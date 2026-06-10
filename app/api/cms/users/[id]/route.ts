@@ -13,6 +13,11 @@ export async function PUT(request: Request, { params }: RouteParams) {
 
   const { id } = await params;
   const body = await request.json();
+
+  if (body.status === 'suspended' && id === auth.userId) {
+    return errorResponse('Impossible de suspendre votre propre compte');
+  }
+
   const user = await updateUser(id, body);
   if (!user) return errorResponse('Utilisateur non trouvé', 404);
   return jsonResponse(user);

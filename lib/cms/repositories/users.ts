@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from 'uuid';
 import bcrypt from 'bcryptjs';
-import type { User, UserRole } from '../types';
+import type { User, UserRole, UserStatus } from '../types';
 import { query, execute } from '@/lib/db';
 
 function rowToUser(row: any): User {
@@ -11,22 +11,21 @@ function rowToUser(row: any): User {
     passwordHash: row.password,
     role: row.role,
     avatar: row.avatar,
+    status: (row.status as UserStatus) ?? 'active',
+    lastLoginAt: row.last_login_at ? row.last_login_at.toISOString() : null,
     createdAt: row.created_at ? row.created_at.toISOString() : new Date().toISOString(),
     updatedAt: row.updated_at ? row.updated_at.toISOString() : new Date().toISOString(),
   };
 }
 
+function toSafeUser(user: User): Omit<User, 'passwordHash'> {
+  const { passwordHash: _passwordHash, ...safe } = user;
+  return safe;
+}
+
 export async function getAllUsers(): Promise<Omit<User, 'passwordHash'>[]> {
-  const rows = await query<any>('SELECT id, name, email, role, avatar, created_at, updated_at FROM users ORDER BY name ASC');
-  return rows.map((row) => ({
-    id: row.id,
-    name: row.name,
-    email: row.email,
-    role: row.role,
-    avatar: row.avatar,
-    createdAt: row.created_at ? row.created_at.toISOString() : new Date().toISOString(),
-    updatedAt: row.updated_at ? row.updated_at.toISOString() : new Date().toISOString(),
-  }));
+  const rows = await query<any>('SELECT * FROM users ORDER BY name ASC');
+  return rows.map((row) => toSafeUser(rowToUser(row)));
 }
 
 export async function getUserById(id: string): Promise<User | null> {
@@ -64,6 +63,8 @@ export async function createUser(input: {
     email: input.email.toLowerCase(),
     role,
     avatar: null,
+    status: 'active',
+    lastLoginAt: null,
     createdAt: now,
     updatedAt: now,
   };
@@ -71,7 +72,14 @@ export async function createUser(input: {
 
 export async function updateUser(
   id: string,
-  input: Partial<{ name: string; email: string; password: string; role: UserRole; avatar: string | null }>
+  input: Partial<{
+    name: string;
+    email: string;
+    password: string;
+    role: UserRole;
+    avatar: string | null;
+    status: UserStatus;
+  }>
 ): Promise<Omit<User, 'passwordHash'> | null> {
   const existing = await getUserById(id);
   if (!existing) return null;
@@ -100,6 +108,10 @@ export async function updateUser(
     fields.push('avatar = ?');
     params.push(input.avatar);
   }
+  if (input.status !== undefined) {
+    fields.push('status = ?');
+    params.push(input.status);
+  }
 
   if (fields.length > 0) {
     fields.push('updated_at = NOW()');
@@ -110,8 +122,7 @@ export async function updateUser(
   const updated = await getUserById(id);
   if (!updated) return null;
 
-  const { passwordHash: _, ...safe } = updated;
-  return safe;
+  return toSafeUser(updated);
 }
 
 export async function deleteUser(id: string): Promise<boolean> {
@@ -124,4 +135,17 @@ export async function verifyPassword(email: string, password: string): Promise<U
   if (!user) return null;
   const valid = await bcrypt.compare(password, user.passwordHash);
   return valid ? user : null;
+}
+
+/**
+ * Records the user's last login timestamp.
+ * Silently no-ops if the last_login_at column does not exist yet
+ * (before the schema migration is applied).
+ */
+export async function recordLogin(id: string): Promise<void> {
+  try {
+    await execute('UPDATE users SET last_login_at = NOW() WHERE id = ?', [id]);
+  } catch {
+    // Column may not exist yet; ignore.
+  }
 }

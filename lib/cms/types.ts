@@ -60,6 +60,8 @@ export interface MediaItem {
   createdAt: string;
 }
 
+export type UserStatus = 'active' | 'suspended';
+
 export interface User {
   id: string;
   name: string;
@@ -67,6 +69,8 @@ export interface User {
   passwordHash: string;
   role: UserRole;
   avatar: string | null;
+  status?: UserStatus;
+  lastLoginAt?: string | null;
   createdAt: string;
   updatedAt: string;
 }
