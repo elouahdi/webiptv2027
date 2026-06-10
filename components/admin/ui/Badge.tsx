@@ -12,6 +12,7 @@ const badgeVariants = cva(
         danger: 'bg-red-500/10 text-red-400',
         info: 'bg-brand-from/10 text-brand-from',
         purple: 'bg-purple-500/10 text-purple-400',
+        blue: 'bg-blue-500/10 text-blue-400',
       },
     },
     defaultVariants: { variant: 'default' },
