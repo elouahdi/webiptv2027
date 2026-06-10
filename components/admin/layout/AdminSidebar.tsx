@@ -20,6 +20,8 @@ import {
   Tv,
   Phone,
   Bell,
+  Trophy,
+  BarChart3,
 } from 'lucide-react';
 import { cn } from '@/lib/utils/cn';
 
