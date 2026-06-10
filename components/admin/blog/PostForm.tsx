@@ -1,7 +1,8 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
+import { CheckCircle2, CloudUpload, CircleDot, Loader2 } from 'lucide-react';
 import type { Post, Category, Tag, SEOSettings, User, PostStatus } from '@/lib/cms/types';
 import { DEFAULT_SEO } from '@/lib/cms/types';
 import { generateSlug } from '@/lib/cms/services/slug';
@@ -14,6 +15,7 @@ import { Textarea } from '../ui/Textarea';
 import { Select } from '../ui/Select';
 import { Card, CardContent, CardHeader, CardTitle } from '../ui/Card';
 import { Badge } from '../ui/Badge';
+import { useToast } from '../ui/Toast';
 import { calculateReadingTime } from '@/lib/cms/services/reading-time';
 
 interface PostFormProps {
@@ -21,9 +23,13 @@ interface PostFormProps {
   mode: 'create' | 'edit';
 }
 
+type SaveStatus = 'idle' | 'dirty' | 'saving' | 'saved';
+
 export function PostForm({ post, mode }: PostFormProps) {
   const router = useRouter();
+  const { toast } = useToast();
   const [saving, setSaving] = useState(false);
+  const [saveStatus, setSaveStatus] = useState<SaveStatus>('idle');
   const [categories, setCategories] = useState<Category[]>([]);
   const [tags, setTags] = useState<Tag[]>([]);
   const [users, setUsers] = useState<Omit<User, 'passwordHash'>[]>([]);
@@ -43,6 +49,9 @@ export function PostForm({ post, mode }: PostFormProps) {
   const [seo, setSeo] = useState<SEOSettings>(post?.seo || { ...DEFAULT_SEO });
   const [autoSlug, setAutoSlug] = useState(mode === 'create');
 
+  const initializedRef = useRef(false);
+  const skipDirtyRef = useRef(false);
+
   useEffect(() => {
     Promise.all([
       fetch('/api/cms/categories').then((r) => r.json()),
@@ -60,41 +69,109 @@ export function PostForm({ post, mode }: PostFormProps) {
     if (autoSlug && title) setSlug(generateSlug(title));
   }, [title, autoSlug]);
 
+  // Track unsaved changes (skipped on first render and after programmatic updates)
+  useEffect(() => {
+    if (!initializedRef.current) {
+      initializedRef.current = true;
+      return;
+    }
+    if (skipDirtyRef.current) {
+      skipDirtyRef.current = false;
+      return;
+    }
+    setSaveStatus('dirty');
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [title, slug, excerpt, content, status, scheduledAt, categoryId, tagIds, featuredImageId, galleryImageIds, seo]);
+
+  // Warn before leaving with unsaved changes
+  useEffect(() => {
+    const handler = (e: BeforeUnloadEvent) => {
+      if (saveStatus === 'dirty') {
+        e.preventDefault();
+      }
+    };
+    window.addEventListener('beforeunload', handler);
+    return () => window.removeEventListener('beforeunload', handler);
+  }, [saveStatus]);
+
   const readTime = calculateReadingTime(content);
+
+  const savePost = useCallback(
+    async (opts: { statusOverride?: PostStatus; redirect?: boolean; silent?: boolean } = {}) => {
+      const effectiveStatus = opts.statusOverride ?? status;
+      setSaving(true);
+      setSaveStatus('saving');
+
+      const payload = {
+        title,
+        slug,
+        excerpt,
+        content,
+        status: effectiveStatus,
+        scheduledAt:
+          effectiveStatus === 'scheduled' && scheduledAt ? new Date(scheduledAt).toISOString() : null,
+        categoryId: categoryId || null,
+        tagIds,
+        authorId,
+        featuredImageId,
+        galleryImageIds,
+        seo,
+      };
+
+      const url = mode === 'create' ? '/api/cms/posts' : `/api/cms/posts/${post!.id}`;
+      const method = mode === 'create' ? 'POST' : 'PUT';
+
+      try {
+        const res = await fetch(url, {
+          method,
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+        if (!res.ok) throw new Error();
+
+        if (opts.statusOverride && opts.statusOverride !== status) {
+          skipDirtyRef.current = true;
+          setStatus(opts.statusOverride);
+        }
+        setSaveStatus('saved');
+        if (!opts.silent) {
+          toast(
+            opts.statusOverride === 'published' ? 'Article publié' : 'Article enregistré',
+            'success'
+          );
+        }
+        if (opts.redirect || mode === 'create') {
+          router.push('/admin/blog/posts');
+          router.refresh();
+        }
+      } catch {
+        setSaveStatus('dirty');
+        toast('Enregistrement impossible', 'error');
+      }
+      setSaving(false);
+    },
+    [title, slug, excerpt, content, status, scheduledAt, categoryId, tagIds, authorId, featuredImageId, galleryImageIds, seo, mode, post, router, toast]
+  );
+
+  // Autosave in edit mode, 3s after the last change
+  useEffect(() => {
+    if (mode !== 'edit' || saveStatus !== 'dirty') return;
+    const timer = setTimeout(() => {
+      savePost({ silent: true });
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, [saveStatus, mode, savePost]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSaving(true);
+    savePost({ redirect: true });
+  };
 
-    const payload = {
-      title,
-      slug,
-      excerpt,
-      content,
-      status,
-      scheduledAt: status === 'scheduled' && scheduledAt ? new Date(scheduledAt).toISOString() : null,
-      categoryId: categoryId || null,
-      tagIds,
-      authorId,
-      featuredImageId,
-      galleryImageIds,
-      seo,
-    };
-
-    const url = mode === 'create' ? '/api/cms/posts' : `/api/cms/posts/${post!.id}`;
-    const method = mode === 'create' ? 'POST' : 'PUT';
-
-    const res = await fetch(url, {
-      method,
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload),
-    });
-
-    if (res.ok) {
-      router.push('/admin/blog/posts');
-      router.refresh();
+  const handleCancel = () => {
+    if (saveStatus === 'dirty' && !window.confirm('Des modifications ne sont pas enregistrées. Quitter quand même ?')) {
+      return;
     }
-    setSaving(false);
+    router.back();
   };
 
   const toggleTag = (id: string) => {
@@ -107,23 +184,58 @@ export function PostForm({ post, mode }: PostFormProps) {
     { id: 'media' as const, label: 'Médias' },
   ];
 
+  const saveIndicator = {
+    idle: null,
+    dirty: (
+      <span className="inline-flex items-center gap-1.5 text-xs text-yellow-400">
+        <CircleDot className="w-3.5 h-3.5" /> Non enregistré
+      </span>
+    ),
+    saving: (
+      <span className="inline-flex items-center gap-1.5 text-xs text-admin-text-secondary">
+        <Loader2 className="w-3.5 h-3.5 animate-spin" /> Enregistrement...
+      </span>
+    ),
+    saved: (
+      <span className="inline-flex items-center gap-1.5 text-xs text-green-400">
+        <CheckCircle2 className="w-3.5 h-3.5" /> Enregistré
+      </span>
+    ),
+  }[saveStatus];
+
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-16">
         <div>
-          <h1 className="font-syne font-bold text-2xl text-admin-text">
-            {mode === 'create' ? 'Nouvel article' : 'Modifier l\'article'}
-          </h1>
+          <div className="flex items-center gap-3">
+            <h1 className="font-syne font-bold text-2xl text-admin-text">
+              {mode === 'create' ? 'Nouvel article' : 'Modifier l\'article'}
+            </h1>
+            {saveIndicator}
+          </div>
           <p className="text-admin-text-secondary text-sm mt-1">
             {readTime} min de lecture • Slug: /blog/{slug || '...'}
           </p>
         </div>
         <div className="flex gap-2">
-          <Button type="button" variant="outline" onClick={() => router.back()}>
+          <Button type="button" variant="outline" onClick={handleCancel}>
             Annuler
           </Button>
-          <Button type="submit" disabled={saving}>
-            {saving ? 'Enregistrement...' : 'Enregistrer'}
+          <Button
+            type="button"
+            variant="secondary"
+            disabled={saving}
+            onClick={() => savePost({ statusOverride: 'draft' })}
+          >
+            Enregistrer brouillon
+          </Button>
+          <Button
+            type="button"
+            disabled={saving}
+            onClick={() => savePost({ statusOverride: status === 'scheduled' ? 'scheduled' : 'published', redirect: true })}
+          >
+            <CloudUpload className="w-4 h-4" />
+            {saving ? 'Enregistrement...' : status === 'published' || mode === 'edit' ? 'Mettre à jour' : 'Publier'}
           </Button>
         </div>
       </div>
