@@ -28,6 +28,8 @@ CREATE TABLE users (
     password VARCHAR(255) NOT NULL,
     role ENUM('admin', 'editor', 'author', 'moderator') NOT NULL DEFAULT 'author',
     avatar VARCHAR(500) NULL,
+    status ENUM('active', 'suspended') NOT NULL DEFAULT 'active',
+    last_login_at TIMESTAMP NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     INDEX idx_email (email),

@@ -1,4 +1,4 @@
-import { verifyPassword } from '@/lib/cms/repositories/users';
+import { verifyPassword, recordLogin } from '@/lib/cms/repositories/users';
 import { createSession, setSessionCookie } from '@/lib/cms/auth/session';
 import { ensureCMSInitialized } from '@/lib/cms/init';
 import { jsonResponse, errorResponse } from '@/lib/cms/api-helpers';
@@ -17,6 +17,12 @@ export async function POST(request: Request) {
   if (!user) {
     return errorResponse('Identifiants invalides', 401);
   }
+
+  if (user.status === 'suspended') {
+    return errorResponse('Ce compte est suspendu. Contactez un administrateur.', 403);
+  }
+
+  await recordLogin(user.id);
 
   const token = await createSession(user);
   await setSessionCookie(token);
