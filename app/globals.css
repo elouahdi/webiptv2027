@@ -1,0 +1,632 @@
+@import '@fortawesome/fontawesome-free/css/all.min.css';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-base: #f8fafc;
+  --bg-card: #ffffff;
+  --bg-elevated: #f1f5f9;
+  --border: #e2e8f0;
+  --border-active: #cbd5e1;
+  --brand-from: #00F3FF;
+  --brand-to: #FF00E5;
+  --accent-purple: #7c3aed;
+  --accent-violet: #a855f7;
+  --text-primary: #0f172a;
+  --text-secondary: #334155; /* Darker for better light mode contrast */
+  --text-muted: #64748b; /* Slate-500 for better light mode readability (WCAG) */
+  --success: #059669; /* Darker green for accessibility */
+  --warning: #d97706;
+  --nav-bg: rgba(248, 250, 252, 0.75);
+  --nav-bg-scrolled: rgba(255, 255, 255, 0.85);
+  --card-shadow: 0 4px 24px -6px rgba(15, 23, 42, 0.04), 0 8px 16px -8px rgba(15, 23, 42, 0.08);
+  --card-shadow-hover: 0 20px 32px -8px rgba(15, 23, 42, 0.12), 0 4px 12px -4px rgba(15, 23, 42, 0.04);
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(226, 232, 240, 0.6);
+
+  /* Admin panel variables in light mode */
+  --admin-bg: #f8fafc;
+  --admin-card: #ffffff;
+  --admin-muted: #f1f5f9;
+  --admin-input: #ffffff;
+  --admin-border: #e2e8f0;
+  --admin-text: #0f172a;
+  --admin-text-secondary: #334155;
+  --admin-text-muted: #64748b;
+  --admin-sidebar: #ffffff;
+  --admin-accent: #d97706;
+}
+
+.dark {
+  --bg-base: #0A0A0A;
+  --bg-card: #111118;
+  --bg-elevated: #1a1a1a;
+  --border: #2A2A3A;
+  --border-active: #3f3f5a;
+  --brand-from: #00F3FF;
+  --brand-to: #FF00E5;
+  --accent-purple: #7c3aed;
+  --accent-violet: #a855f7;
+  --text-primary: #FFFFFF;
+  --text-secondary: #A0A0B0;
+  --text-muted: #60607a;
+  --success: #00FF7F;
+  --warning: #f59e0b;
+  --nav-bg: rgba(10, 10, 10, 0.7);
+  --nav-bg-scrolled: rgba(10, 10, 10, 0.85);
+  --card-shadow: 0 4px 24px -8px rgba(0, 0, 0, 0.4);
+  --card-shadow-hover: 0 12px 32px -8px rgba(0, 0, 0, 0.6);
+  --glass-bg: rgba(17, 17, 24, 0.7);
+  --glass-border: rgba(42, 42, 58, 0.4);
+
+  /* Admin panel variables in dark mode */
+  --admin-bg: #0f0f14;
+  --admin-card: #16161f;
+  --admin-muted: #1e1e2a;
+  --admin-input: #12121a;
+  --admin-border: #2a2a3a;
+  --admin-text: #f0f0f5;
+  --admin-text-secondary: #9898a8;
+  --admin-text-muted: #606078;
+  --admin-sidebar: #12121a;
+  --admin-accent: #f59e0b;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Skip to main content for accessibility */
+.skip-to-main {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 999;
+  padding: 1rem;
+  background: var(--brand-from);
+  color: white;
+  text-decoration: none;
+}
+
+.skip-to-main:focus {
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+}
+
+/* Focus visible for accessibility */
+:focus-visible {
+  outline: 2px solid var(--brand-from);
+  outline-offset: 2px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-base);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border-active);
+}
+
+/* Selection */
+::selection {
+  background: var(--brand-from);
+  color: white;
+}
+
+/* Blog article content */
+.blog-content h1 { font-size: 2rem; font-weight: 700; margin: 1.5rem 0 1rem; }
+.blog-content h2 { font-size: 1.5rem; font-weight: 600; margin: 1.25rem 0 0.75rem; }
+.blog-content h3 { font-size: 1.25rem; font-weight: 600; margin: 1rem 0 0.5rem; }
+.blog-content p { margin: 0.75rem 0; line-height: 1.8; color: var(--text-secondary); }
+.blog-content ul, .blog-content ol { padding-left: 1.5rem; margin: 0.75rem 0; }
+.blog-content li { margin: 0.35rem 0; color: var(--text-secondary); }
+.blog-content a { color: var(--brand-from); text-decoration: underline; }
+.blog-content img { max-width: 100%; border-radius: 0.75rem; margin: 1.5rem 0; }
+.blog-content blockquote { border-left: 4px solid var(--brand-from); padding-left: 1rem; margin: 1rem 0; font-style: italic; }
+
+/* Custom Design System Utilities */
+.card-glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--card-shadow);
+}
+
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--card-shadow-hover);
+  border-color: var(--border-active);
+}
+
+.transition-premium {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--brand-from), var(--brand-to));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Scrollbar tweaks */
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border: 2px solid var(--bg-base);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border-active);
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   KOOORA EXACT DESIGN SYSTEM
+   ═══════════════════════════════════════════════════════════════════ */
+
+.kooora-theme {
+  background-color: #0f1117;
+  color: #ffffff;
+  min-height: 100vh;
+}
+
+/* Date navigation bar */
+.kooora-date-nav {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 600px) {
+  .kooora-date-nav {
+    gap: 4px;
+  }
+}
+
+.date-pill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 6px;
+  border-radius: 8px;
+  background: transparent;
+  border: 1px solid #2a2d3a;
+  color: #8b8fa8;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.date-pill:hover {
+  border-color: #8b8fa8;
+  color: #ffffff;
+}
+
+.date-pill--active {
+  background: #e8002d;
+  border-color: #e8002d;
+  color: #ffffff !important;
+}
+
+.date-pill-name {
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 2px;
+}
+
+.date-pill-num {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+@media (max-width: 400px) {
+  .date-pill-name { font-size: 9px; }
+  .date-pill-num { font-size: 13px; }
+  .date-pill { padding: 6px 4px; }
+}
+
+/* Filter Tabs */
+.kooora-filters {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid #2a2d3a;
+  padding-bottom: 12px;
+}
+
+.kooora-filter-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #8b8fa8;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  padding: 4px 8px;
+  transition: color 0.2s;
+}
+
+.kooora-filter-tab:hover {
+  color: #ffffff;
+}
+
+.kooora-filter-tab--active {
+  color: #ffffff;
+}
+
+.kooora-filter-tab--active::after {
+  content: '';
+  position: absolute;
+  bottom: -13px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #e8002d;
+}
+
+.kooora-filter-count {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 1px 6px;
+  border-radius: 99px;
+  background: #2a2d3a;
+  color: #8b8fa8;
+}
+
+.kooora-filter-tab--active .kooora-filter-count {
+  background: #e8002d;
+  color: #ffffff;
+}
+
+/* League Group Card */
+.kooora-league-group {
+  background: #161922;
+  border: 1px solid #2a2d3a;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.kooora-league-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: #1a1d27;
+  border-bottom: 1px solid #2a2d3a;
+}
+
+.kooora-league-header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.kooora-league-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.kooora-league-country {
+  font-size: 12px;
+  font-weight: 400;
+  color: #8b8fa8;
+}
+
+.kooora-league-flag {
+  font-size: 16px;
+  line-height: 1;
+}
+
+.kooora-league-live-badge {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 10px;
+  font-weight: 700;
+  color: #e8002d;
+  text-transform: uppercase;
+}
+
+/* Match Row */
+.kooora-match-row {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr 100px;
+  align-items: center;
+  height: 52px;
+  padding: 0 16px;
+  border-bottom: 1px solid #2a2d3a;
+  background: transparent;
+}
+
+.kooora-match-row:last-child {
+  border-bottom: none;
+}
+
+/* Match Team Cell */
+.kooora-match-team {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.kooora-match-team-home {
+  justify-content: flex-end;
+  text-align: right;
+  flex-direction: row;
+}
+
+.kooora-match-team-away {
+  justify-content: flex-start;
+  text-align: left;
+  flex-direction: row;
+}
+
+.kooora-team-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: #ffffff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Match Center cell */
+.kooora-match-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 80px;
+}
+
+.kooora-score {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: -0.02em;
+}
+
+.kooora-score--live {
+  color: #ffffff;
+}
+
+.kooora-time {
+  font-size: 14px;
+  font-weight: 500;
+  color: #8b8fa8;
+}
+
+/* Far right cell for status badges */
+.kooora-match-status-cell {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/* Status Badges */
+.kooora-badge-live {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: #e8002d;
+  color: #ffffff;
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.kooora-badge-ft {
+  display: inline-flex;
+  align-items: center;
+  background: #2a2d3a;
+  color: #8b8fa8;
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.kooora-badge-ht {
+  display: inline-flex;
+  align-items: center;
+  background: #f59e0b;
+  color: #ffffff;
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* Pulse animation dot */
+.kooora-pulse-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #ffffff;
+  animation: kooora-pulse 1.5s ease-in-out infinite;
+  display: inline-block;
+}
+
+@keyframes kooora-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
+}
+
+/* Team Logo wrappers */
+.kooora-logo-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1px solid #2a2d3a;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.kooora-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.kooora-logo-fallback {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  font-size: 10px;
+  font-weight: 700;
+  color: #ffffff;
+  background: #2a2d3a;
+  flex-shrink: 0;
+  user-select: none;
+}
+
+/* Dynamic error wrappers */
+.kooora-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px 24px;
+  border-radius: 8px;
+  border: 1px solid #2a2d3a;
+  background: #161922;
+}
+
+.kooora-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 24px;
+  border: 1px dashed #2a2d3a;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.01);
+}
+
+.kooora-cta-banner {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+  padding: 24px;
+  margin-top: 16px;
+  border-radius: 8px;
+  background: #161922;
+  border: 1px solid #2a2d3a;
+}
+
+@media (min-width: 768px) {
+  .kooora-cta-banner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.kooora-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: #e8002d;
+  color: white;
+  font-weight: 700;
+  font-size: 13px;
+  border-radius: 6px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all 0.2s;
+}
+
+.kooora-cta-btn:hover {
+  transform: scale(1.02);
+  background: #c20024;
+}
+
+/* Responsive tweaks */
+@media (max-width: 640px) {
+  .kooora-match-row {
+    grid-template-columns: 1fr auto 1fr 80px;
+    padding: 0 8px;
+  }
+  .kooora-team-name {
+    max-width: 120px;
+  }
+  .kooora-logo-wrapper, .kooora-logo-fallback {
+    width: 24px;
+    height: 24px;
+  }
+  .kooora-logo-fallback {
+    font-size: 9px;
+  }
+}
+
+
+

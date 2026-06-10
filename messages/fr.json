@@ -1,0 +1,364 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "plans": "Plans",
+    "channels": "Chaînes",
+    "blog": "Blog",
+    "contact": "Contact",
+    "faq": "FAQ",
+    "sports": "Matchs Live",
+    "trial": "Essai Gratuit 3H",
+    "close_menu": "Fermer le menu",
+    "open_menu": "Ouvrir le menu"
+  },
+  "announcement": {
+    "text": "🔥 Offre Spéciale : Économisez jusqu'à 79% + 3 mois offerts sur le plan annuel !"
+  },
+  "hero": {
+    "badge": "Offre limitée : 12 mois + 3 mois OFFERTS",
+    "title_1": "45 000 Chaînes HD/4K",
+    "title_gradient": "Sans Interruption",
+    "subtitle": "Abonnement IPTV Premium France 2026. Activation instantanée, compatible tous appareils, support client 24h/7j.",
+    "cta_plans": "Voir les plans",
+    "cta_trial": "Essai gratuit 3H",
+    "features": {
+      "activation": "Activation instantanée",
+      "no_commitment": "Sans engagement",
+      "support": "Support 24h/7j",
+      "guarantee": "Garantie 7 jours"
+    }
+  },
+  "features": {
+    "title": "Pourquoi Choisir RegardezIPTV ?",
+    "subtitle": "Découvrez les fonctionnalités exclusives qui font de notre service le meilleur choix pour votre divertissement.",
+    "items": {
+      "channels": {
+        "title": "45 000+ Chaînes & VOD",
+        "description": "Accédez à un catalogue immense de chaînes mondiales et de films/séries en VOD mis à jour régulièrement."
+      },
+      "servers": {
+        "title": "Serveurs Ultra-Rapides",
+        "description": "Technologie anti-saccade avancée avec bande passante de 10 Gbps pour un streaming stable en 4K UHD."
+      },
+      "compatibility": {
+        "title": "Compatibilité Totale",
+        "description": "Fonctionne sur tous vos appareils : Smart TV, Firestick, Apple TV, Android, iOS, PC et MAG."
+      },
+      "support": {
+        "title": "Support VIP 24h/7j",
+        "description": "Notre équipe technique est disponible à tout moment via WhatsApp et e-mail pour vous guider."
+      }
+    }
+  },
+  "stats": {
+    "clients": {
+      "value": "99.2%",
+      "label": "Satisfaction client"
+    },
+    "uptime": {
+      "value": "99.9%",
+      "label": "Temps de fonctionnement"
+    },
+    "channels": {
+      "value": "45K+",
+      "label": "Chaînes & VOD"
+    },
+    "support": {
+      "value": "< 15min",
+      "label": "Temps de réponse support"
+    }
+  },
+  "plans": {
+    "title": "Nos Abonnements IPTV",
+    "subtitle": "Choisissez le plan qui vous convient. Tous nos abonnements incluent l'accès complet en HD/4K.",
+    "cta_choose": "Choisir ce plan",
+    "cta_order": "Commander maintenant",
+    "trial_cta": "Obtenir via WhatsApp",
+    "features_list": {
+      "activation": "Activation instantanée",
+      "channels": "45 000 chaînes & films",
+      "quality": "Qualité HD / Full HD / 4K",
+      "updates": "Mises à jour automatiques",
+      "replay": "TV de rattrapage (Replay)",
+      "support": "Support 24h/7j",
+      "extra_months": "3 mois supplémentaires offerts",
+      "trial_hours": "3 heures d'accès complet",
+      "no_card": "Sans carte de crédit"
+    },
+    "1-mois": {
+      "name": "1 Mois",
+      "badge": "",
+      "description": "Notre abonnement 1 mois est parfait pour découvrir notre service IPTV premium sans engagement. Accès immédiat à 45 000 chaînes HD et 4K, activation en moins de 5 minutes."
+    },
+    "3-mois": {
+      "name": "3 Mois",
+      "badge": "Populaire",
+      "description": "L'abonnement 3 mois offre un excellent rapport qualité-prix pour profiter de toute une saison de sport ou de séries sans interruption. Idéal pour les utilisateurs réguliers."
+    },
+    "6-mois": {
+      "name": "6 Mois",
+      "badge": "",
+      "description": "Notre abonnement 6 mois est notre offre la plus populaire. Idéal pour toute une saison de foot, de séries ou de films — avec accès aux chaînes sport premium inclus."
+    },
+    "12-mois": {
+      "name": "12 Mois",
+      "subtitle": "+ 3 mois offerts",
+      "badge": "MEILLEURE OFFRE",
+      "description": "Notre meilleure offre : 12 mois d'abonnement IPTV premium avec 3 mois offerts, soit 15 mois au prix de 12 à seulement 46,99€. Le choix de nos clients les plus satisfaits."
+    },
+    "24-mois": {
+      "name": "24 Mois",
+      "badge": "Meilleur Prix/Durée",
+      "description": "L'abonnement 24 mois est notre offre VIP ultime : 30 mois au prix de 24, ligne dédiée prioritaire et accès à l'intégralité de notre catalogue. Pour les vrais passionnés."
+    },
+    "essai-3h": {
+      "name": "Essai 3H",
+      "badge": "GRATUIT",
+      "description": "Essayez notre service IPTV gratuitement pendant 3 heures. Accès complet à toutes les chaînes et fonctionnalités, sans engagement et sans carte de crédit."
+    }
+  },
+  "devices": {
+    "title": "Compatible Avec Tous Vos Appareils",
+    "subtitle": "Notre service fonctionne de manière transparente sur n'importe quel écran.",
+    "description": "Nous fournissons des instructions d'installation faciles pour toutes les plateformes. Vous serez prêt à regarder en moins de 5 minutes.",
+    "tv": "Smart TV (Samsung, LG, Sony...)",
+    "box": "Android TV & Box (Nvidia Shield, Xiaomi...)",
+    "stick": "Amazon Fire TV Stick",
+    "mobile": "Apple iOS & Android (Téléphones, Tablettes)",
+    "pc": "Ordinateurs (Windows, macOS, Linux)",
+    "mag": "Boîtiers MAG & Formuler"
+  },
+  "how_it_works": {
+    "title": "Comment Ça Marche ?",
+    "subtitle": "Trois étapes simples pour commencer à regarder vos programmes favoris dès aujourd'hui.",
+    "step_1": {
+      "title": "1. Choisissez Votre Plan",
+      "desc": "Sélectionnez l'abonnement qui convient le mieux à vos besoins et procédez au paiement sécurisé."
+    },
+    "step_2": {
+      "title": "2. Recevez Vos Accès",
+      "desc": "Vos identifiants et guides d'installation détaillés vous sont envoyés par e-mail en moins de 5 minutes."
+    },
+    "step_3": {
+      "title": "3. Profitez du Spectacle !",
+      "desc": "Configurez votre appareil en suivant notre guide simple et commencez à diffuser en HD/4K."
+    }
+  },
+  "guarantee": {
+    "title": "Garantie Satisfait ou Remboursé sous 7 Jours",
+    "subtitle": "Achetez en toute confiance. Votre satisfaction est notre priorité absolue.",
+    "desc_1": "Nous sommes tellement convaincus de la qualité de notre service IPTV que nous vous offrons une garantie de remboursement de 7 jours.",
+    "desc_2": "Si vous rencontrez des problèmes techniques insolubles ou si vous n'êtes pas entièrement satisfait du service, contactez simplement notre support WhatsApp dans les 7 jours suivant votre achat pour obtenir un remboursement intégral.",
+    "points": {
+      "zero_risk": "Risque Zéro",
+      "fast_refund": "Remboursement rapide",
+      "active_support": "Support WhatsApp actif"
+    }
+  },
+  "testimonials": {
+    "title": "Ce Que Disent Nos Clients",
+    "subtitle": "Découvrez les retours d'expérience de nos utilisateurs à travers le monde.",
+    "trust": "Évalué {rating}/5 basé sur {count} avis clients",
+    "items": {
+      "t1": {
+        "text": "Qualité d'image incroyable sur les chaînes de sport. Zapping ultra-rapide et aucun freeze pendant les grands matchs de Ligue des Champions. Je recommande à 100% !",
+        "name": "Jean-Pierre D.",
+        "location": "Paris, France"
+      },
+      "t2": {
+        "text": "Après avoir testé plusieurs fournisseurs, c'est de loin le meilleur. La VOD est immense avec toutes les nouveautés Netflix et Disney+ en excellente qualité. Support WhatsApp super sympa.",
+        "name": "Sophie M.",
+        "location": "Lyon, France"
+      },
+      "t3": {
+        "text": "Installation faite sur ma Smart TV Samsung en 5 minutes grâce au guide. C'est parfait, ma famille adore les chaînes de divertissement et jeunesse.",
+        "name": "Marc-André L.",
+        "location": "Bruxelles, Belgique"
+      }
+    }
+  },
+  "faq": {
+    "title": "Foire Aux Questions",
+    "subtitle": "Trouvez des réponses rapides aux questions les plus fréquemment posées sur notre service IPTV.",
+    "items": {
+      "q1": {
+        "q": "Qu'est-ce que l'IPTV et comment ça fonctionne ?",
+        "a": "L'IPTV (Internet Protocol Television) est un service qui diffuse des chaînes de télévision via internet plutôt que par les méthodes traditionnelles (câble/satellite). Il vous suffit d'une connexion internet stable et d'un appareil compatible pour y accéder."
+      },
+      "q2": {
+        "q": "Quels appareils sont compatibles avec votre service ?",
+        "a": "Notre service est compatible avec la majorité des appareils : Smart TV (Samsung, LG, Sony, Android TV), Amazon Firestick, boîtiers MAG, smartphones/tablettes (iOS et Android), ordinateurs (PC/Mac) et Apple TV."
+      },
+      "q3": {
+        "q": "De quelle vitesse internet ai-je besoin ?",
+        "a": "Pour une expérience de streaming fluide, nous recommandons une vitesse de connexion minimale de 12 Mbps pour les chaînes HD, 20 Mbps pour le Full HD et 30-40 Mbps pour une qualité optimale en 4K UHD."
+      },
+      "q4": {
+        "q": "Combien de temps prend l'activation de mon abonnement ?",
+        "a": "L'activation est extrêmement rapide. Une fois le paiement validé, vous recevrez vos codes d'accès et le guide d'installation complet par e-mail en moins de 5 minutes."
+      },
+      "q5": {
+        "q": "Puis-je utiliser l'abonnement sur plusieurs appareils ?",
+        "a": "Chaque abonnement standard permet une connexion simultanée à la fois. Si vous souhaitez l'utiliser sur plusieurs écrans en même temps, veuillez contacter notre service client pour obtenir un tarif multi-écrans préférentiel."
+      },
+      "q6": {
+        "q": "Proposez-vous un remboursement si je ne suis pas satisfait ?",
+        "a": "Oui, tout à fait. Nous offrons une garantie satisfait ou remboursé de 7 jours. Si vous rencontrez un problème technique ou n'êtes pas satisfait, contactez-nous via WhatsApp pour demander votre remboursement."
+      }
+    }
+  },
+  "cta_banner": {
+    "title": "Prêt à Révolutionner Votre Télévision ?",
+    "subtitle": "Rejoignez des milliers de clients satisfaits et accédez instantanément à tout le sport, cinéma et séries en 4K UHD.",
+    "btn": "Commencer maintenant"
+  },
+  "checkout": {
+    "title": "Finaliser votre commande",
+    "subtitle": "Activation immédiate en moins de 5 minutes par e-mail.",
+    "steps": {
+      "info": "Informations",
+      "payment": "Paiement"
+    },
+    "form": {
+      "email": "Adresse E-mail",
+      "email_placeholder": "votre@email.com",
+      "email_desc": "Vos accès et instructions d'installation y seront envoyés.",
+      "firstname": "Prénom",
+      "firstname_placeholder": "Jean",
+      "lastname": "Nom",
+      "lastname_placeholder": "Dupont",
+      "country": "Pays",
+      "postal": "Code Postal",
+      "postal_placeholder": "75000",
+      "device": "Appareil principal (Optionnel)",
+      "device_placeholder": "Ex: Smart TV Samsung, Firestick, GSE IPTV...",
+      "mac": "Adresse MAC (Pour MAG/DuplexPlay uniquement)",
+      "mac_placeholder": "Ex: 00:1A:79:XX:XX:XX",
+      "submit": "Continuer vers le paiement",
+      "processing": "Traitement en cours...",
+      "pay_now": "Payer maintenant — {price}€"
+    },
+    "summary": {
+      "title": "Récapitulatif de la commande",
+      "plan": "Abonnement {name}",
+      "support": "Support VIP WhatsApp gratuit 24h/7j",
+      "servers": "Serveurs ultra-rapides sans saccades en 4K UHD",
+      "setup": "Activation immédiate en moins de 5 min par email",
+      "total": "Total à payer",
+      "guarantee": "Garantie Satisfait ou Remboursé sous 7 jours"
+    },
+    "payment": {
+      "title": "Sélectionnez votre mode de paiement",
+      "desc": "Tous les paiements sont cryptés et 100% sécurisés.",
+      "card": "Carte Bancaire (Visa, Mastercard)",
+      "crypto": "Cryptomonnaie (Bitcoin, USDT)",
+      "success": "Félicitations ! Votre commande a été enregistrée avec succès. Vous recevrez vos accès IPTV par e-mail en moins de 5 minutes.",
+      "error": "Une erreur est survenue lors de la validation. Veuillez réessayer ou contacter le support WhatsApp."
+    }
+  },
+  "trial_page": {
+    "title": "Demander Votre Essai IPTV Gratuit",
+    "subtitle": "Testez la qualité de nos serveurs premium gratuitement pendant 3 heures, sans aucun engagement.",
+    "whatsapp_desc": "L'activation de l'essai gratuit se fait instantanément par WhatsApp. Cliquez sur le bouton ci-dessous pour démarrer.",
+    "whatsapp_btn": "Demander l'essai via WhatsApp",
+    "or_email": "Ou faites votre demande par e-mail",
+    "email_desc": "L'activation par e-mail peut prendre entre 30 minutes et 2 heures.",
+    "form": {
+      "name": "Votre Nom complet",
+      "email": "Votre Adresse E-mail",
+      "device": "Votre Appareil (Smart TV, Firestick...)",
+      "submit": "Envoyer ma demande d'essai",
+      "success": "Demande envoyée ! Veuillez vérifier vos e-mails ou vos spams dans les prochaines minutes.",
+      "error": "Une erreur s'est produite. Veuillez réessayer ou utiliser l'option WhatsApp."
+    }
+  },
+  "contact_page": {
+    "title": "Contactez Notre Support VIP",
+    "subtitle": "Une question ? Notre équipe d'assistance est disponible 24h/24 et 7j/7 pour vous répondre.",
+    "whatsapp_title": "Assistance Directe WhatsApp",
+    "whatsapp_desc": "La méthode la plus rapide pour obtenir de l'aide ou une activation.",
+    "email_title": "Support par E-mail",
+    "email_desc": "Envoyez-nous un e-mail et nous vous répondrons sous 2 heures.",
+    "form_title": "Envoyez-nous un message",
+    "form": {
+      "name": "Nom complet",
+      "email": "Adresse e-mail",
+      "subject": "Sujet",
+      "message": "Message",
+      "submit": "Envoyer le message",
+      "success": "Message envoyé avec succès. Nous vous répondrons très rapidement !"
+    }
+  },
+  "footer": {
+    "tagline": "Le meilleur service IPTV Premium avec 45 000+ chaînes HD/4K et VOD illimitée. Stable, sans saccades et activé instantanément.",
+    "cols": {
+      "about": "À Propos",
+      "links": "Liens Rapides",
+      "plans": "Nos Plans"
+    },
+    "copyright": "© {year} RegardezIPTV. Tous droits réservés.",
+    "legal": {
+      "cgu": "CGU",
+      "privacy": "Confidentialité",
+      "refund": "Remboursement"
+    }
+  },
+  "not_found": {
+    "title": "Page Introuvable",
+    "desc": "Désolé, la page que vous recherchez n'existe pas ou a été déplacée.",
+    "btn": "Retour à l'accueil"
+  },
+  "seo": {
+    "home_title": "Meilleur Abonnement IPTV France 2026 | 45K Chaînes HD & 4K | RegardezIPTV",
+    "home_description": "Profitez du meilleur abonnement IPTV premium en France. Plus de 45 000 chaînes Live HD/4K et VOD illimitées. Activation instantanée, serveurs stables 99.9%, support 24/7."
+  },
+  "specs": {
+    "title": "Spécifications Techniques",
+    "subtitle": "Les détails techniques de nos infrastructures et serveurs IPTV",
+    "feature": "Fonctionnalité",
+    "description": "Description",
+    "protocols": {
+      "title": "Protocoles supportés",
+      "desc": "M3U, Xtream Codes API, Portal (MAG, STB Emulator)"
+    },
+    "resolution": {
+      "title": "Résolution Max",
+      "desc": "4K Ultra HD, Full HD (1080p), HD (720p)"
+    },
+    "epg": {
+      "title": "EPG (Guide TV)",
+      "desc": "Oui (Intégré et mis à jour automatiquement pour tous les bouquets)"
+    },
+    "antifreeze": {
+      "title": "Technologie Anti-Freeze",
+      "desc": "Version 5.8 Anti-Coupure avancée avec double flux"
+    },
+    "devices": {
+      "title": "Compatibilité Appareils",
+      "desc": "Smart TV (Samsung/LG), Android TV, Firestick, Apple TV, iPhone, Android, MAG, PC, VLC"
+    },
+    "trial": {
+      "title": "Période d'essai",
+      "desc": "Essai de 3h disponible gratuitement en ligne"
+    }
+  },
+  "sports": {
+    "title": "Programme TV Sports & Matchs en Direct",
+    "subtitle": "Retrouvez tous les grands événements sportifs diffusés en direct en 4K sur notre IPTV. Suivez vos équipes favorites et ne ratez aucun match !",
+    "meta_title": "Programme TV Foot & Matchs de Sport en Direct | RegardezIPTV",
+    "meta_desc": "Découvrez le programme des matchs de foot et sports en direct diffusés sur notre IPTV. Regardez la Ligue 1, la Ligue des Champions, Premier League, NBA et F1 en 4K.",
+    "all": "Tous les sports",
+    "football": "Football",
+    "basketball": "Basketball",
+    "motorsport": "F1 & Auto-Moto",
+    "tennis": "Tennis",
+    "today": "Aujourd'hui",
+    "tomorrow": "Demain",
+    "week": "Cette Semaine",
+    "watch_live": "Regarder en Direct 4K",
+    "live": "EN DIRECT",
+    "channel": "Chaîne :",
+    "no_matches": "Aucun match prévu dans cette catégorie pour le moment.",
+    "trial_cta": "Commencer l'essai gratuit 3H"
+  }
+}
