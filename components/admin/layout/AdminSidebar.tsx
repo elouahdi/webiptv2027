@@ -20,6 +20,8 @@ import {
   Tv,
   Phone,
   Bell,
+  Trophy,
+  BarChart3,
 } from 'lucide-react';
 import { cn } from '@/lib/utils/cn';
 
@@ -51,6 +53,8 @@ const navigation = [
     ],
   },
   { name: 'Utilisateurs', href: '/admin/users', icon: Users },
+  { name: 'Sports', href: '/admin/sports', icon: Trophy },
+  { name: 'Analytics', href: '/admin/analytics', icon: BarChart3 },
   { name: 'SEO', href: '/admin/seo', icon: Search },
   { name: 'Paramètres', href: '/admin/settings', icon: Settings },
 ];

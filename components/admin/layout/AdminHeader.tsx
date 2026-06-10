@@ -3,9 +3,9 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { ThemeSwitcher } from '@/components/ui/ThemeSwitcher';
+import { NotificationsDropdown } from './NotificationsDropdown';
 import {
   Search,
-  Bell,
   User,
   LogOut,
   Menu,
