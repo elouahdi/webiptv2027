@@ -3,7 +3,9 @@ import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { WhatsappButton } from '@/components/ui/WhatsappButton';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
+import { readSettings } from '@/lib/cms/settings-storage';
 import { getPlanBySlugSync } from '@/lib/data/plans';
+import type { Plan } from '@/lib/data/plans';
 import { buildProductSchema, buildBreadcrumbSchema } from '@/lib/seo/schemas';
 import { notFound } from 'next/navigation';
 import { getTranslations, locales, getLocalizedPath } from '@/lib/i18n';
@@ -121,8 +123,13 @@ export default async function PackIptv6MoisPage({ params }: PageProps) {
   const activeLocale = locales.includes(locale as any) ? locale : 'fr';
   const { t } = getTranslations(activeLocale);
 
-  const plan = getPlanBySlugSync('6-mois');
-  if (!plan) notFound();
+  const settings = await readSettings();
+  const settingsPlan = settings.pricing.find((p) => p.slug === '6-mois');
+  const defaultPlan = getPlanBySlugSync('6-mois');
+  if (!defaultPlan) notFound();
+  const plan: Plan = settingsPlan
+    ? { ...defaultPlan, ...settingsPlan, reviewCount: settingsPlan.reviewCount ?? defaultPlan.reviewCount, rating: settingsPlan.rating ?? defaultPlan.rating, highlights: settingsPlan.highlights ?? defaultPlan.highlights, faq: settingsPlan.faq ?? defaultPlan.faq }
+    : defaultPlan;
 
   const extraFaq = [
     {

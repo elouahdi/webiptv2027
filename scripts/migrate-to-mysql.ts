@@ -448,16 +448,16 @@ async function migrateExistingJSONData(connection: mysql.Connection) {
       console.log('    - Migrating posts...');
       for (const post of data.posts) {
         await connection.execute(
-          `INSERT INTO posts (id, title, slug, excerpt, content, status, featured, author_id, category_id, featured_image_id, published_at, read_time, views, seo_title, seo_description, seo_keywords, created_at, updated_at) 
-           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) 
-           ON DUPLICATE KEY UPDATE title=VALUES(title), content=VALUES(content), updated_at=VALUES(updated_at)`,
-          [
-            post.id, post.title, post.slug, post.excerpt, post.content,
-            post.status, post.featured || false, post.authorId, post.categoryId,
-            post.featuredImageId, post.publishedAt, post.readTime, post.views,
-            post.seo?.title, post.seo?.description, JSON.stringify(post.seo?.keywords || []),
-            post.createdAt, post.updatedAt
-          ]
+          `INSERT INTO posts (id, title, slug, excerpt, content, status, featured, author_id, category_id, featured_image_id, gallery_image_ids, published_at, read_time, views, seo_title, seo_description, seo_keywords, created_at, updated_at) 
+             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) 
+             ON DUPLICATE KEY UPDATE title=VALUES(title), content=VALUES(content), gallery_image_ids=VALUES(gallery_image_ids), updated_at=VALUES(updated_at)`,
+            [
+              post.id, post.title, post.slug, post.excerpt, post.content,
+              post.status, post.featured || false, post.authorId, post.categoryId,
+              post.featuredImageId, JSON.stringify(post.galleryImageIds || []), post.publishedAt, post.readTime, post.views,
+              post.seo?.title, post.seo?.description, JSON.stringify(post.seo?.keywords || []),
+              post.createdAt, post.updatedAt
+            ]
         );
         
         // Migrate post-tag relationships

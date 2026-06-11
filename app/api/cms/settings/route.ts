@@ -2,13 +2,6 @@ import { NextRequest, NextResponse } from 'next/server';
 import { requireAuth, isErrorResponse } from '@/lib/cms/api-helpers';
 import db from '@/lib/db';
 
-async function getSetting(key: string) {
-  const [rows] = await db.query(
-    'SELECT setting_value FROM settings WHERE setting_key = ?', [key]
-  ) as any[];
-  return rows[0] ? JSON.parse(rows[0].setting_value) : null;
-}
-
 async function setSetting(key: string, value: any) {
   await db.query(
     `INSERT INTO settings (setting_key, setting_value) VALUES (?, ?)
@@ -17,7 +10,7 @@ async function setSetting(key: string, value: any) {
   );
 }
 
-export async function GET(req: NextRequest) {
+export async function GET(_req: NextRequest) {
   try {
     const auth = await requireAuth();
     if (isErrorResponse(auth)) return auth;

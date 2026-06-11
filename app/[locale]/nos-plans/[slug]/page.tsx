@@ -3,6 +3,7 @@ import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { WhatsappButton } from '@/components/ui/WhatsappButton';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
+import { readSettings } from '@/lib/cms/settings-storage';
 import { getPlanBySlugSync, getAllPlansSync } from '@/lib/data/plans';
 import { buildProductSchema } from '@/lib/seo/schemas';
 import { notFound } from 'next/navigation';
@@ -16,11 +17,16 @@ interface PageProps {
 }
 
 export async function generateStaticParams() {
-  return getAllPlansSync().flatMap((plan) => 
-    locales.map((locale) => ({
-      locale,
-      slug: plan.slug,
-    }))
+  let slugs: string[] = [];
+  try {
+    const settings = await readSettings();
+    slugs = (settings.pricing || []).map((p) => p.slug);
+  } catch {}
+  if (slugs.length === 0) {
+    slugs = getAllPlansSync().map((p) => p.slug);
+  }
+  return slugs.flatMap((slug) =>
+    locales.map((locale) => ({ locale, slug }))
   );
 }
 
@@ -28,7 +34,12 @@ export async function generateMetadata({ params }: PageProps) {
   const { locale, slug } = await params;
   const activeLocale = locales.includes(locale as any) ? locale : 'fr';
   const { t } = getTranslations(activeLocale);
-  const plan = getPlanBySlugSync(slug);
+  let plan = getPlanBySlugSync(slug);
+  try {
+    const settings = await readSettings();
+    const sp = settings.pricing.find((p) => p.slug === slug);
+    if (sp && plan) plan = { ...plan, ...sp };
+  } catch {}
   
   if (!plan) return {};
 
@@ -58,8 +69,13 @@ export default async function ProductPage({ params }: PageProps) {
   const activeLocale = locales.includes(locale as any) ? locale : 'fr';
   const { t } = getTranslations(activeLocale);
 
-  const plan = getPlanBySlugSync(slug);
+  let plan = getPlanBySlugSync(slug);
   if (!plan) notFound();
+  try {
+    const settings = await readSettings();
+    const sp = settings.pricing.find((p) => p.slug === slug);
+    if (sp) plan = { ...plan, ...sp };
+  } catch {}
 
   const getTranslatedFeature = (feature: string) => {
     const lower = feature.toLowerCase();
@@ -131,8 +147,8 @@ export default async function ProductPage({ params }: PageProps) {
                   ))}
                 </div>
                 <span className="text-text-secondary text-sm font-medium">
-                  {plan.reviewCount > 0 
-                    ? `${plan.reviewCount.toLocaleString()} ${activeLocale === 'en' ? 'verified customer reviews' : activeLocale === 'de' ? 'verifizierte Kundenbewertungen' : activeLocale === 'es' ? 'opiniones de clientes verificadas' : 'avis clients vérifiés'}`
+                  {(plan.reviewCount ?? 0) > 0 
+                    ? `${(plan.reviewCount ?? 0).toLocaleString()} ${activeLocale === 'en' ? 'verified customer reviews' : activeLocale === 'de' ? 'verifizierte Kundenbewertungen' : activeLocale === 'es' ? 'opiniones de clientes verificadas' : 'avis clients vérifiés'}`
                     : ''}
                 </span>
               </div>

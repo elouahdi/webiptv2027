@@ -6,6 +6,7 @@ import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { PlansSection } from '@/components/sections/PlansSection';
 import { GuaranteeSection } from '@/components/sections/GuaranteeSection';
 import { buildProductSchema } from '@/lib/seo/schemas';
+import { readSettings } from '@/lib/cms/settings-storage';
 import { getAllPlansSync } from '@/lib/data/plans';
 import { getTranslations, locales } from '@/lib/i18n';
 import { SITE_CONFIG } from '@/config/site';
@@ -63,7 +64,12 @@ export default async function NosPlansPage({ params }: { params: Promise<{ local
     };
   };
 
-  const featuredPlan = getAllPlansSync().find((p) => p.featured) || getAllPlansSync()[3];
+  const settings = await readSettings();
+  const pricingPlans = settings.pricing.filter((p) => p.visible !== false).sort((a, b) => a.order - b.order);
+  const settingsFeatured = pricingPlans.find((p) => p.featured) || pricingPlans[3];
+  const allDefault = getAllPlansSync();
+  const featuredDefault = allDefault.find((p) => p.featured) || allDefault[3];
+  const featuredPlan = settingsFeatured ? { ...featuredDefault, ...settingsFeatured } : featuredDefault;
   const translatedFeaturedPlan = getTranslatedPlan(featuredPlan);
 
   return (

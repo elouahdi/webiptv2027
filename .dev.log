@@ -1,0 +1,892 @@
+
+> regardez-iptv@1.0.0 dev
+> next dev --turbo
+
+   ▲ Next.js 15.1.3 (Turbopack)
+   - Local:        http://localhost:3000
+   - Network:      http://192.168.1.84:3000
+   - Environments: .env.local
+   - Experiments (use with caution):
+     · turbo
+
+ ✓ Starting...
+ ✓ Compiled in 308ms
+ ✓ Ready in 1470ms
+ ○ Compiling /api/auth/login ...
+ ✓ Compiled /api/auth/login in 1230ms
+ POST /api/auth/login 401 in 1768ms
+ ✓ Compiled /api/admin/settings in 159ms
+ GET /api/admin/settings 401 in 201ms
+ POST /api/auth/login 200 in 315ms
+ GET /api/admin/settings 200 in 36ms
+ ○ Compiling /admin ...
+ ✓ Compiled /admin in 2.3s
+ GET /admin 200 in 2545ms
+ ✓ Compiled /admin/users in 249ms
+ GET /admin/users 200 in 304ms
+ ✓ Compiled /admin/media in 278ms
+ GET /admin/media 200 in 329ms
+ ✓ Compiled /admin/blog/posts in 210ms
+ GET /admin/blog/posts 200 in 258ms
+ ✓ Compiled /admin/pages in 180ms
+ GET /admin/pages 200 in 219ms
+ ✓ Compiled /admin/site/page in 181ms
+ ✓ Compiled /_not-found/page in 124ms
+ GET /admin/site/page 404 in 156ms
+ GET /api/admin/settings 200 in 29ms
+ ✓ Compiled /api/cms/pages/route in 156ms
+ ✓ Compiled /api/cms/pages/[id] in 133ms
+ GET /api/cms/pages/route 404 in 603ms
+ ✓ Compiled /api/cms/posts/route in 144ms
+ ✓ Compiled /api/cms/posts/[id] in 125ms
+ GET /api/cms/posts/route 404 in 584ms
+ ✓ Compiled /api/cms/media/route in 139ms
+ ✓ Compiled /api/cms/media/[id] in 132ms
+ GET /api/cms/media/route 405 in 566ms
+ ✓ Compiled /admin/login in 207ms
+ GET /admin/login 200 in 256ms
+ ✓ Compiled /manifest.webmanifest in 164ms
+ GET /manifest.webmanifest 200 in 224ms
+ ○ Compiling /[locale] ...
+ ✓ Compiled /[locale] in 2.1s
+ GET /favicon.ico 200 in 2999ms
+ POST /api/auth/login 200 in 318ms
+ GET /admin 200 in 53ms
+ GET /admin 200 in 39ms
+ GET /favicon.ico 200 in 181ms
+ GET /api/auth/me 200 in 374ms
+ ✓ Compiled /api/cms/dashboard/stats in 389ms
+ GET /api/auth/me 200 in 61ms
+ GET /api/cms/dashboard/stats 200 in 440ms
+ GET /manifest.webmanifest 200 in 42ms
+ GET /api/cms/dashboard/stats 200 in 43ms
+ GET /api/cms/dashboard/stats 200 in 41ms
+ GET /api/cms/dashboard/stats 200 in 37ms
+ GET /api/sports/today 200 in 1464ms
+ GET /api/sports/today 200 in 378ms
+ ○ Compiling /admin/blog/posts/create ...
+ ✓ Compiled /admin/blog/posts/create in 817ms
+ GET /admin/blog/posts/create 200 in 844ms
+ GET /favicon.ico 200 in 127ms
+ ✓ Compiled /api/cms/categories in 185ms
+ GET /api/cms/users 200 in 215ms
+ GET /api/cms/categories 200 in 218ms
+ GET /api/cms/tags 200 in 229ms
+ GET /api/cms/users 200 in 67ms
+ GET /manifest.webmanifest 200 in 69ms
+ GET /api/cms/categories 200 in 73ms
+ GET /api/cms/tags 200 in 67ms
+ GET /api/cms/users 200 in 49ms
+ GET /api/cms/categories 200 in 50ms
+ GET /api/cms/tags 200 in 48ms
+ POST /api/cms/posts/route 405 in 27ms
+ ✓ Compiled /api/public/blog in 119ms
+ GET /api/public/blog 200 in 163ms
+ GET /api/public/blog 200 in 40ms
+ ✓ Compiled /api/cms/posts in 11ms
+ ⨯ Error: Unknown column 'gallery_image_ids' in 'field list'
+    at execute (lib/db.ts:29:30)
+    at createPost (lib/cms/repositories/posts.ts:182:4)
+    at async POST (app/api/cms/posts/route.ts:84:15)
+  27 |
+  28 | export async function execute(sql: string, params?: any[]): Promise<mysql.ResultSetHeader> {
+> 29 |   const [result] = await pool.execute(sql, params);
+     |                              ^
+  30 |   return result as mysql.ResultSetHeader;
+  31 | }
+  32 | {
+  code: 'ER_BAD_FIELD_ERROR',
+  errno: 1054,
+  sqlState: '42S22',
+  sqlMessage: "Unknown column 'gallery_image_ids' in 'field list'",
+  sql: 'INSERT INTO posts (\n' +
+    '      id, title, slug, excerpt, content, status, \n' +
+    '      published_at, scheduled_at, category_id, author_id, \n' +
+    '      featured_image_id, gallery_image_ids, read_time, views,\n' +
+    '      seo_title, seo_description, seo_keywords, seo_canonical_url,\n' +
+    '      seo_og_title, seo_og_description, seo_og_image_id,\n' +
+    '      seo_twitter_card, seo_robots_index, seo_robots_follow, seo_schema_jsonld,\n' +
+    '      created_at, updated_at\n' +
+    '    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW(), NOW())'
+}
+ ⨯ Error: Unknown column 'gallery_image_ids' in 'field list'
+    at execute (lib/db.ts:29:30)
+    at createPost (lib/cms/repositories/posts.ts:182:4)
+    at async POST (app/api/cms/posts/route.ts:84:15)
+  27 |
+  28 | export async function execute(sql: string, params?: any[]): Promise<mysql.ResultSetHeader> {
+> 29 |   const [result] = await pool.execute(sql, params);
+     |                              ^
+  30 |   return result as mysql.ResultSetHeader;
+  31 | }
+  32 | {
+  code: 'ER_BAD_FIELD_ERROR',
+  errno: 1054,
+  sqlState: '42S22',
+  sqlMessage: "Unknown column 'gallery_image_ids' in 'field list'",
+  sql: 'INSERT INTO posts (\n' +
+    '      id, title, slug, excerpt, content, status, \n' +
+    '      published_at, scheduled_at, category_id, author_id, \n' +
+    '      featured_image_id, gallery_image_ids, read_time, views,\n' +
+    '      seo_title, seo_description, seo_keywords, seo_canonical_url,\n' +
+    '      seo_og_title, seo_og_description, seo_og_image_id,\n' +
+    '      seo_twitter_card, seo_robots_index, seo_robots_follow, seo_schema_jsonld,\n' +
+    '      created_at, updated_at\n' +
+    '    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW(), NOW())'
+}
+ POST /api/cms/posts 500 in 212ms
+ GET /api/public/blog 200 in 46ms
+ GET / 200 in 188ms
+ GET /admin 200 in 122ms
+ GET /manifest.webmanifest 200 in 57ms
+ GET /favicon.ico 200 in 244ms
+ GET /api/auth/me 200 in 230ms
+ GET /api/cms/dashboard/stats 200 in 251ms
+ GET /api/cms/dashboard/stats 200 in 69ms
+ GET /api/sports/today 200 in 1082ms
+ POST /api/auth/login 200 in 324ms
+ ⨯ Error: Column count doesn't match value count at row 1
+    at execute (lib/db.ts:29:30)
+    at createPost (lib/cms/repositories/posts.ts:182:4)
+    at async POST (app/api/cms/posts/route.ts:84:15)
+  27 |
+  28 | export async function execute(sql: string, params?: any[]): Promise<mysql.ResultSetHeader> {
+> 29 |   const [result] = await pool.execute(sql, params);
+     |                              ^
+  30 |   return result as mysql.ResultSetHeader;
+  31 | }
+  32 | {
+  code: 'ER_WRONG_VALUE_COUNT_ON_ROW',
+  errno: 1136,
+  sqlState: '21S01',
+  sqlMessage: "Column count doesn't match value count at row 1",
+  sql: 'INSERT INTO posts (\n' +
+    '      id, title, slug, excerpt, content, status, \n' +
+    '      published_at, scheduled_at, category_id, author_id, \n' +
+    '      featured_image_id, gallery_image_ids, read_time, views,\n' +
+    '      seo_title, seo_description, seo_keywords, seo_canonical_url,\n' +
+    '      seo_og_title, seo_og_description, seo_og_image_id,\n' +
+    '      seo_twitter_card, seo_robots_index, seo_robots_follow, seo_schema_jsonld,\n' +
+    '      created_at, updated_at\n' +
+    '    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW(), NOW())'
+}
+ ⨯ Error: Column count doesn't match value count at row 1
+    at execute (lib/db.ts:29:30)
+    at createPost (lib/cms/repositories/posts.ts:182:4)
+    at async POST (app/api/cms/posts/route.ts:84:15)
+  27 |
+  28 | export async function execute(sql: string, params?: any[]): Promise<mysql.ResultSetHeader> {
+> 29 |   const [result] = await pool.execute(sql, params);
+     |                              ^
+  30 |   return result as mysql.ResultSetHeader;
+  31 | }
+  32 | {
+  code: 'ER_WRONG_VALUE_COUNT_ON_ROW',
+  errno: 1136,
+  sqlState: '21S01',
+  sqlMessage: "Column count doesn't match value count at row 1",
+  sql: 'INSERT INTO posts (\n' +
+    '      id, title, slug, excerpt, content, status, \n' +
+    '      published_at, scheduled_at, category_id, author_id, \n' +
+    '      featured_image_id, gallery_image_ids, read_time, views,\n' +
+    '      seo_title, seo_description, seo_keywords, seo_canonical_url,\n' +
+    '      seo_og_title, seo_og_description, seo_og_image_id,\n' +
+    '      seo_twitter_card, seo_robots_index, seo_robots_follow, seo_schema_jsonld,\n' +
+    '      created_at, updated_at\n' +
+    '    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW(), NOW())'
+}
+ POST /api/cms/posts 500 in 175ms
+ ✓ Compiled in 23ms
+ GET /admin 200 in 127ms
+ GET /admin/blog/posts/create 200 in 129ms
+ GET /manifest.webmanifest 200 in 67ms
+ GET /manifest.webmanifest 200 in 70ms
+ ✓ Compiled in 20ms
+ GET /admin/blog/posts/create 200 in 85ms
+ GET /admin 200 in 85ms
+ GET /manifest.webmanifest 200 in 44ms
+ GET /manifest.webmanifest 200 in 43ms
+createPost: inserting with params length= 25 preview= ["272df546-c959-41c9-900d-c792602011b9","Automated Test Post (admin-audit)","automated-test-post-admin-audit","Automated test excerpt","This is a test post created by an automated audit.","published","2026-06-11T01:04:01.446Z",null,null,"admin-default-id",null,"[]",1,0,"","","[]","","","",null,"summary_large_image",true,true,""]
+ ⨯ Error: Column count doesn't match value count at row 1
+    at execute (lib/db.ts:29:30)
+    at createPost (lib/cms/repositories/posts.ts:213:4)
+    at async POST (app/api/cms/posts/route.ts:84:15)
+  27 |
+  28 | export async function execute(sql: string, params?: any[]): Promise<mysql.ResultSetHeader> {
+> 29 |   const [result] = await pool.execute(sql, params);
+     |                              ^
+  30 |   return result as mysql.ResultSetHeader;
+  31 | }
+  32 | {
+  code: 'ER_WRONG_VALUE_COUNT_ON_ROW',
+  errno: 1136,
+  sqlState: '21S01',
+  sqlMessage: "Column count doesn't match value count at row 1",
+  sql: 'INSERT INTO posts (\n' +
+    '      id, title, slug, excerpt, content, status, \n' +
+    '      published_at, scheduled_at, category_id, author_id, \n' +
+    '      featured_image_id, gallery_image_ids, read_time, views,\n' +
+    '      seo_title, seo_description, seo_keywords, seo_canonical_url,\n' +
+    '      seo_og_title, seo_og_description, seo_og_image_id,\n' +
+    '      seo_twitter_card, seo_robots_index, seo_robots_follow, seo_schema_jsonld,\n' +
+    '      created_at, updated_at\n' +
+    '    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW(), NOW())'
+}
+ ⨯ Error: Column count doesn't match value count at row 1
+    at execute (lib/db.ts:29:30)
+    at createPost (lib/cms/repositories/posts.ts:213:4)
+    at async POST (app/api/cms/posts/route.ts:84:15)
+  27 |
+  28 | export async function execute(sql: string, params?: any[]): Promise<mysql.ResultSetHeader> {
+> 29 |   const [result] = await pool.execute(sql, params);
+     |                              ^
+  30 |   return result as mysql.ResultSetHeader;
+  31 | }
+  32 | {
+  code: 'ER_WRONG_VALUE_COUNT_ON_ROW',
+  errno: 1136,
+  sqlState: '21S01',
+  sqlMessage: "Column count doesn't match value count at row 1",
+  sql: 'INSERT INTO posts (\n' +
+    '      id, title, slug, excerpt, content, status, \n' +
+    '      published_at, scheduled_at, category_id, author_id, \n' +
+    '      featured_image_id, gallery_image_ids, read_time, views,\n' +
+    '      seo_title, seo_description, seo_keywords, seo_canonical_url,\n' +
+    '      seo_og_title, seo_og_description, seo_og_image_id,\n' +
+    '      seo_twitter_card, seo_robots_index, seo_robots_follow, seo_schema_jsonld,\n' +
+    '      created_at, updated_at\n' +
+    '    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW(), NOW())'
+}
+ POST /api/cms/posts 500 in 401ms
+ GET /admin 200 in 61ms
+ ✓ Compiled in 20ms
+ GET /admin/blog/posts/create 200 in 65ms
+ GET /manifest.webmanifest 200 in 81ms
+ GET /manifest.webmanifest 200 in 77ms
+createPost: inserting with params length= 25 preview= ["e6c90333-9a8c-47c8-a34d-17e823d52cb8","Automated Test Post (admin-audit)","automated-test-post-admin-audit","Automated test excerpt","This is a test post created by an automated audit.","published","2026-06-11T01:05:46.854Z",null,null,"admin-default-id",null,"[]",1,0,"","","[]","","","",null,"summary_large_image",true,true,""]
+ ⨯ Error: Incorrect datetime value: '2026-06-11T01:05:46.854Z' for column 'published_at' at row 1
+    at execute (lib/db.ts:29:30)
+    at createPost (lib/cms/repositories/posts.ts:224:16)
+    at async POST (app/api/cms/posts/route.ts:84:15)
+  27 |
+  28 | export async function execute(sql: string, params?: any[]): Promise<mysql.ResultSetHeader> {
+> 29 |   const [result] = await pool.execute(sql, params);
+     |                              ^
+  30 |   return result as mysql.ResultSetHeader;
+  31 | }
+  32 | {
+  code: 'ER_TRUNCATED_WRONG_VALUE',
+  errno: 1292,
+  sqlState: '22007',
+  sqlMessage: "Incorrect datetime value: '2026-06-11T01:05:46.854Z' for column 'published_at' at row 1",
+  sql: 'INSERT INTO posts (id, title, slug, excerpt, content, status, published_at, scheduled_at, category_id, author_id, featured_image_id, gallery_image_ids, read_time, views, seo_title, seo_description, seo_keywords, seo_canonical_url, seo_og_title, seo_og_description, seo_og_image_id, seo_twitter_card, seo_robots_index, seo_robots_follow, seo_schema_jsonld, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW(), NOW())'
+}
+ ⨯ Error: Incorrect datetime value: '2026-06-11T01:05:46.854Z' for column 'published_at' at row 1
+    at execute (lib/db.ts:29:30)
+    at createPost (lib/cms/repositories/posts.ts:224:16)
+    at async POST (app/api/cms/posts/route.ts:84:15)
+  27 |
+  28 | export async function execute(sql: string, params?: any[]): Promise<mysql.ResultSetHeader> {
+> 29 |   const [result] = await pool.execute(sql, params);
+     |                              ^
+  30 |   return result as mysql.ResultSetHeader;
+  31 | }
+  32 | {
+  code: 'ER_TRUNCATED_WRONG_VALUE',
+  errno: 1292,
+  sqlState: '22007',
+  sqlMessage: "Incorrect datetime value: '2026-06-11T01:05:46.854Z' for column 'published_at' at row 1",
+  sql: 'INSERT INTO posts (id, title, slug, excerpt, content, status, published_at, scheduled_at, category_id, author_id, featured_image_id, gallery_image_ids, read_time, views, seo_title, seo_description, seo_keywords, seo_canonical_url, seo_og_title, seo_og_description, seo_og_image_id, seo_twitter_card, seo_robots_index, seo_robots_follow, seo_schema_jsonld, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW(), NOW())'
+}
+ POST /api/cms/posts 500 in 330ms
+ GET /admin/blog/posts/create 200 in 49ms
+ GET /admin 200 in 55ms
+ GET /manifest.webmanifest 200 in 41ms
+ GET /manifest.webmanifest 200 in 34ms
+ ✓ Compiled in 72ms
+ ✓ Compiled in 18ms
+ GET /admin/blog/posts/create 200 in 73ms
+ GET /admin 200 in 74ms
+ GET /manifest.webmanifest 200 in 47ms
+ GET /manifest.webmanifest 200 in 50ms
+ ✓ Compiled /[locale] in 65ms
+ GET / 200 in 651ms
+ GET /manifest.webmanifest 200 in 220ms
+ GET /favicon.ico 200 in 197ms
+ ✓ Compiled /api/public/settings in 395ms
+ GET /api/public/settings 200 in 562ms
+ GET /api/public/settings 200 in 66ms
+createPost: inserting with params length= 25 preview= ["353c1688-3d2f-4524-9e9b-30e0effbe666","Automated Test Post (admin-audit)","automated-test-post-admin-audit","Automated test excerpt","This is a test post created by an automated audit.","published","2026-06-11 01:06:20",null,null,"admin-default-id",null,"[]",1,0,"","","[]","","","",null,"summary_large_image",true,true,""]
+ ⨯ SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at createPost (lib/cms/repositories/posts.ts:266:51)
+    at async POST (app/api/cms/posts/route.ts:84:15)
+  264 |     authorId: post.author_id,
+  265 |     featuredImageId: post.featured_image_id,
+> 266 |     galleryImageIds: post.gallery_image_ids ? JSON.parse(post.gallery_image_ids) : [],
+      |                                                   ^
+  267 |     readTime: post.read_time,
+  268 |     views: post.views,
+  269 |     seo: {
+ ⨯ SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at createPost (lib/cms/repositories/posts.ts:266:51)
+    at async POST (app/api/cms/posts/route.ts:84:15)
+  264 |     authorId: post.author_id,
+  265 |     featuredImageId: post.featured_image_id,
+> 266 |     galleryImageIds: post.gallery_image_ids ? JSON.parse(post.gallery_image_ids) : [],
+      |                                                   ^
+  267 |     readTime: post.read_time,
+  268 |     views: post.views,
+  269 |     seo: {
+ POST /api/cms/posts 500 in 398ms
+ ✓ Compiled /[locale] in 35ms
+ GET /admin/blog/posts/create 200 in 315ms
+ GET /admin 200 in 328ms
+Error reading CMS data from MySQL: SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at rowToPost (lib/cms/storage.ts:36:50)
+    at <unknown> (lib/cms/storage.ts:181:21)
+    at Array.map (<anonymous>)
+    at readCMSData (lib/cms/storage.ts:180:19)
+    at async getPublishedPosts (lib/cms/repositories/posts.ts:77:15)
+    at async getPublicBlogPosts (lib/cms/blog-public.ts:42:17)
+    at async HomePage (app/[locale]/page.tsx:88:31)
+  34 |     categoryId: row.category_id,
+  35 |     featuredImageId: row.featured_image_id,
+> 36 |     galleryImageIds: row.gallery_image_ids ? JSON.parse(row.gallery_image_ids) : [],
+     |                                                  ^
+  37 |     publishedAt: row.published_at ? row.published_at.toISOString() : null,
+  38 |     scheduledAt: row.scheduled_at ? row.scheduled_at.toISOString() : null,
+  39 |     readTime: row.read_time,
+ GET / 200 in 399ms
+ GET /manifest.webmanifest 200 in 244ms
+ GET /manifest.webmanifest 200 in 220ms
+ GET /manifest.webmanifest 200 in 64ms
+ ✓ Compiled /[locale] in 36ms
+ GET /admin 200 in 78ms
+ GET /admin/blog/posts/create 200 in 81ms
+Error reading CMS data from MySQL: SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at rowToPost (lib/cms/storage.ts:36:50)
+    at <unknown> (lib/cms/storage.ts:181:21)
+    at Array.map (<anonymous>)
+    at readCMSData (lib/cms/storage.ts:180:19)
+    at async getPublishedPosts (lib/cms/repositories/posts.ts:77:15)
+    at async getPublicBlogPosts (lib/cms/blog-public.ts:42:17)
+    at async HomePage (app/[locale]/page.tsx:88:31)
+  34 |     categoryId: row.category_id,
+  35 |     featuredImageId: row.featured_image_id,
+> 36 |     galleryImageIds: row.gallery_image_ids ? JSON.parse(row.gallery_image_ids) : [],
+     |                                                  ^
+  37 |     publishedAt: row.published_at ? row.published_at.toISOString() : null,
+  38 |     scheduledAt: row.scheduled_at ? row.scheduled_at.toISOString() : null,
+  39 |     readTime: row.read_time,
+ GET / 200 in 323ms
+ GET /manifest.webmanifest 200 in 166ms
+ GET /manifest.webmanifest 200 in 167ms
+ GET /manifest.webmanifest 200 in 42ms
+ ✓ Compiled in 39ms
+ ✓ Compiled /[locale] in 44ms
+ GET /admin/blog/posts/create 200 in 86ms
+ GET /admin 200 in 90ms
+Error reading CMS data from MySQL: SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at rowToPost (lib/cms/storage.ts:36:50)
+    at <unknown> (lib/cms/storage.ts:181:21)
+    at Array.map (<anonymous>)
+    at readCMSData (lib/cms/storage.ts:180:19)
+    at async getPublishedPosts (lib/cms/repositories/posts.ts:77:15)
+    at async getPublicBlogPosts (lib/cms/blog-public.ts:42:17)
+    at async HomePage (app/[locale]/page.tsx:88:31)
+  34 |     categoryId: row.category_id,
+  35 |     featuredImageId: row.featured_image_id,
+> 36 |     galleryImageIds: row.gallery_image_ids ? JSON.parse(row.gallery_image_ids) : [],
+     |                                                  ^
+  37 |     publishedAt: row.published_at ? row.published_at.toISOString() : null,
+  38 |     scheduledAt: row.scheduled_at ? row.scheduled_at.toISOString() : null,
+  39 |     readTime: row.read_time,
+ GET / 200 in 339ms
+ GET /manifest.webmanifest 200 in 177ms
+ GET /manifest.webmanifest 200 in 176ms
+ GET /manifest.webmanifest 200 in 38ms
+ ✓ Compiled /[locale] in 37ms
+ GET /admin/blog/posts/create 200 in 72ms
+ GET /admin 200 in 75ms
+ GET /manifest.webmanifest 200 in 89ms
+ GET /manifest.webmanifest 200 in 88ms
+ GET / 200 in 346ms
+ GET /manifest.webmanifest 200 in 47ms
+createPost: inserting with params length= 25 preview= ["a7ba84e2-4ce6-479c-9701-4d3853fa4f47","Automated Test Post (admin-audit)","automated-test-post-admin-audit-2","Automated test excerpt","This is a test post created by an automated audit.","published","2026-06-11 01:07:20",null,null,"admin-default-id",null,"[]",1,0,"","","[]","","","",null,"summary_large_image",true,true,""]
+ POST /api/cms/posts 201 in 205ms
+ GET /api/public/blog 200 in 176ms
+ GET /api/cms/posts/a7ba84e2-4ce6-479c-9701-4d3853fa4f47 200 in 234ms
+ ⨯ Error: Incorrect datetime value: '2026-06-11T00:07:20.000Z' for column 'published_at' at row 1
+    at execute (lib/db.ts:29:30)
+    at updatePost (lib/cms/repositories/posts.ts:338:4)
+    at async PUT (app/api/cms/posts/[id]/route.ts:32:15)
+  27 |
+  28 | export async function execute(sql: string, params?: any[]): Promise<mysql.ResultSetHeader> {
+> 29 |   const [result] = await pool.execute(sql, params);
+     |                              ^
+  30 |   return result as mysql.ResultSetHeader;
+  31 | }
+  32 | {
+  code: 'ER_TRUNCATED_WRONG_VALUE',
+  errno: 1292,
+  sqlState: '22007',
+  sqlMessage: "Incorrect datetime value: '2026-06-11T00:07:20.000Z' for column 'published_at' at row 1",
+  sql: 'UPDATE posts SET\n' +
+    '      title = ?, slug = ?, excerpt = ?, content = ?, status = ?,\n' +
+    '      published_at = ?, scheduled_at = ?, category_id = ?, author_id = ?,\n' +
+    '      featured_image_id = ?, gallery_image_ids = ?, read_time = ?,\n' +
+    '      seo_title = ?, seo_description = ?, seo_keywords = ?, seo_canonical_url = ?,\n' +
+    '      seo_og_title = ?, seo_og_description = ?, seo_og_image_id = ?,\n' +
+    '      seo_twitter_card = ?, seo_robots_index = ?, seo_robots_follow = ?, seo_schema_jsonld = ?,\n' +
+    '      updated_at = NOW()\n' +
+    '    WHERE id = ?'
+}
+ ⨯ Error: Incorrect datetime value: '2026-06-11T00:07:20.000Z' for column 'published_at' at row 1
+    at execute (lib/db.ts:29:30)
+    at updatePost (lib/cms/repositories/posts.ts:338:4)
+    at async PUT (app/api/cms/posts/[id]/route.ts:32:15)
+  27 |
+  28 | export async function execute(sql: string, params?: any[]): Promise<mysql.ResultSetHeader> {
+> 29 |   const [result] = await pool.execute(sql, params);
+     |                              ^
+  30 |   return result as mysql.ResultSetHeader;
+  31 | }
+  32 | {
+  code: 'ER_TRUNCATED_WRONG_VALUE',
+  errno: 1292,
+  sqlState: '22007',
+  sqlMessage: "Incorrect datetime value: '2026-06-11T00:07:20.000Z' for column 'published_at' at row 1",
+  sql: 'UPDATE posts SET\n' +
+    '      title = ?, slug = ?, excerpt = ?, content = ?, status = ?,\n' +
+    '      published_at = ?, scheduled_at = ?, category_id = ?, author_id = ?,\n' +
+    '      featured_image_id = ?, gallery_image_ids = ?, read_time = ?,\n' +
+    '      seo_title = ?, seo_description = ?, seo_keywords = ?, seo_canonical_url = ?,\n' +
+    '      seo_og_title = ?, seo_og_description = ?, seo_og_image_id = ?,\n' +
+    '      seo_twitter_card = ?, seo_robots_index = ?, seo_robots_follow = ?, seo_schema_jsonld = ?,\n' +
+    '      updated_at = NOW()\n' +
+    '    WHERE id = ?'
+}
+ PUT /api/cms/posts/a7ba84e2-4ce6-479c-9701-4d3853fa4f47 500 in 176ms
+ ✓ Compiled in 42ms
+ ✓ Compiled /[locale] in 42ms
+ GET /admin/blog/posts/create 200 in 86ms
+ GET /admin 200 in 87ms
+ GET / 200 in 412ms
+ GET /manifest.webmanifest 200 in 191ms
+ GET /manifest.webmanifest 200 in 190ms
+ GET /manifest.webmanifest 200 in 47ms
+ ⨯ ReferenceError: toSqlDatetime is not defined
+    at updatePost (lib/cms/repositories/posts.ts:344:17)
+    at async PUT (app/api/cms/posts/[id]/route.ts:32:15)
+  342 |     : input.publishedAt !== undefined
+  343 |       ? toSqlDatetime(input.publishedAt)
+> 344 |       : existing.published_at ? toSqlDatetime(existing.published_at) : null;
+      |                 ^
+  345 |
+  346 |   // Update post
+  347 |   await execute(
+ ⨯ ReferenceError: toSqlDatetime is not defined
+    at updatePost (lib/cms/repositories/posts.ts:344:17)
+    at async PUT (app/api/cms/posts/[id]/route.ts:32:15)
+  342 |     : input.publishedAt !== undefined
+  343 |       ? toSqlDatetime(input.publishedAt)
+> 344 |       : existing.published_at ? toSqlDatetime(existing.published_at) : null;
+      |                 ^
+  345 |
+  346 |   // Update post
+  347 |   await execute(
+ PUT /api/cms/posts/a7ba84e2-4ce6-479c-9701-4d3853fa4f47 500 in 418ms
+ ✓ Compiled /[locale] in 38ms
+ GET /admin/blog/posts/create 200 in 77ms
+ GET /admin 200 in 76ms
+ GET / 200 in 376ms
+ GET /manifest.webmanifest 200 in 116ms
+ GET /manifest.webmanifest 200 in 123ms
+ GET /manifest.webmanifest 200 in 47ms
+ ✓ Compiled in 31ms
+ ✓ Compiled /[locale] in 44ms
+ GET /admin/blog/posts/create 200 in 81ms
+ GET /admin 200 in 83ms
+ GET / 200 in 299ms
+ GET /manifest.webmanifest 200 in 99ms
+ GET /manifest.webmanifest 200 in 99ms
+ GET /manifest.webmanifest 200 in 40ms
+ PUT /api/cms/posts/a7ba84e2-4ce6-479c-9701-4d3853fa4f47 200 in 248ms
+ DELETE /api/cms/posts/a7ba84e2-4ce6-479c-9701-4d3853fa4f47 200 in 48ms
+ POST /api/cms/categories 201 in 215ms
+ POST /api/cms/tags 201 in 200ms
+createPost: inserting with params length= 25 preview= ["ca057769-c98a-4b34-932c-06c5d07a0f8a","Post with cat & tag","post-with-cat-tag","Cat/Tag test","Testing category and tag linking","published","2026-06-11 01:11:11",null,"91b19a79-ae06-4cb4-a798-eaaea911b3c2","admin-default-id",null,"[]",1,0,"","","[]","","","",null,"summary_large_image",true,true,""]
+ POST /api/cms/posts 201 in 199ms
+ GET /api/public/blog 200 in 194ms
+ DELETE /api/cms/posts/ca057769-c98a-4b34-932c-06c5d07a0f8a 200 in 43ms
+ ✓ Compiled /api/cms/tags/[id] in 171ms
+ DELETE /api/cms/tags/430b5d38-cd53-409c-b3c8-48468c91a84f 200 in 722ms
+ ✓ Compiled /api/cms/categories/[id] in 173ms
+ DELETE /api/cms/categories/91b19a79-ae06-4cb4-a798-eaaea911b3c2 200 in 785ms
+ ✓ Compiled /api/cms/media in 21ms
+ POST /api/cms/media 201 in 186ms
+ DELETE /api/cms/media/74504ec4-35d9-4fc8-a946-d3cf707e1573 200 in 200ms
+ ✓ Compiled /api/cms/pages in 15ms
+ POST /api/cms/pages 201 in 51ms
+ GET /api/cms/pages 200 in 42ms
+ GET /api/admin/settings 200 in 40ms
+ POST /api/admin/settings 200 in 42ms
+ GET /api/public/settings 200 in 36ms
+ GET /api/public/settings 200 in 216ms
+ POST /api/admin/settings 200 in 270ms
+ GET /api/public/settings 200 in 152ms
+ GET /api/public/settings 200 in 146ms
+ GET /api/public/settings 200 in 67ms
+[public/settings] announcement: {
+  enabled: false,
+  text: '🎉 Offre spéciale : -20% sur tous les abonnements ce week-end !',
+  backgroundColor: '#f59e0b',
+  textColor: '#000000',
+  expiresAt: null,
+  ctaText: 'Voir les offres',
+  ctaHref: '/tarifs'
+}
+ GET /api/public/settings 200 in 137ms
+[public/settings] announcement: {
+  text: '[AGENT] Verify DB write',
+  ctaHref: '/tarifs',
+  ctaText: 'Voir',
+  enabled: true,
+  expiresAt: null,
+  textColor: '#000000',
+  backgroundColor: '#00ff88'
+}
+ GET /api/public/settings 200 in 166ms
+ POST /api/cms/users 201 in 349ms
+ GET /api/cms/users 200 in 45ms
+ ✓ Compiled /api/cms/users/[id] in 159ms
+ PUT /api/cms/users/8dcf98d9-50af-4830-babd-f59a5d657c21 200 in 972ms
+ DELETE /api/cms/users/8dcf98d9-50af-4830-babd-f59a5d657c21 200 in 40ms
+ GET /api/sports/today 200 in 762ms
+Error reading CMS data from MySQL: SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at rowToPage (lib/cms/storage.ts:116:34)
+    at Array.map (<anonymous>)
+    at readCMSData (lib/cms/storage.ts:186:19)
+    at async GET (app/api/cms/dashboard/stats/route.ts:14:47)
+  114 |     template: row.template,
+  115 |     status: row.status,
+> 116 |     sections: row.sections ? JSON.parse(row.sections) : [],
+      |                                  ^
+  117 |     seo: {
+  118 |       title: row.seo_title || '',
+  119 |       description: row.seo_description || '',
+Error reading CMS data from MySQL: SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at rowToPage (lib/cms/storage.ts:116:34)
+    at Array.map (<anonymous>)
+    at readCMSData (lib/cms/storage.ts:186:19)
+    at async getPostStats (lib/cms/repositories/posts.ts:469:15)
+    at async GET (app/api/cms/dashboard/stats/route.ts:14:47)
+  114 |     template: row.template,
+  115 |     status: row.status,
+> 116 |     sections: row.sections ? JSON.parse(row.sections) : [],
+      |                                  ^
+  117 |     seo: {
+  118 |       title: row.seo_title || '',
+  119 |       description: row.seo_description || '',
+Error reading CMS data from MySQL: SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at rowToPage (lib/cms/storage.ts:116:34)
+    at Array.map (<anonymous>)
+    at readCMSData (lib/cms/storage.ts:186:19)
+    at async getSEOStats (lib/cms/repositories/analytics.ts:55:15)
+    at async GET (app/api/cms/dashboard/stats/route.ts:14:47)
+  114 |     template: row.template,
+  115 |     status: row.status,
+> 116 |     sections: row.sections ? JSON.parse(row.sections) : [],
+      |                                  ^
+  117 |     seo: {
+  118 |       title: row.seo_title || '',
+  119 |       description: row.seo_description || '',
+ GET /api/cms/dashboard/stats 200 in 438ms
+ GET /admin/blog/posts 200 in 47ms
+ GET /manifest.webmanifest 200 in 167ms
+Error reading CMS data from MySQL: SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at rowToPage (lib/cms/storage.ts:116:34)
+    at Array.map (<anonymous>)
+    at readCMSData (lib/cms/storage.ts:186:19)
+    at async getAllCategories (lib/cms/repositories/categories.ts:8:15)
+    at async GET (app/api/cms/categories/route.ts:7:21)
+  114 |     template: row.template,
+  115 |     status: row.status,
+> 116 |     sections: row.sections ? JSON.parse(row.sections) : [],
+      |                                  ^
+  117 |     seo: {
+  118 |       title: row.seo_title || '',
+  119 |       description: row.seo_description || '',
+ GET /api/cms/categories 200 in 469ms
+Error reading CMS data from MySQL: SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at rowToPage (lib/cms/storage.ts:116:34)
+    at Array.map (<anonymous>)
+    at readCMSData (lib/cms/storage.ts:186:19)
+    at async getPublishedPosts (lib/cms/repositories/posts.ts:88:15)
+    at async getPublicBlogPosts (lib/cms/blog-public.ts:42:17)
+    at async HomePage (app/[locale]/page.tsx:88:31)
+  114 |     template: row.template,
+  115 |     status: row.status,
+> 116 |     sections: row.sections ? JSON.parse(row.sections) : [],
+      |                                  ^
+  117 |     seo: {
+  118 |       title: row.seo_title || '',
+  119 |       description: row.seo_description || '',
+Error reading CMS data from MySQL: SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at rowToPage (lib/cms/storage.ts:116:34)
+    at Array.map (<anonymous>)
+    at readCMSData (lib/cms/storage.ts:186:19)
+    at async getAllPosts (lib/cms/repositories/posts.ts:46:15)
+    at async GET (app/api/cms/posts/route.ts:25:17)
+  114 |     template: row.template,
+  115 |     status: row.status,
+> 116 |     sections: row.sections ? JSON.parse(row.sections) : [],
+      |                                  ^
+  117 |     seo: {
+  118 |       title: row.seo_title || '',
+  119 |       description: row.seo_description || '',
+Error reading CMS data from MySQL: SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at rowToPage (lib/cms/storage.ts:116:34)
+    at Array.map (<anonymous>)
+    at readCMSData (lib/cms/storage.ts:186:19)
+    at async GET (app/api/cms/posts/route.ts:59:15)
+  114 |     template: row.template,
+  115 |     status: row.status,
+> 116 |     sections: row.sections ? JSON.parse(row.sections) : [],
+      |                                  ^
+  117 |     seo: {
+  118 |       title: row.seo_title || '',
+  119 |       description: row.seo_description || '',
+ GET /api/cms/posts?enriched=1&page=1&limit=10 200 in 1083ms
+ GET /favicon.ico 200 in 1080ms
+Error reading CMS data from MySQL: SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at rowToPage (lib/cms/storage.ts:116:34)
+    at Array.map (<anonymous>)
+    at readCMSData (lib/cms/storage.ts:186:19)
+    at async getAllCategories (lib/cms/repositories/categories.ts:8:15)
+    at async GET (app/api/cms/categories/route.ts:7:21)
+  114 |     template: row.template,
+  115 |     status: row.status,
+> 116 |     sections: row.sections ? JSON.parse(row.sections) : [],
+      |                                  ^
+  117 |     seo: {
+  118 |       title: row.seo_title || '',
+  119 |       description: row.seo_description || '',
+ GET /api/cms/categories 200 in 549ms
+Error reading CMS data from MySQL: SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at rowToPage (lib/cms/storage.ts:116:34)
+    at Array.map (<anonymous>)
+    at readCMSData (lib/cms/storage.ts:186:19)
+    at async getAllPosts (lib/cms/repositories/posts.ts:46:15)
+    at async GET (app/api/cms/posts/route.ts:25:17)
+  114 |     template: row.template,
+  115 |     status: row.status,
+> 116 |     sections: row.sections ? JSON.parse(row.sections) : [],
+      |                                  ^
+  117 |     seo: {
+  118 |       title: row.seo_title || '',
+  119 |       description: row.seo_description || '',
+Error reading CMS data from MySQL: SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at rowToPage (lib/cms/storage.ts:116:34)
+    at Array.map (<anonymous>)
+    at readCMSData (lib/cms/storage.ts:186:19)
+    at async GET (app/api/cms/posts/route.ts:59:15)
+  114 |     template: row.template,
+  115 |     status: row.status,
+> 116 |     sections: row.sections ? JSON.parse(row.sections) : [],
+      |                                  ^
+  117 |     seo: {
+  118 |       title: row.seo_title || '',
+  119 |       description: row.seo_description || '',
+ GET /api/cms/posts?enriched=1&page=1&limit=10 200 in 273ms
+ GET /admin/blog/posts/create 200 in 42ms
+ GET /api/cms/users 200 in 117ms
+Error reading CMS data from MySQL: SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at rowToPage (lib/cms/storage.ts:116:34)
+    at Array.map (<anonymous>)
+    at readCMSData (lib/cms/storage.ts:186:19)
+    at async getAllCategories (lib/cms/repositories/categories.ts:8:15)
+    at async GET (app/api/cms/categories/route.ts:7:21)
+  114 |     template: row.template,
+  115 |     status: row.status,
+> 116 |     sections: row.sections ? JSON.parse(row.sections) : [],
+      |                                  ^
+  117 |     seo: {
+  118 |       title: row.seo_title || '',
+  119 |       description: row.seo_description || '',
+ GET /api/cms/categories 200 in 203ms
+Error reading CMS data from MySQL: SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at rowToPage (lib/cms/storage.ts:116:34)
+    at Array.map (<anonymous>)
+    at readCMSData (lib/cms/storage.ts:186:19)
+    at async getAllTags (lib/cms/repositories/tags.ts:8:15)
+    at async GET (app/api/cms/tags/route.ts:7:15)
+  114 |     template: row.template,
+  115 |     status: row.status,
+> 116 |     sections: row.sections ? JSON.parse(row.sections) : [],
+      |                                  ^
+  117 |     seo: {
+  118 |       title: row.seo_title || '',
+  119 |       description: row.seo_description || '',
+ GET /api/cms/tags 200 in 283ms
+Error reading CMS data from MySQL: SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at rowToPage (lib/cms/storage.ts:116:34)
+    at Array.map (<anonymous>)
+    at readCMSData (lib/cms/storage.ts:186:19)
+    at async getPublishedPosts (lib/cms/repositories/posts.ts:88:15)
+    at async getPublicBlogPosts (lib/cms/blog-public.ts:42:17)
+    at async HomePage (app/[locale]/page.tsx:88:31)
+  114 |     template: row.template,
+  115 |     status: row.status,
+> 116 |     sections: row.sections ? JSON.parse(row.sections) : [],
+      |                                  ^
+  117 |     seo: {
+  118 |       title: row.seo_title || '',
+  119 |       description: row.seo_description || '',
+ GET /favicon.ico 200 in 332ms
+ GET /api/cms/users 200 in 274ms
+ GET /manifest.webmanifest 200 in 224ms
+Error reading CMS data from MySQL: SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at rowToPage (lib/cms/storage.ts:116:34)
+    at Array.map (<anonymous>)
+    at readCMSData (lib/cms/storage.ts:186:19)
+    at async getAllCategories (lib/cms/repositories/categories.ts:8:15)
+    at async GET (app/api/cms/categories/route.ts:7:21)
+  114 |     template: row.template,
+  115 |     status: row.status,
+> 116 |     sections: row.sections ? JSON.parse(row.sections) : [],
+      |                                  ^
+  117 |     seo: {
+  118 |       title: row.seo_title || '',
+  119 |       description: row.seo_description || '',
+ GET /api/cms/categories 200 in 287ms
+Error reading CMS data from MySQL: SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at rowToPage (lib/cms/storage.ts:116:34)
+    at Array.map (<anonymous>)
+    at readCMSData (lib/cms/storage.ts:186:19)
+    at async getAllTags (lib/cms/repositories/tags.ts:8:15)
+    at async GET (app/api/cms/tags/route.ts:7:15)
+  114 |     template: row.template,
+  115 |     status: row.status,
+> 116 |     sections: row.sections ? JSON.parse(row.sections) : [],
+      |                                  ^
+  117 |     seo: {
+  118 |       title: row.seo_title || '',
+  119 |       description: row.seo_description || '',
+ GET /api/cms/tags 200 in 294ms
+ GET /api/cms/users 200 in 279ms
+Error reading CMS data from MySQL: SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at rowToPage (lib/cms/storage.ts:116:34)
+    at Array.map (<anonymous>)
+    at readCMSData (lib/cms/storage.ts:186:19)
+    at async getAllCategories (lib/cms/repositories/categories.ts:8:15)
+    at async GET (app/api/cms/categories/route.ts:7:21)
+  114 |     template: row.template,
+  115 |     status: row.status,
+> 116 |     sections: row.sections ? JSON.parse(row.sections) : [],
+      |                                  ^
+  117 |     seo: {
+  118 |       title: row.seo_title || '',
+  119 |       description: row.seo_description || '',
+ GET /api/cms/categories 200 in 260ms
+Error reading CMS data from MySQL: SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at rowToPage (lib/cms/storage.ts:116:34)
+    at Array.map (<anonymous>)
+    at readCMSData (lib/cms/storage.ts:186:19)
+    at async getAllTags (lib/cms/repositories/tags.ts:8:15)
+    at async GET (app/api/cms/tags/route.ts:7:15)
+  114 |     template: row.template,
+  115 |     status: row.status,
+> 116 |     sections: row.sections ? JSON.parse(row.sections) : [],
+      |                                  ^
+  117 |     seo: {
+  118 |       title: row.seo_title || '',
+  119 |       description: row.seo_description || '',
+ GET /api/cms/tags 200 in 160ms
+ ✓ Compiled /[locale] in 42ms
+ GET /admin/blog/posts/create 200 in 93ms
+ GET /admin/blog/posts/create 200 in 93ms
+Error reading CMS data from MySQL: SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at rowToPage (lib/cms/storage.ts:116:34)
+    at Array.map (<anonymous>)
+    at readCMSData (lib/cms/storage.ts:186:19)
+    at async getPublishedPosts (lib/cms/repositories/posts.ts:88:15)
+    at async getPublicBlogPosts (lib/cms/blog-public.ts:42:17)
+    at async HomePage (app/[locale]/page.tsx:88:31)
+  114 |     template: row.template,
+  115 |     status: row.status,
+> 116 |     sections: row.sections ? JSON.parse(row.sections) : [],
+      |                                  ^
+  117 |     seo: {
+  118 |       title: row.seo_title || '',
+  119 |       description: row.seo_description || '',
+ GET / 200 in 398ms
+ GET /manifest.webmanifest 200 in 204ms
+ GET /manifest.webmanifest 200 in 204ms
+ GET /manifest.webmanifest 200 in 42ms
+ GET /api/public/settings 200 in 158ms
+Error reading CMS data from MySQL: SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at rowToPage (lib/cms/storage.ts:116:34)
+    at Array.map (<anonymous>)
+    at readCMSData (lib/cms/storage.ts:186:19)
+    at async getPostStats (lib/cms/repositories/posts.ts:462:15)
+    at async GET (app/api/cms/dashboard/stats/route.ts:14:47)
+  114 |     template: row.template,
+  115 |     status: row.status,
+> 116 |     sections: row.sections ? JSON.parse(row.sections) : [],
+      |                                  ^
+  117 |     seo: {
+  118 |       title: row.seo_title || '',
+  119 |       description: row.seo_description || '',
+Error reading CMS data from MySQL: SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at rowToPage (lib/cms/storage.ts:116:34)
+    at Array.map (<anonymous>)
+    at readCMSData (lib/cms/storage.ts:186:19)
+    at async getSEOStats (lib/cms/repositories/analytics.ts:55:15)
+    at async GET (app/api/cms/dashboard/stats/route.ts:14:47)
+  114 |     template: row.template,
+  115 |     status: row.status,
+> 116 |     sections: row.sections ? JSON.parse(row.sections) : [],
+      |                                  ^
+  117 |     seo: {
+  118 |       title: row.seo_title || '',
+  119 |       description: row.seo_description || '',
+Error reading CMS data from MySQL: SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at rowToPage (lib/cms/storage.ts:116:34)
+    at Array.map (<anonymous>)
+    at readCMSData (lib/cms/storage.ts:186:19)
+    at async GET (app/api/cms/dashboard/stats/route.ts:14:47)
+  114 |     template: row.template,
+  115 |     status: row.status,
+> 116 |     sections: row.sections ? JSON.parse(row.sections) : [],
+      |                                  ^
+  117 |     seo: {
+  118 |       title: row.seo_title || '',
+  119 |       description: row.seo_description || '',
+ GET /api/cms/dashboard/stats 200 in 456ms

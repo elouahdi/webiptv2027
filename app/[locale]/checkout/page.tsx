@@ -1,5 +1,6 @@
 import { Suspense } from 'react';
 import CheckoutForm from './CheckoutForm';
+import { readSettings } from '@/lib/cms/settings-storage';
 import { getTranslations, locales } from '@/lib/i18n';
 import { SITE_CONFIG } from '@/config/site';
 
@@ -33,14 +34,20 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   };
 }
 
-export default function CheckoutPage() {
+export default async function CheckoutPage() {
+  let pricing: any[] | null = null;
+  try {
+    const settings = await readSettings();
+    pricing = settings.pricing || null;
+  } catch {}
+
   return (
     <Suspense fallback={
       <div className="min-h-screen bg-[#F7F8FA] dark:bg-[#0A0A0A] flex items-center justify-center">
         <div className="w-10 h-10 border-4 border-[#00D4FF]/30 border-t-[#00D4FF] rounded-full animate-spin"></div>
       </div>
     }>
-      <CheckoutForm />
+      <CheckoutForm pricing={pricing} />
     </Suspense>
   );
 }

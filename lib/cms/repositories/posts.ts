@@ -6,6 +6,17 @@ import { generateSlug, ensureUniqueSlug } from '../services/slug';
 import { calculateReadingTime } from '../services/reading-time';
 import { query, execute } from '@/lib/db';
 
+function toSqlDatetime(v: any) {
+  if (v === null || v === undefined) return null;
+  if (v instanceof Date) return v.toISOString().slice(0, 19).replace('T', ' ');
+  if (typeof v === 'string') {
+    const d = new Date(v);
+    if (!Number.isNaN(d.getTime())) return d.toISOString().slice(0, 19).replace('T', ' ');
+    return v;
+  }
+  return v;
+}
+
 export interface PostFilters {
   status?: PostStatus;
   categoryId?: string;
@@ -163,7 +174,10 @@ export interface CreatePostInput {
 }
 
 export async function createPost(input: CreatePostInput): Promise<Post> {
-  const now = new Date().toISOString();
+  const nowDate = new Date();
+  const now = nowDate.toISOString();
+  // MySQL DATETIME format (no timezone) for inserts
+  const sqlNow = nowDate.toISOString().slice(0, 19).replace('T', ' ');
   
   // Get existing posts to ensure unique slug
   const existingPosts = await query<any>('SELECT slug FROM posts');
@@ -178,44 +192,50 @@ export async function createPost(input: CreatePostInput): Promise<Post> {
   const seo = { ...DEFAULT_SEO, ...input.seo };
   const id = uuidv4();
 
-  await execute(
-    `INSERT INTO posts (
-      id, title, slug, excerpt, content, status, 
-      published_at, scheduled_at, category_id, author_id, 
-      featured_image_id, gallery_image_ids, read_time, views,
-      seo_title, seo_description, seo_keywords, seo_canonical_url,
-      seo_og_title, seo_og_description, seo_og_image_id,
-      seo_twitter_card, seo_robots_index, seo_robots_follow, seo_schema_jsonld,
-      created_at, updated_at
-    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW(), NOW())`,
-    [
-      id,
-      input.title,
-      slug,
-      input.excerpt ?? '',
-      content,
-      input.status ?? 'draft',
-      input.publishedAt ?? (input.status === 'published' ? now : null),
-      input.scheduledAt ?? null,
-      input.categoryId ?? null,
-      input.authorId,
-      input.featuredImageId ?? null,
-      JSON.stringify(input.galleryImageIds ?? []),
-      readTime,
-      0,
-      seo.title,
-      seo.description,
-      JSON.stringify(seo.keywords),
-      seo.canonicalUrl,
-      seo.ogTitle,
-      seo.ogDescription,
-      seo.ogImageId,
-      seo.twitterCard,
-      seo.robotsIndex,
-      seo.robotsFollow,
-      seo.schemaJsonLd,
-    ]
-  );
+  const _insertParams = [
+    id,
+    input.title,
+    slug,
+    input.excerpt ?? '',
+    content,
+    input.status ?? 'draft',
+    input.publishedAt ?? (input.status === 'published' ? sqlNow : null),
+    input.scheduledAt ?? null,
+    input.categoryId ?? null,
+    input.authorId,
+    input.featuredImageId ?? null,
+    JSON.stringify(input.galleryImageIds ?? []),
+    readTime,
+    0,
+    seo.title,
+    seo.description,
+    JSON.stringify(seo.keywords),
+    seo.canonicalUrl,
+    seo.ogTitle,
+    seo.ogDescription,
+    seo.ogImageId,
+    seo.twitterCard,
+    seo.robotsIndex,
+    seo.robotsFollow,
+    seo.schemaJsonLd,
+  ];
+
+
+  const columns = [
+    'id','title','slug','excerpt','content','status',
+    'published_at','scheduled_at','category_id','author_id',
+    'featured_image_id','gallery_image_ids','read_time','views',
+    'seo_title','seo_description','seo_keywords','seo_canonical_url',
+    'seo_og_title','seo_og_description','seo_og_image_id',
+    'seo_twitter_card','seo_robots_index','seo_robots_follow','seo_schema_jsonld'
+  ];
+
+  const placeholders = _insertParams.map(() => '?').join(', ');
+  const sql = `INSERT INTO posts (${columns.join(', ')}, created_at, updated_at) VALUES (${placeholders}, NOW(), NOW())`;
+
+  await execute(sql, _insertParams);
+
+  // no debug logging here
   
   // Insert tag relationships
   if (input.tagIds && input.tagIds.length > 0) {
@@ -246,7 +266,14 @@ export async function createPost(input: CreatePostInput): Promise<Post> {
     tagIds,
     authorId: post.author_id,
     featuredImageId: post.featured_image_id,
-    galleryImageIds: post.gallery_image_ids ? JSON.parse(post.gallery_image_ids) : [],
+    galleryImageIds: (() => {
+      const v = post.gallery_image_ids;
+      if (!v) return [];
+      if (typeof v === 'string') {
+        try { return JSON.parse(v); } catch { return []; }
+      }
+      return v;
+    })(),
     readTime: post.read_time,
     views: post.views,
     seo: {
@@ -303,11 +330,12 @@ export async function updatePost(id: string, input: Partial<CreatePostInput>): P
   };
   const seo = input.seo ? { ...existingSeo, ...input.seo } : existingSeo;
   
+  const sqlNow = new Date().toISOString().slice(0, 19).replace('T', ' ');
   const publishedAt = input.status === 'published' && !existing.published_at
-    ? now
+    ? sqlNow
     : input.publishedAt !== undefined
-      ? input.publishedAt
-      : existing.published_at ? existing.published_at.toISOString() : null;
+      ? toSqlDatetime(input.publishedAt)
+      : existing.published_at ? toSqlDatetime(existing.published_at) : null;
 
   // Update post
   await execute(
@@ -331,7 +359,13 @@ export async function updatePost(id: string, input: Partial<CreatePostInput>): P
       input.categoryId !== undefined ? input.categoryId : existing.category_id,
       input.authorId ?? existing.author_id,
       input.featuredImageId !== undefined ? input.featuredImageId : existing.featured_image_id,
-      JSON.stringify(input.galleryImageIds ?? (existing.gallery_image_ids ? JSON.parse(existing.gallery_image_ids) : [])),
+      JSON.stringify(
+        input.galleryImageIds ?? (
+          existing.gallery_image_ids
+            ? (typeof existing.gallery_image_ids === 'string' ? JSON.parse(existing.gallery_image_ids) : existing.gallery_image_ids)
+            : []
+        )
+      ),
       readTime,
       seo.title,
       seo.description,
@@ -383,7 +417,14 @@ export async function updatePost(id: string, input: Partial<CreatePostInput>): P
     tagIds,
     authorId: post.author_id,
     featuredImageId: post.featured_image_id,
-    galleryImageIds: post.gallery_image_ids ? JSON.parse(post.gallery_image_ids) : [],
+    galleryImageIds: (() => {
+      const v = post.gallery_image_ids;
+      if (!v) return [];
+      if (typeof v === 'string') {
+        try { return JSON.parse(v); } catch { return []; }
+      }
+      return v;
+    })(),
     readTime: post.read_time,
     views: post.views,
     seo: {

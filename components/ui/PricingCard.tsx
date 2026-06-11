@@ -4,12 +4,12 @@ import { motion } from 'framer-motion';
 import { Check, Star, ShoppingCart } from 'lucide-react';
 import Link from 'next/link';
 import { cn } from '@/lib/utils/cn';
-import type { Plan } from '@/lib/data/plans';
+import type { PricingPlan } from '@/lib/cms/settings-storage';
 import { useTranslation } from '@/hooks/useTranslation';
 import { getLocalizedPath } from '@/lib/i18n';
 
 interface PricingCardProps {
-  plan: Plan;
+  plan: PricingPlan;
   featured?: boolean;
 }
 
@@ -141,14 +141,14 @@ export function PricingCard({ plan, featured = false }: PricingCardProps) {
           </Link>
         )}
 
-        {plan.reviewCount > 0 && (
+        {(plan.reviewCount ?? 0) > 0 && (
           <div className="mt-14 flex items-center justify-center gap-[6px]">
             <div className="flex items-center gap-[2px]">
-              {renderStars(plan.rating)}
+              {renderStars(plan.rating ?? 0)}
             </div>
-            <span className="text-[11px] font-bold text-amber-500">{plan.rating}</span>
+            <span className="text-[11px] font-bold text-amber-500">{plan.rating ?? 0}</span>
             <span className="text-[10px] text-text-muted font-medium">
-              ({plan.reviewCount.toLocaleString('fr-FR')} avis)
+              ({(plan.reviewCount ?? 0).toLocaleString('fr-FR')} avis)
             </span>
           </div>
         )}

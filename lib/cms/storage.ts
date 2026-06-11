@@ -33,7 +33,14 @@ function rowToPost(row: any): Post {
     authorId: row.author_id,
     categoryId: row.category_id,
     featuredImageId: row.featured_image_id,
-    galleryImageIds: row.gallery_image_ids ? JSON.parse(row.gallery_image_ids) : [],
+    galleryImageIds: (() => {
+      const v = row.gallery_image_ids;
+      if (!v) return [];
+      if (typeof v === 'string') {
+        try { return JSON.parse(v); } catch { return []; }
+      }
+      return v;
+    })(),
     publishedAt: row.published_at ? row.published_at.toISOString() : null,
     scheduledAt: row.scheduled_at ? row.scheduled_at.toISOString() : null,
     readTime: row.read_time,

@@ -87,6 +87,7 @@ CREATE TABLE posts (
     author_id VARCHAR(36) NOT NULL,
     category_id VARCHAR(36) NULL,
     featured_image_id VARCHAR(36) NULL,
+    gallery_image_ids JSON NULL,
     published_at TIMESTAMP NULL,
     scheduled_at TIMESTAMP NULL,
     read_time INT DEFAULT 0,

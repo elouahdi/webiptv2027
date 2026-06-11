@@ -18,6 +18,10 @@ export interface PricingPlan {
   description: string;
   ctaText?: string;
   ctaHref?: string;
+  reviewCount?: number;
+  rating?: number;
+  highlights?: { icon: string; title: string; text: string; }[];
+  faq?: { question: string; answer: string; }[];
 }
 
 export interface HeroContent {
@@ -101,21 +105,21 @@ const DEFAULT_SETTINGS: SiteSettings = {
     {
       slug: '1-mois', name: '1 Mois', price: 17.99, originalPrice: null,
       currency: 'EUR', duration: 'month', badge: null, featured: false,
-      visible: true, order: 0, promoPrice: null,
+      visible: true, order: 0, promoPrice: null, reviewCount: 1250, rating: 4.8,
       features: ['Activation instantanée', '45 000 chaînes & films', 'Qualité HD / Full HD / 4K', 'TV de rattrapage (Replay)', 'Support 24h/7j'],
       description: 'Abonnement 1 mois découverte sans engagement.',
     },
     {
       slug: '3-mois', name: '3 Mois', price: 26.99, originalPrice: 53.97,
       savings: '50%', currency: 'EUR', duration: 'month', badge: 'Populaire',
-      featured: false, visible: true, order: 1, promoPrice: null,
+      featured: false, visible: true, order: 1, promoPrice: null, reviewCount: 2100, rating: 4.9,
       features: ['Activation instantanée', '45 000 chaînes & films', 'Qualité HD / Full HD / 4K', 'TV de rattrapage (Replay)', 'Support 24h/7j'],
       description: 'Excellent rapport qualité-prix pour 3 mois.',
     },
     {
       slug: '6-mois', name: '6 Mois', price: 36.99, originalPrice: 107.94,
       savings: '66%', currency: 'EUR', duration: 'month', badge: null,
-      featured: false, visible: true, order: 2, promoPrice: null,
+      featured: false, visible: true, order: 2, promoPrice: null, reviewCount: 3400, rating: 4.9,
       features: ['Activation instantanée', '45 000 chaînes & films', 'Qualité HD / Full HD / 4K', 'TV de rattrapage (Replay)', 'Support 24h/7j'],
       description: 'Notre offre la plus populaire pour toute une saison.',
     },
@@ -123,21 +127,21 @@ const DEFAULT_SETTINGS: SiteSettings = {
       slug: '12-mois', name: '12 Mois', subtitle: '+ 3 mois offerts',
       price: 46.99, originalPrice: 215.88, savings: '78%', currency: 'EUR',
       duration: 'month', badge: 'MEILLEURE OFFRE', featured: true,
-      visible: true, order: 3, promoPrice: null,
+      visible: true, order: 3, promoPrice: null, reviewCount: 5600, rating: 4.95,
       features: ['Activation instantanée', '45 000 chaînes & films', 'Qualité HD / Full HD / 4K', 'TV de rattrapage (Replay)', 'Support 24h/7j', '3 mois supplémentaires offerts'],
       description: 'Notre meilleure offre: 15 mois au prix de 12.',
     },
     {
       slug: '24-mois', name: '24 Mois', price: 89.99, originalPrice: 431.76,
       savings: '79%', currency: 'EUR', duration: 'month', badge: 'Meilleur Prix/Durée',
-      featured: false, visible: true, order: 4, promoPrice: null,
+      featured: false, visible: true, order: 4, promoPrice: null, reviewCount: 8900, rating: 4.97,
       features: ['Activation instantanée', '45 000 chaînes & films', 'Qualité HD / Full HD / 4K', 'TV de rattrapage (Replay)', 'Support 24h/7j'],
       description: 'Offre VIP ultime pour les passionnés.',
     },
     {
       slug: 'essai-3h', name: 'Essai 3H', price: 0, originalPrice: null,
       currency: 'EUR', duration: 'hour', badge: 'GRATUIT', featured: false,
-      visible: true, order: 5, promoPrice: null,
+      visible: true, order: 5, promoPrice: null, reviewCount: 450, rating: 4.7,
       ctaText: 'Obtenir via WhatsApp',
       ctaHref: 'https://api.whatsapp.com/send?phone=212708245223&text=Bonjour, je souhaite un essai IPTV gratuit de 3h',
       features: ["3 heures d'accès complet", 'Sans carte de crédit', 'Activation immédiate'],
@@ -200,49 +204,103 @@ const DEFAULT_SETTINGS: SiteSettings = {
   updatedAt: new Date().toISOString(),
 };
 
-// ─── MySQL-based storage ─────────────────────────────────────────────────────
+// ─── Storage (MySQL with file fallback) ──────────────────────────────────────
+
+import { promises as fs } from 'fs';
+import path from 'path';
 
 let cache: SiteSettings | null = null;
+const SETTINGS_FILE = path.join(process.cwd(), 'data', 'cms', 'settings.json');
 
-async function ensureSettingsExist() {
-  // Check if settings exist in database
-  const db = (await import('@/lib/db')).default;
+async function readFromDB(): Promise<SiteSettings | null> {
   try {
-    const [countResult] = await db.query<any>('SELECT COUNT(*) as count FROM settings WHERE setting_key = ?', ['site_settings']);
+    const { query } = await import('@/lib/db');
+    const [countResult] = await query<any>('SELECT COUNT(*) as count FROM settings WHERE setting_key = ?', ['site_settings']);
     const count = countResult?.count || 0;
-    
+
     if (count === 0) {
-      // Insert default settings
-      await db.execute(
+      const { execute } = await import('@/lib/db');
+      await execute(
         'INSERT INTO settings (setting_key, setting_value) VALUES (?, ?)',
         ['site_settings', JSON.stringify(DEFAULT_SETTINGS)]
       );
     }
-  } catch (error: any) {
-    // If duplicate entry error, settings already exist, ignore
-    if (error.code !== 'ER_DUP_ENTRY') {
-      throw error;
+
+    const rows = await query<any>('SELECT setting_value FROM settings WHERE setting_key = ?', ['site_settings']);
+    if (rows?.length) {
+      const raw = rows[0].setting_value;
+      if (!raw) return null;
+      // The mysql2 driver may already decode JSON columns to objects. Handle
+      // both cases (string or object) defensively.
+      if (typeof raw === 'string') {
+        try { return JSON.parse(raw || '{}'); } catch (err) { return null; }
+      }
+      if (typeof raw === 'object') {
+        return raw as SiteSettings;
+      }
     }
+  } catch {}
+  return null;
+}
+
+async function readFromFile(): Promise<SiteSettings | null> {
+  try {
+    const raw = await fs.readFile(SETTINGS_FILE, 'utf-8');
+    return JSON.parse(raw);
+  } catch {
+    return null;
   }
 }
 
-export async function readSettings(): Promise<SiteSettings> {
-  if (cache) return structuredClone(cache);
-  
-  await ensureSettingsExist();
-  
-  const db = (await import('@/lib/db')).default;
-  const result = await db.query<any>('SELECT setting_value FROM settings WHERE setting_key = ?', ['site_settings']);
-  const rows = Array.isArray(result) ? result : [result];
-  
-  if (!rows || rows.length === 0) {
-    cache = structuredClone(DEFAULT_SETTINGS);
-    return cache;
+async function writeToDB(data: SiteSettings): Promise<boolean> {
+  try {
+    const { execute } = await import('@/lib/db');
+    await execute(
+      'UPDATE settings SET setting_value = ?, updated_at = NOW() WHERE setting_key = ?',
+      [JSON.stringify(data), 'site_settings']
+    );
+    return true;
+  } catch (err) {
+    console.error('[settings-storage] writeToDB error:', err);
+    return false;
   }
-  
-  const stored = JSON.parse(rows[0]?.setting_value || '{}');
-  cache = { ...DEFAULT_SETTINGS, ...stored };
-  return structuredClone(cache as SiteSettings);
+}
+
+async function writeToFile(data: SiteSettings): Promise<boolean> {
+  try {
+    await fs.writeFile(SETTINGS_FILE, JSON.stringify(data, null, 2), 'utf-8');
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+export async function readSettings({ bypassCache }: { bypassCache?: boolean } = {}): Promise<SiteSettings> {
+  // Always prefer the DB as the source of truth. In-memory `cache` can become
+  // stale across multiple Node/edge processes when running Next.js dev or in
+  // clustered environments, so avoid returning it as the primary source.
+  // `bypassCache` exists for callers that explicitly want to ignore DB/file reads.
+
+  // Do not return `cache` here — prefer reading the DB/file every time to
+  // avoid serving stale settings from an in-memory cache in other Next.js
+  // server processes. Callers that explicitly want the process-local cache
+  // can pass `bypassCache: false` and use `cache` afterwards, but default
+  // behavior is to re-load from the DB/file.
+
+  const fromDB = await readFromDB();
+  if (fromDB) {
+    cache = { ...DEFAULT_SETTINGS, ...fromDB };
+    return structuredClone(cache);
+  }
+
+  const fromFile = await readFromFile();
+  if (fromFile) {
+    cache = { ...DEFAULT_SETTINGS, ...fromFile };
+    return structuredClone(cache);
+  }
+
+  cache = structuredClone(DEFAULT_SETTINGS);
+  return structuredClone(cache);
 }
 
 export async function writeSettings(data: Partial<SiteSettings>): Promise<SiteSettings> {
@@ -252,15 +310,23 @@ export async function writeSettings(data: Partial<SiteSettings>): Promise<SiteSe
     ...data,
     updatedAt: new Date().toISOString(),
   };
-  
-  const db = (await import('@/lib/db')).default;
-  await db.execute(
-    'UPDATE settings SET setting_value = ?, updated_at = NOW() WHERE setting_key = ?',
-    [JSON.stringify(next), 'site_settings']
-  );
-  
-  cache = structuredClone(next);
-  return next;
+
+  const wroteDB = await writeToDB(next);
+  if (!wroteDB) {
+    console.error('[settings-storage] writeToDB failed, falling back to file storage');
+    await writeToFile(next);
+    // Clear process cache so subsequent reads re-load from file/DB as available.
+    cache = null;
+    return next;
+  }
+
+  // After a successful DB write, re-load the settings from DB so the value we
+  // return (and store in cache) exactly matches what's persisted. This helps
+  // avoid cross-process inconsistencies where one process writes and another
+  // still serves stale in-memory data.
+  cache = null;
+  const reloaded = await readSettings();
+  return reloaded;
 }
 
 export function invalidateSettingsCache() {

@@ -1,8 +1,9 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { useSearchParams } from 'next/navigation';
-import { getPlanBySlugSync } from '@/lib/data/plans';
+import { getAllPlansSync } from '@/lib/data/plans';
+import type { PricingPlan } from '@/lib/cms/settings-storage';
 import { cn } from '@/lib/utils/cn';
 import { 
   CreditCard, 
@@ -49,7 +50,7 @@ const defaultPrices: Record<string, number> = {
   '24mois': 89.99
 };
 
-export default function CheckoutForm() {
+export default function CheckoutForm({ pricing }: { pricing: PricingPlan[] | null }) {
   const searchParams = useSearchParams();
   const { t, locale } = useTranslation();
 
@@ -65,7 +66,13 @@ export default function CheckoutForm() {
   }
 
   const planSlug = packMapping[packKey];
-  const basePlan = getPlanBySlugSync(planSlug);
+  const basePlan = useMemo(() => {
+    if (pricing) {
+      const fromSettings = pricing.find((p) => p.slug === planSlug);
+      if (fromSettings) return fromSettings;
+    }
+    return getAllPlansSync().find((p) => p.slug === planSlug) || null;
+  }, [pricing, planSlug]);
   const basePrice = prixParam ? parseFloat(prixParam) : (basePlan?.price ?? defaultPrices[packKey] ?? 46.99);
 
   const [firstName, setFirstName] = useState('');

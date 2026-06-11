@@ -1,0 +1,14 @@
+HTTP/1.1 200 OK
+X-Frame-Options: DENY
+X-Content-Type-Options: nosniff
+Referrer-Policy: strict-origin-when-cross-origin
+Permissions-Policy: camera=(), microphone=(), geolocation=()
+Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' fonts.googleapis.com; font-src 'self' fonts.gstatic.com; img-src 'self' data: blob: res.cloudinary.com https://*.whatsapp.com https://*.bzzoiro.com https://media.api-sports.io https://media-4.api-sports.io; connect-src 'self' https://api.whatsapp.com https://sports.bzzoiro.com; frame-src 'self' https://www.youtube.com;
+vary: RSC, Next-Router-State-Tree, Next-Router-Prefetch, Next-Router-Segment-Prefetch
+content-type: application/json
+Date: Thu, 11 Jun 2026 01:10:25 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+Transfer-Encoding: chunked
+
+{"id":"a7ba84e2-4ce6-479c-9701-4d3853fa4f47","title":"Automated Test Post (admin-audit) - edited","slug":"automated-test-post-admin-audit-edited","excerpt":"Edited excerpt","content":"This is a test post created by an automated audit.","status":"published","featured":false,"publishedAt":"2026-06-10T23:07:20.000Z","scheduledAt":null,"categoryId":null,"tagIds":[],"authorId":"admin-default-id","featuredImageId":null,"galleryImageIds":[],"readTime":1,"views":0,"seo":{"title":"","description":"","keywords":[],"canonicalUrl":"","ogTitle":"","ogDescription":"","ogImageId":null,"twitterCard":"summary_large_image","robotsIndex":1,"robotsFollow":1,"schemaJsonLd":""},"createdAt":"2026-06-11T01:07:20.000Z","updatedAt":"2026-06-11T01:10:25.000Z"}

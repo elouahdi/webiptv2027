@@ -1,13 +1,59 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { PricingCard } from '@/components/ui/PricingCard';
-import { getAllPlansSync } from '@/lib/data/plans';
 import { staggerContainer, fadeInUp } from '@/lib/utils/animations';
 import { useTranslation } from '@/hooks/useTranslation';
+import { getAllPlansSync } from '@/lib/data/plans';
+import type { PricingPlan } from '@/lib/cms/settings-storage';
+
+const DEFAULT_RATINGS: Record<string, { reviewCount: number; rating: number }> = {
+  '1-mois': { reviewCount: 1250, rating: 4.8 },
+  '3-mois': { reviewCount: 2100, rating: 4.9 },
+  '6-mois': { reviewCount: 3400, rating: 4.9 },
+  '12-mois': { reviewCount: 5600, rating: 4.95 },
+  '24-mois': { reviewCount: 8900, rating: 4.97 },
+  'essai-3h': { reviewCount: 450, rating: 4.7 },
+};
 
 export function PlansSection() {
   const { t, locale } = useTranslation();
+  const [plans, setPlans] = useState<(PricingPlan & { reviewCount: number; rating: number })[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    let cancelled = false;
+    fetch('/api/public/settings')
+      .then((res) => res.ok ? res.json() : null)
+      .then((data) => {
+        if (cancelled) return;
+        if (data?.pricing) {
+          const sorted = (data.pricing as PricingPlan[])
+            .filter((p) => p.visible !== false)
+            .sort((a, b) => a.order - b.order)
+            .map((p) => {
+              const fallback = DEFAULT_RATINGS[p.slug] || { reviewCount: 0, rating: 0 };
+              return { ...p, reviewCount: p.reviewCount ?? fallback.reviewCount, rating: p.rating ?? fallback.rating };
+            });
+          setPlans(sorted);
+        }
+      })
+      .catch(() => {
+        if (cancelled) return;
+        const fallback = getAllPlansSync().map((p) => ({
+          ...p,
+          visible: true,
+          order: 0,
+          promoPrice: null,
+        }));
+        setPlans(fallback);
+      })
+      .finally(() => {
+        if (!cancelled) setLoading(false);
+      });
+    return () => { cancelled = true; };
+  }, []);
 
   return (
     <section className="py-80 bg-bg-base relative">
@@ -27,17 +73,23 @@ export function PlansSection() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-32 max-w-6xl mx-auto items-stretch">
-          {getAllPlansSync().map((plan) => (
-            <motion.div
-              key={plan.slug}
-              variants={fadeInUp}
-              className="flex h-full"
-            >
-              <PricingCard plan={plan} featured={plan.featured} />
-            </motion.div>
-          ))}
-        </div>
+        {loading ? (
+          <div className="flex justify-center py-32">
+            <div className="w-8 h-8 border-2 border-brand-from border-t-transparent rounded-full animate-spin" />
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-32 max-w-6xl mx-auto items-stretch">
+            {plans.map((plan) => (
+              <motion.div
+                key={plan.slug}
+                variants={fadeInUp}
+                className="flex h-full"
+              >
+                <PricingCard plan={plan} featured={plan.featured} />
+              </motion.div>
+            ))}
+          </div>
+        )}
 
         <motion.div variants={fadeInUp} className="text-center mt-64 bg-bg-card/40 p-24 rounded-2xl border border-border/40 max-w-2xl mx-auto">
           <p className="text-text-secondary text-sm mb-12">
