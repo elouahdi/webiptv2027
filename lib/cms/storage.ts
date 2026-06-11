@@ -1,6 +1,7 @@
 import { promises as fs } from 'fs';
 import path from 'path';
 import type { CMSData, Post, Category, Tag, MediaItem, Page, User, AnalyticsEntry } from './types';
+import { safeParseJSON } from '@/lib/utils';
 
 const EMPTY_DATA: CMSData = {
   posts: [],
@@ -49,7 +50,7 @@ function rowToPost(row: any): Post {
     seo: {
       title: row.seo_title || '',
       description: row.seo_description || '',
-      keywords: row.seo_keywords ? JSON.parse(row.seo_keywords) : [],
+      keywords: safeParseJSON<string[]>(row.seo_keywords, []),
       canonicalUrl: row.seo_canonical_url || '',
       ogTitle: row.seo_og_title || '',
       ogDescription: row.seo_og_description || '',
@@ -113,11 +114,11 @@ function rowToPage(row: any): Page {
     slug: row.slug,
     template: row.template,
     status: row.status,
-    sections: row.sections ? JSON.parse(row.sections) : [],
+      sections: safeParseJSON<any[]>(row.sections, []),
     seo: {
       title: row.seo_title || '',
       description: row.seo_description || '',
-      keywords: row.seo_keywords ? JSON.parse(row.seo_keywords) : [],
+        keywords: safeParseJSON<string[]>(row.seo_keywords, []),
       canonicalUrl: row.seo_canonical_url || '',
       ogTitle: row.seo_og_title || '',
       ogDescription: row.seo_og_description || '',

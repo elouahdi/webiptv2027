@@ -5,17 +5,7 @@ import { readCMSData } from '../storage';
 import { generateSlug, ensureUniqueSlug } from '../services/slug';
 import { calculateReadingTime } from '../services/reading-time';
 import { query, execute } from '@/lib/db';
-
-function toSqlDatetime(v: any) {
-  if (v === null || v === undefined) return null;
-  if (v instanceof Date) return v.toISOString().slice(0, 19).replace('T', ' ');
-  if (typeof v === 'string') {
-    const d = new Date(v);
-    if (!Number.isNaN(d.getTime())) return d.toISOString().slice(0, 19).replace('T', ' ');
-    return v;
-  }
-  return v;
-}
+import { toSqlDatetime, safeParseJSON } from '@/lib/utils';
 
 export interface PostFilters {
   status?: PostStatus;
@@ -279,7 +269,7 @@ export async function createPost(input: CreatePostInput): Promise<Post> {
     seo: {
       title: post.seo_title || '',
       description: post.seo_description || '',
-      keywords: post.seo_keywords ? JSON.parse(post.seo_keywords) : [],
+      keywords: safeParseJSON<string[]>(post.seo_keywords, []),
       canonicalUrl: post.seo_canonical_url || '',
       ogTitle: post.seo_og_title || '',
       ogDescription: post.seo_og_description || '',
@@ -318,7 +308,7 @@ export async function updatePost(id: string, input: Partial<CreatePostInput>): P
   const existingSeo = {
     title: existing.seo_title || '',
     description: existing.seo_description || '',
-    keywords: existing.seo_keywords ? JSON.parse(existing.seo_keywords) : [],
+    keywords: safeParseJSON<string[]>(existing.seo_keywords, []),
     canonicalUrl: existing.seo_canonical_url || '',
     ogTitle: existing.seo_og_title || '',
     ogDescription: existing.seo_og_description || '',
@@ -361,9 +351,7 @@ export async function updatePost(id: string, input: Partial<CreatePostInput>): P
       input.featuredImageId !== undefined ? input.featuredImageId : existing.featured_image_id,
       JSON.stringify(
         input.galleryImageIds ?? (
-          existing.gallery_image_ids
-            ? (typeof existing.gallery_image_ids === 'string' ? JSON.parse(existing.gallery_image_ids) : existing.gallery_image_ids)
-            : []
+          safeParseJSON<string[]>(existing.gallery_image_ids, [])
         )
       ),
       readTime,
@@ -430,7 +418,7 @@ export async function updatePost(id: string, input: Partial<CreatePostInput>): P
     seo: {
       title: post.seo_title || '',
       description: post.seo_description || '',
-      keywords: post.seo_keywords ? JSON.parse(post.seo_keywords) : [],
+      keywords: safeParseJSON<string[]>(post.seo_keywords, []),
       canonicalUrl: post.seo_canonical_url || '',
       ogTitle: post.seo_og_title || '',
       ogDescription: post.seo_og_description || '',
