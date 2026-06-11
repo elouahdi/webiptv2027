@@ -99,31 +99,15 @@ export default async function RootLayout({
   const dictionary = messages[activeLocale];
 
   return (
-    <>
-      <head>
-        <script
-          id="organization-schema"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(buildOrganizationSchema()) }}
-          suppressHydrationWarning
-        />
-        <script
-          id="website-schema"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(buildWebSiteSchema()) }}
-          suppressHydrationWarning
-        />
-      </head>
-      <div className={`${syne.variable} ${inter.variable} ${jetbrainsMono.variable} min-h-screen bg-bg-base text-text-primary antialiased`}>
-        <TranslationProvider locale={activeLocale} dictionary={dictionary}>
-          <ThemeProvider>
-            <a href="#main" className="skip-to-main">
-              {activeLocale === 'en' ? 'Skip to main content' : activeLocale === 'de' ? 'Zum Hauptinhalt springen' : activeLocale === 'es' ? 'Saltar al contenido principal' : 'Aller au contenu principal'}
-            </a>
-            <div id="main">{children}</div>
-          </ThemeProvider>
-        </TranslationProvider>
-      </div>
-    </>
+    <div className={`${syne.variable} ${inter.variable} ${jetbrainsMono.variable} min-h-screen bg-bg-base text-text-primary antialiased`}>
+      <TranslationProvider locale={activeLocale} dictionary={dictionary}>
+        <ThemeProvider>
+          <a href="#main" className="skip-to-main">
+            {activeLocale === 'en' ? 'Skip to main content' : activeLocale === 'de' ? 'Zum Hauptinhalt springen' : activeLocale === 'es' ? 'Saltar al contenido principal' : 'Aller au contenu principal'}
+          </a>
+          <div id="main">{children}</div>
+        </ThemeProvider>
+      </TranslationProvider>
+    </div>
   );
 }

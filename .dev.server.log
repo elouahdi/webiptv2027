@@ -10,20 +10,30 @@
      · turbo
 
  ✓ Starting...
- ✓ Compiled in 384ms
- ✓ Ready in 1623ms
- ○ Compiling /[locale] ...
- ✓ Compiled /[locale] in 7.2s
- GET / 200 in 8357ms
- ✓ Compiled /manifest.webmanifest in 285ms
- GET /manifest.webmanifest 200 in 390ms
- GET /favicon.ico 200 in 154ms
+ ✓ Compiled in 344ms
+ ✓ Ready in 1582ms
+ ○ Compiling /_not-found/page ...
+ ✓ Compiled /_not-found/page in 3.6s
+ GET /tarifs 404 in 3853ms
+ GET /tarifs 404 in 63ms
+ GET /tarifs 404 in 154ms
+ GET /manifest.webmanifest 200 in 352ms
+ ○ Compiling /manifest.webmanifest ...
+ ✓ Compiled /manifest.webmanifest in 4.9s
+ GET /favicon.ico 200 in 5697ms
+ GET / 200 in 3762ms
+ GET /favicon.ico 200 in 164ms
  ○ Compiling /api/public/settings ...
- ✓ Compiled /api/public/settings in 792ms
- GET /api/public/settings 200 in 1056ms
- GET /api/public/settings 200 in 1087ms
- GET /api/public/settings 200 in 1078ms
- GET /api/public/settings 200 in 1093ms
- HEAD / 200 in 105ms
- ✓ Compiled /api/sports/today in 111ms
- GET /api/sports/today 200 in 1126ms
+ ✓ Compiled /api/public/settings in 814ms
+ GET /api/public/settings 200 in 986ms
+ GET /api/public/settings 200 in 115ms
+ ○ Compiling /[locale]/nos-plans ...
+ ✓ Compiled /[locale]/nos-plans in 724ms
+ GET /nos-plans 200 in 1428ms
+ GET /api/public/settings 200 in 115ms
+ GET /manifest.webmanifest 200 in 171ms
+ GET /favicon.ico 200 in 205ms
+ GET /api/public/settings 200 in 170ms
+ GET /api/public/settings 200 in 96ms
+ GET /api/public/settings 200 in 70ms
+ HEAD / 200 in 94ms
