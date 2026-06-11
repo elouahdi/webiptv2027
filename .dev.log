@@ -890,3 +890,1681 @@ Error reading CMS data from MySQL: SyntaxError: Unexpected end of JSON input
   118 |       title: row.seo_title || '',
   119 |       description: row.seo_description || '',
  GET /api/cms/dashboard/stats 200 in 456ms
+ GET /admin 200 in 39ms
+ GET /manifest.webmanifest 200 in 267ms
+Error reading CMS data from MySQL: SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at rowToPage (lib/cms/storage.ts:116:34)
+    at Array.map (<anonymous>)
+    at readCMSData (lib/cms/storage.ts:186:19)
+    at async GET (app/api/cms/dashboard/stats/route.ts:14:47)
+  114 |     template: row.template,
+  115 |     status: row.status,
+> 116 |     sections: row.sections ? JSON.parse(row.sections) : [],
+      |                                  ^
+  117 |     seo: {
+  118 |       title: row.seo_title || '',
+  119 |       description: row.seo_description || '',
+Error reading CMS data from MySQL: SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at rowToPage (lib/cms/storage.ts:116:34)
+    at Array.map (<anonymous>)
+    at readCMSData (lib/cms/storage.ts:186:19)
+    at async getPostStats (lib/cms/repositories/posts.ts:462:15)
+    at async GET (app/api/cms/dashboard/stats/route.ts:14:47)
+  114 |     template: row.template,
+  115 |     status: row.status,
+> 116 |     sections: row.sections ? JSON.parse(row.sections) : [],
+      |                                  ^
+  117 |     seo: {
+  118 |       title: row.seo_title || '',
+  119 |       description: row.seo_description || '',
+Error reading CMS data from MySQL: SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at rowToPage (lib/cms/storage.ts:116:34)
+    at Array.map (<anonymous>)
+    at readCMSData (lib/cms/storage.ts:186:19)
+    at async getSEOStats (lib/cms/repositories/analytics.ts:55:15)
+    at async GET (app/api/cms/dashboard/stats/route.ts:14:47)
+  114 |     template: row.template,
+  115 |     status: row.status,
+> 116 |     sections: row.sections ? JSON.parse(row.sections) : [],
+      |                                  ^
+  117 |     seo: {
+  118 |       title: row.seo_title || '',
+  119 |       description: row.seo_description || '',
+ GET /api/cms/dashboard/stats 200 in 516ms
+Error reading CMS data from MySQL: SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at rowToPage (lib/cms/storage.ts:116:34)
+    at Array.map (<anonymous>)
+    at readCMSData (lib/cms/storage.ts:186:19)
+    at async getPublishedPosts (lib/cms/repositories/posts.ts:88:15)
+    at async getPublicBlogPosts (lib/cms/blog-public.ts:42:17)
+    at async HomePage (app/[locale]/page.tsx:88:31)
+  114 |     template: row.template,
+  115 |     status: row.status,
+> 116 |     sections: row.sections ? JSON.parse(row.sections) : [],
+      |                                  ^
+  117 |     seo: {
+  118 |       title: row.seo_title || '',
+  119 |       description: row.seo_description || '',
+ GET /favicon.ico 200 in 893ms
+Error reading CMS data from MySQL: SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at rowToPage (lib/cms/storage.ts:116:34)
+    at Array.map (<anonymous>)
+    at readCMSData (lib/cms/storage.ts:186:19)
+    at async GET (app/api/cms/dashboard/stats/route.ts:14:47)
+  114 |     template: row.template,
+  115 |     status: row.status,
+> 116 |     sections: row.sections ? JSON.parse(row.sections) : [],
+      |                                  ^
+  117 |     seo: {
+  118 |       title: row.seo_title || '',
+  119 |       description: row.seo_description || '',
+ GET /api/sports/today 200 in 1036ms
+Error reading CMS data from MySQL: SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at rowToPage (lib/cms/storage.ts:116:34)
+    at Array.map (<anonymous>)
+    at readCMSData (lib/cms/storage.ts:186:19)
+    at async getPostStats (lib/cms/repositories/posts.ts:462:15)
+    at async GET (app/api/cms/dashboard/stats/route.ts:14:47)
+  114 |     template: row.template,
+  115 |     status: row.status,
+> 116 |     sections: row.sections ? JSON.parse(row.sections) : [],
+      |                                  ^
+  117 |     seo: {
+  118 |       title: row.seo_title || '',
+  119 |       description: row.seo_description || '',
+Error reading CMS data from MySQL: SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at rowToPage (lib/cms/storage.ts:116:34)
+    at Array.map (<anonymous>)
+    at readCMSData (lib/cms/storage.ts:186:19)
+    at async getSEOStats (lib/cms/repositories/analytics.ts:55:15)
+    at async GET (app/api/cms/dashboard/stats/route.ts:14:47)
+  114 |     template: row.template,
+  115 |     status: row.status,
+> 116 |     sections: row.sections ? JSON.parse(row.sections) : [],
+      |                                  ^
+  117 |     seo: {
+  118 |       title: row.seo_title || '',
+  119 |       description: row.seo_description || '',
+ GET /api/cms/dashboard/stats 200 in 752ms
+ GET /api/sports/today 200 in 736ms
+ GET /admin 200 in 69ms
+ GET /manifest.webmanifest 200 in 202ms
+Error reading CMS data from MySQL: SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at rowToPage (lib/cms/storage.ts:116:34)
+    at Array.map (<anonymous>)
+    at readCMSData (lib/cms/storage.ts:186:19)
+    at async getPublishedPosts (lib/cms/repositories/posts.ts:88:15)
+    at async getPublicBlogPosts (lib/cms/blog-public.ts:42:17)
+    at async HomePage (app/[locale]/page.tsx:88:31)
+  114 |     template: row.template,
+  115 |     status: row.status,
+> 116 |     sections: row.sections ? JSON.parse(row.sections) : [],
+      |                                  ^
+  117 |     seo: {
+  118 |       title: row.seo_title || '',
+  119 |       description: row.seo_description || '',
+ GET /favicon.ico 200 in 275ms
+ GET /api/auth/me 200 in 245ms
+Error reading CMS data from MySQL: SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at rowToPage (lib/cms/storage.ts:116:34)
+    at Array.map (<anonymous>)
+    at readCMSData (lib/cms/storage.ts:186:19)
+    at async GET (app/api/cms/dashboard/stats/route.ts:14:47)
+  114 |     template: row.template,
+  115 |     status: row.status,
+> 116 |     sections: row.sections ? JSON.parse(row.sections) : [],
+      |                                  ^
+  117 |     seo: {
+  118 |       title: row.seo_title || '',
+  119 |       description: row.seo_description || '',
+Error reading CMS data from MySQL: SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at rowToPage (lib/cms/storage.ts:116:34)
+    at Array.map (<anonymous>)
+    at readCMSData (lib/cms/storage.ts:186:19)
+    at async getSEOStats (lib/cms/repositories/analytics.ts:55:15)
+    at async GET (app/api/cms/dashboard/stats/route.ts:14:47)
+  114 |     template: row.template,
+  115 |     status: row.status,
+> 116 |     sections: row.sections ? JSON.parse(row.sections) : [],
+      |                                  ^
+  117 |     seo: {
+  118 |       title: row.seo_title || '',
+  119 |       description: row.seo_description || '',
+Error reading CMS data from MySQL: SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at rowToPage (lib/cms/storage.ts:116:34)
+    at Array.map (<anonymous>)
+    at readCMSData (lib/cms/storage.ts:186:19)
+    at async getPostStats (lib/cms/repositories/posts.ts:462:15)
+    at async GET (app/api/cms/dashboard/stats/route.ts:14:47)
+  114 |     template: row.template,
+  115 |     status: row.status,
+> 116 |     sections: row.sections ? JSON.parse(row.sections) : [],
+      |                                  ^
+  117 |     seo: {
+  118 |       title: row.seo_title || '',
+  119 |       description: row.seo_description || '',
+ GET /api/cms/dashboard/stats 200 in 535ms
+Error reading CMS data from MySQL: SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at rowToPage (lib/cms/storage.ts:116:34)
+    at Array.map (<anonymous>)
+    at readCMSData (lib/cms/storage.ts:186:19)
+    at async GET (app/api/cms/dashboard/stats/route.ts:14:47)
+  114 |     template: row.template,
+  115 |     status: row.status,
+> 116 |     sections: row.sections ? JSON.parse(row.sections) : [],
+      |                                  ^
+  117 |     seo: {
+  118 |       title: row.seo_title || '',
+  119 |       description: row.seo_description || '',
+Error reading CMS data from MySQL: SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at rowToPage (lib/cms/storage.ts:116:34)
+    at Array.map (<anonymous>)
+    at readCMSData (lib/cms/storage.ts:186:19)
+    at async getPostStats (lib/cms/repositories/posts.ts:462:15)
+    at async GET (app/api/cms/dashboard/stats/route.ts:14:47)
+  114 |     template: row.template,
+  115 |     status: row.status,
+> 116 |     sections: row.sections ? JSON.parse(row.sections) : [],
+      |                                  ^
+  117 |     seo: {
+  118 |       title: row.seo_title || '',
+  119 |       description: row.seo_description || '',
+ GET /api/sports/today 200 in 723ms
+Error reading CMS data from MySQL: SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at rowToPage (lib/cms/storage.ts:116:34)
+    at Array.map (<anonymous>)
+    at readCMSData (lib/cms/storage.ts:186:19)
+    at async getSEOStats (lib/cms/repositories/analytics.ts:55:15)
+    at async GET (app/api/cms/dashboard/stats/route.ts:14:47)
+  114 |     template: row.template,
+  115 |     status: row.status,
+> 116 |     sections: row.sections ? JSON.parse(row.sections) : [],
+      |                                  ^
+  117 |     seo: {
+  118 |       title: row.seo_title || '',
+  119 |       description: row.seo_description || '',
+ GET /api/cms/dashboard/stats 200 in 272ms
+ GET /api/cms/users 401 in 46ms
+ GET /api/cms/users 200 in 36ms
+ POST /api/cms/users 201 in 318ms
+ GET /api/cms/users 200 in 34ms
+ PUT /api/cms/users/05342b58-fcee-4364-b68e-7de741cc4376 200 in 44ms
+ DELETE /api/cms/users/05342b58-fcee-4364-b68e-7de741cc4376 200 in 37ms
+ GET /api/sports/today 200 in 418ms
+ ✓ Compiled /admin/sports in 250ms
+ GET /admin/sports 200 in 283ms
+ GET /manifest.webmanifest 200 in 103ms
+Error reading CMS data from MySQL: SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at rowToPage (lib/cms/storage.ts:116:34)
+    at Array.map (<anonymous>)
+    at readCMSData (lib/cms/storage.ts:186:19)
+    at async getPublishedPosts (lib/cms/repositories/posts.ts:88:15)
+    at async getPublicBlogPosts (lib/cms/blog-public.ts:42:17)
+    at async HomePage (app/[locale]/page.tsx:88:31)
+  114 |     template: row.template,
+  115 |     status: row.status,
+> 116 |     sections: row.sections ? JSON.parse(row.sections) : [],
+      |                                  ^
+  117 |     seo: {
+  118 |       title: row.seo_title || '',
+  119 |       description: row.seo_description || '',
+ GET /favicon.ico 200 in 269ms
+ GET /api/sports/today 200 in 540ms
+ GET /api/sports/today 200 in 278ms
+ GET /api/sports/today 200 in 498ms
+ GET /manifest.webmanifest 200 in 146ms
+Error reading CMS data from MySQL: SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at rowToPage (lib/cms/storage.ts:116:34)
+    at Array.map (<anonymous>)
+    at readCMSData (lib/cms/storage.ts:186:19)
+    at async GET (app/api/cms/dashboard/stats/route.ts:14:47)
+  114 |     template: row.template,
+  115 |     status: row.status,
+> 116 |     sections: row.sections ? JSON.parse(row.sections) : [],
+      |                                  ^
+  117 |     seo: {
+  118 |       title: row.seo_title || '',
+  119 |       description: row.seo_description || '',
+Error reading CMS data from MySQL: SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at rowToPage (lib/cms/storage.ts:116:34)
+    at Array.map (<anonymous>)
+    at readCMSData (lib/cms/storage.ts:186:19)
+    at async getSEOStats (lib/cms/repositories/analytics.ts:55:15)
+    at async GET (app/api/cms/dashboard/stats/route.ts:14:47)
+  114 |     template: row.template,
+  115 |     status: row.status,
+> 116 |     sections: row.sections ? JSON.parse(row.sections) : [],
+      |                                  ^
+  117 |     seo: {
+  118 |       title: row.seo_title || '',
+  119 |       description: row.seo_description || '',
+Error reading CMS data from MySQL: SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at rowToPage (lib/cms/storage.ts:116:34)
+    at Array.map (<anonymous>)
+    at readCMSData (lib/cms/storage.ts:186:19)
+    at async getPostStats (lib/cms/repositories/posts.ts:462:15)
+    at async GET (app/api/cms/dashboard/stats/route.ts:14:47)
+  114 |     template: row.template,
+  115 |     status: row.status,
+> 116 |     sections: row.sections ? JSON.parse(row.sections) : [],
+      |                                  ^
+  117 |     seo: {
+  118 |       title: row.seo_title || '',
+  119 |       description: row.seo_description || '',
+ GET /api/cms/dashboard/stats 200 in 437ms
+Error reading CMS data from MySQL: SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at rowToPage (lib/cms/storage.ts:116:34)
+    at Array.map (<anonymous>)
+    at readCMSData (lib/cms/storage.ts:186:19)
+    at async getPublishedPosts (lib/cms/repositories/posts.ts:88:15)
+    at async getPublicBlogPosts (lib/cms/blog-public.ts:42:17)
+    at async HomePage (app/[locale]/page.tsx:88:31)
+  114 |     template: row.template,
+  115 |     status: row.status,
+> 116 |     sections: row.sections ? JSON.parse(row.sections) : [],
+      |                                  ^
+  117 |     seo: {
+  118 |       title: row.seo_title || '',
+  119 |       description: row.seo_description || '',
+ GET /favicon.ico 200 in 599ms
+ GET /api/sports/today 200 in 666ms
+Error reading CMS data from MySQL: SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at rowToPage (lib/cms/storage.ts:116:34)
+    at Array.map (<anonymous>)
+    at readCMSData (lib/cms/storage.ts:186:19)
+    at async getPostStats (lib/cms/repositories/posts.ts:462:15)
+    at async GET (app/api/cms/dashboard/stats/route.ts:14:47)
+  114 |     template: row.template,
+  115 |     status: row.status,
+> 116 |     sections: row.sections ? JSON.parse(row.sections) : [],
+      |                                  ^
+  117 |     seo: {
+  118 |       title: row.seo_title || '',
+  119 |       description: row.seo_description || '',
+Error reading CMS data from MySQL: SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at rowToPage (lib/cms/storage.ts:116:34)
+    at Array.map (<anonymous>)
+    at readCMSData (lib/cms/storage.ts:186:19)
+    at async GET (app/api/cms/dashboard/stats/route.ts:14:47)
+  114 |     template: row.template,
+  115 |     status: row.status,
+> 116 |     sections: row.sections ? JSON.parse(row.sections) : [],
+      |                                  ^
+  117 |     seo: {
+  118 |       title: row.seo_title || '',
+  119 |       description: row.seo_description || '',
+Error reading CMS data from MySQL: SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at rowToPage (lib/cms/storage.ts:116:34)
+    at Array.map (<anonymous>)
+    at readCMSData (lib/cms/storage.ts:186:19)
+    at async getSEOStats (lib/cms/repositories/analytics.ts:55:15)
+    at async GET (app/api/cms/dashboard/stats/route.ts:14:47)
+  114 |     template: row.template,
+  115 |     status: row.status,
+> 116 |     sections: row.sections ? JSON.parse(row.sections) : [],
+      |                                  ^
+  117 |     seo: {
+  118 |       title: row.seo_title || '',
+  119 |       description: row.seo_description || '',
+ GET /api/cms/dashboard/stats 200 in 609ms
+Error reading CMS data from MySQL: SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at rowToPage (lib/cms/storage.ts:116:34)
+    at Array.map (<anonymous>)
+    at readCMSData (lib/cms/storage.ts:186:19)
+    at async getPublishedPosts (lib/cms/repositories/posts.ts:88:15)
+    at async getPublicBlogPosts (lib/cms/blog-public.ts:42:17)
+    at async HomePage (app/[locale]/page.tsx:88:31)
+  114 |     template: row.template,
+  115 |     status: row.status,
+> 116 |     sections: row.sections ? JSON.parse(row.sections) : [],
+      |                                  ^
+  117 |     seo: {
+  118 |       title: row.seo_title || '',
+  119 |       description: row.seo_description || '',
+Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
+1. You might have mismatching versions of React and the renderer (such as React DOM)
+2. You might be breaking the Rules of Hooks
+3. You might have more than one copy of React in the same app
+See https://react.dev/link/invalid-hook-call for tips about how to debug and fix this problem.
+ ⨯ TypeError: Cannot read properties of null (reading 'useState')
+    at AnnouncementBar (components/layout/AnnouncementBar.tsx:10:61)
+   8 |
+   9 | export function AnnouncementBar() {
+> 10 |   const [bar, setBar] = useState<AnnouncementBarType | null>(null);
+     |                                                             ^
+  11 |   const [isVisible, setIsVisible] = useState(false);
+  12 |
+  13 |   useEffect(() => { {
+  digest: '1386774158'
+}
+ GET /admin/blog/posts/create 200 in 907ms
+ GET /favicon.ico 500 in 970ms
+ GET /api/sports/today 200 in 1093ms
+ GET /api/cms/users 200 in 95ms
+Error reading CMS data from MySQL: SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at rowToPage (lib/cms/storage.ts:116:34)
+    at Array.map (<anonymous>)
+    at readCMSData (lib/cms/storage.ts:186:19)
+    at async getAllCategories (lib/cms/repositories/categories.ts:8:15)
+    at async GET (app/api/cms/categories/route.ts:7:21)
+  114 |     template: row.template,
+  115 |     status: row.status,
+> 116 |     sections: row.sections ? JSON.parse(row.sections) : [],
+      |                                  ^
+  117 |     seo: {
+  118 |       title: row.seo_title || '',
+  119 |       description: row.seo_description || '',
+ GET /api/cms/categories 200 in 161ms
+Error reading CMS data from MySQL: SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at rowToPage (lib/cms/storage.ts:116:34)
+    at Array.map (<anonymous>)
+    at readCMSData (lib/cms/storage.ts:186:19)
+    at async getAllTags (lib/cms/repositories/tags.ts:8:15)
+    at async GET (app/api/cms/tags/route.ts:7:15)
+  114 |     template: row.template,
+  115 |     status: row.status,
+> 116 |     sections: row.sections ? JSON.parse(row.sections) : [],
+      |                                  ^
+  117 |     seo: {
+  118 |       title: row.seo_title || '',
+  119 |       description: row.seo_description || '',
+ GET /api/cms/tags 200 in 224ms
+ GET /manifest.webmanifest 200 in 194ms
+ GET /api/cms/users 200 in 205ms
+Error reading CMS data from MySQL: SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at rowToPage (lib/cms/storage.ts:116:34)
+    at Array.map (<anonymous>)
+    at readCMSData (lib/cms/storage.ts:186:19)
+    at async getAllTags (lib/cms/repositories/tags.ts:8:15)
+    at async GET (app/api/cms/tags/route.ts:7:15)
+  114 |     template: row.template,
+  115 |     status: row.status,
+> 116 |     sections: row.sections ? JSON.parse(row.sections) : [],
+      |                                  ^
+  117 |     seo: {
+  118 |       title: row.seo_title || '',
+  119 |       description: row.seo_description || '',
+ GET /api/cms/tags 200 in 127ms
+Error reading CMS data from MySQL: SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at rowToPage (lib/cms/storage.ts:116:34)
+    at Array.map (<anonymous>)
+    at readCMSData (lib/cms/storage.ts:186:19)
+    at async getAllCategories (lib/cms/repositories/categories.ts:8:15)
+    at async GET (app/api/cms/categories/route.ts:7:21)
+  114 |     template: row.template,
+  115 |     status: row.status,
+> 116 |     sections: row.sections ? JSON.parse(row.sections) : [],
+      |                                  ^
+  117 |     seo: {
+  118 |       title: row.seo_title || '',
+  119 |       description: row.seo_description || '',
+ GET /api/cms/categories 200 in 241ms
+ GET /api/cms/users 200 in 123ms
+Error reading CMS data from MySQL: SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at rowToPage (lib/cms/storage.ts:116:34)
+    at Array.map (<anonymous>)
+    at readCMSData (lib/cms/storage.ts:186:19)
+    at async getAllTags (lib/cms/repositories/tags.ts:8:15)
+    at async GET (app/api/cms/tags/route.ts:7:15)
+  114 |     template: row.template,
+  115 |     status: row.status,
+> 116 |     sections: row.sections ? JSON.parse(row.sections) : [],
+      |                                  ^
+  117 |     seo: {
+  118 |       title: row.seo_title || '',
+  119 |       description: row.seo_description || '',
+ GET /api/cms/tags 200 in 176ms
+Error reading CMS data from MySQL: SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at rowToPage (lib/cms/storage.ts:116:34)
+    at Array.map (<anonymous>)
+    at readCMSData (lib/cms/storage.ts:186:19)
+    at async getAllCategories (lib/cms/repositories/categories.ts:8:15)
+    at async GET (app/api/cms/categories/route.ts:7:21)
+  114 |     template: row.template,
+  115 |     status: row.status,
+> 116 |     sections: row.sections ? JSON.parse(row.sections) : [],
+      |                                  ^
+  117 |     seo: {
+  118 |       title: row.seo_title || '',
+  119 |       description: row.seo_description || '',
+ GET /api/cms/categories 200 in 177ms
+ GET /admin/media 200 in 46ms
+ GET /manifest.webmanifest 200 in 205ms
+ GET /api/cms/media? 200 in 240ms
+Error reading CMS data from MySQL: SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at rowToPage (lib/cms/storage.ts:116:34)
+    at Array.map (<anonymous>)
+    at readCMSData (lib/cms/storage.ts:186:19)
+    at async getPublishedPosts (lib/cms/repositories/posts.ts:88:15)
+    at async getPublicBlogPosts (lib/cms/blog-public.ts:42:17)
+    at async HomePage (app/[locale]/page.tsx:88:31)
+  114 |     template: row.template,
+  115 |     status: row.status,
+> 116 |     sections: row.sections ? JSON.parse(row.sections) : [],
+      |                                  ^
+  117 |     seo: {
+  118 |       title: row.seo_title || '',
+  119 |       description: row.seo_description || '',
+ GET /favicon.ico 200 in 305ms
+ GET /api/cms/media? 200 in 111ms
+ GET /admin/pages 200 in 45ms
+ GET /api/cms/pages 200 in 89ms
+ GET /manifest.webmanifest 200 in 82ms
+Error reading CMS data from MySQL: SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at rowToPage (lib/cms/storage.ts:116:34)
+    at Array.map (<anonymous>)
+    at readCMSData (lib/cms/storage.ts:186:19)
+    at async getPublishedPosts (lib/cms/repositories/posts.ts:88:15)
+    at async getPublicBlogPosts (lib/cms/blog-public.ts:42:17)
+    at async HomePage (app/[locale]/page.tsx:88:31)
+  114 |     template: row.template,
+  115 |     status: row.status,
+> 116 |     sections: row.sections ? JSON.parse(row.sections) : [],
+      |                                  ^
+  117 |     seo: {
+  118 |       title: row.seo_title || '',
+  119 |       description: row.seo_description || '',
+ GET /favicon.ico 200 in 163ms
+ GET /api/cms/pages 200 in 116ms
+ ✓ Compiled /admin/pages/[id]/edit in 357ms
+ GET /admin/pages/b44f5f39-83a4-4238-8158-577f553e62f7/edit 200 in 799ms
+ GET /api/cms/pages/b44f5f39-83a4-4238-8158-577f553e62f7 200 in 110ms
+ GET /manifest.webmanifest 200 in 109ms
+Error reading CMS data from MySQL: SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at rowToPage (lib/cms/storage.ts:116:34)
+    at Array.map (<anonymous>)
+    at readCMSData (lib/cms/storage.ts:186:19)
+    at async getPublishedPosts (lib/cms/repositories/posts.ts:88:15)
+    at async getPublicBlogPosts (lib/cms/blog-public.ts:42:17)
+    at async HomePage (app/[locale]/page.tsx:88:31)
+  114 |     template: row.template,
+  115 |     status: row.status,
+> 116 |     sections: row.sections ? JSON.parse(row.sections) : [],
+      |                                  ^
+  117 |     seo: {
+  118 |       title: row.seo_title || '',
+  119 |       description: row.seo_description || '',
+ GET /favicon.ico 200 in 197ms
+ GET /api/cms/pages/b44f5f39-83a4-4238-8158-577f553e62f7 200 in 122ms
+Error reading CMS data from MySQL: SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at rowToPage (lib/cms/storage.ts:116:34)
+    at Array.map (<anonymous>)
+    at readCMSData (lib/cms/storage.ts:186:19)
+    at async getPublishedPosts (lib/cms/repositories/posts.ts:88:15)
+    at async getPublicBlogPosts (lib/cms/blog-public.ts:42:17)
+    at async HomePage (app/[locale]/page.tsx:88:31)
+  114 |     template: row.template,
+  115 |     status: row.status,
+> 116 |     sections: row.sections ? JSON.parse(row.sections) : [],
+      |                                  ^
+  117 |     seo: {
+  118 |       title: row.seo_title || '',
+  119 |       description: row.seo_description || '',
+ GET / 200 in 245ms
+ GET /manifest.webmanifest 200 in 187ms
+Error reading CMS data from MySQL: SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at rowToPage (lib/cms/storage.ts:116:34)
+    at Array.map (<anonymous>)
+    at readCMSData (lib/cms/storage.ts:186:19)
+    at async getPublishedPosts (lib/cms/repositories/posts.ts:88:15)
+    at async getPublicBlogPosts (lib/cms/blog-public.ts:42:17)
+    at async HomePage (app/[locale]/page.tsx:88:31)
+  114 |     template: row.template,
+  115 |     status: row.status,
+> 116 |     sections: row.sections ? JSON.parse(row.sections) : [],
+      |                                  ^
+  117 |     seo: {
+  118 |       title: row.seo_title || '',
+  119 |       description: row.seo_description || '',
+ GET /favicon.ico 200 in 205ms
+ GET /api/public/settings 200 in 207ms
+ GET /api/public/settings 200 in 147ms
+ GET /tarifs 404 in 57ms
+ GET /tarifs 404 in 57ms
+ GET /manifest.webmanifest 200 in 132ms
+Error reading CMS data from MySQL: SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at rowToPage (lib/cms/storage.ts:116:34)
+    at Array.map (<anonymous>)
+    at readCMSData (lib/cms/storage.ts:186:19)
+    at async getPublishedPosts (lib/cms/repositories/posts.ts:88:15)
+    at async getPublicBlogPosts (lib/cms/blog-public.ts:42:17)
+    at async HomePage (app/[locale]/page.tsx:88:31)
+  114 |     template: row.template,
+  115 |     status: row.status,
+> 116 |     sections: row.sections ? JSON.parse(row.sections) : [],
+      |                                  ^
+  117 |     seo: {
+  118 |       title: row.seo_title || '',
+  119 |       description: row.seo_description || '',
+ GET /favicon.ico 200 in 132ms
+Error reading CMS data from MySQL: SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at rowToPage (lib/cms/storage.ts:116:34)
+    at Array.map (<anonymous>)
+    at readCMSData (lib/cms/storage.ts:186:19)
+    at async getPublishedPosts (lib/cms/repositories/posts.ts:88:15)
+    at async getPublicBlogPosts (lib/cms/blog-public.ts:42:17)
+    at async HomePage (app/[locale]/page.tsx:88:31)
+  114 |     template: row.template,
+  115 |     status: row.status,
+> 116 |     sections: row.sections ? JSON.parse(row.sections) : [],
+      |                                  ^
+  117 |     seo: {
+  118 |       title: row.seo_title || '',
+  119 |       description: row.seo_description || '',
+ GET / 200 in 148ms
+Error reading CMS data from MySQL: SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at rowToPage (lib/cms/storage.ts:116:34)
+    at Array.map (<anonymous>)
+    at readCMSData (lib/cms/storage.ts:186:19)
+    at async getPublishedPosts (lib/cms/repositories/posts.ts:88:15)
+    at async getPublicBlogPosts (lib/cms/blog-public.ts:42:17)
+    at async HomePage (app/[locale]/page.tsx:88:31)
+  114 |     template: row.template,
+  115 |     status: row.status,
+> 116 |     sections: row.sections ? JSON.parse(row.sections) : [],
+      |                                  ^
+  117 |     seo: {
+  118 |       title: row.seo_title || '',
+  119 |       description: row.seo_description || '',
+ GET /favicon.ico 200 in 190ms
+ GET /api/public/settings 200 in 226ms
+ GET /api/public/settings 200 in 101ms
+ ✓ Compiled /[locale] in 39ms
+ GET /admin/blog/posts/create 200 in 66ms
+Error reading CMS data from MySQL: SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at rowToPage (lib/cms/storage.ts:116:34)
+    at Array.map (<anonymous>)
+    at readCMSData (lib/cms/storage.ts:186:19)
+    at async getPublishedPosts (lib/cms/repositories/posts.ts:78:15)
+    at async getPublicBlogPosts (lib/cms/blog-public.ts:42:17)
+    at async HomePage (app/[locale]/page.tsx:88:31)
+  114 |     template: row.template,
+  115 |     status: row.status,
+> 116 |     sections: row.sections ? JSON.parse(row.sections) : [],
+      |                                  ^
+  117 |     seo: {
+  118 |       title: row.seo_title || '',
+  119 |       description: row.seo_description || '',
+ GET /admin/pages/b44f5f39-83a4-4238-8158-577f553e62f7/edit 200 in 282ms
+ GET / 200 in 307ms
+ GET /manifest.webmanifest 200 in 344ms
+ GET /manifest.webmanifest 200 in 277ms
+ GET /manifest.webmanifest 200 in 139ms
+ ✓ Compiled /[locale] in 38ms
+ GET /admin/blog/posts/create 200 in 83ms
+ GET /admin/pages/b44f5f39-83a4-4238-8158-577f553e62f7/edit 200 in 81ms
+Error reading CMS data from MySQL: ReferenceError: safeParseJSON is not defined
+    at rowToPage (lib/cms/storage.ts:116:16)
+    at Array.map (<anonymous>)
+    at readCMSData (lib/cms/storage.ts:186:19)
+    at async getPublishedPosts (lib/cms/repositories/posts.ts:78:15)
+    at async getPublicBlogPosts (lib/cms/blog-public.ts:42:17)
+    at async HomePage (app/[locale]/page.tsx:88:31)
+  114 |     template: row.template,
+  115 |     status: row.status,
+> 116 |       sections: safeParseJSON<any[]>(row.sections, []),
+      |                ^
+  117 |     seo: {
+  118 |       title: row.seo_title || '',
+  119 |       description: row.seo_description || '',
+ GET / 200 in 284ms
+ GET /manifest.webmanifest 200 in 154ms
+ GET /manifest.webmanifest 200 in 157ms
+ GET /manifest.webmanifest 200 in 47ms
+ ✓ Compiled /[locale] in 35ms
+ GET /admin/blog/posts/create 200 in 72ms
+ GET /admin/pages/b44f5f39-83a4-4238-8158-577f553e62f7/edit 200 in 73ms
+ GET / 200 in 294ms
+ GET /manifest.webmanifest 200 in 95ms
+ GET /manifest.webmanifest 200 in 95ms
+ GET /manifest.webmanifest 200 in 41ms
+ ✓ Compiled /[locale] in 37ms
+ GET /admin/blog/posts/create 200 in 78ms
+ GET /admin/pages/b44f5f39-83a4-4238-8158-577f553e62f7/edit 200 in 77ms
+ GET / 200 in 292ms
+ GET /manifest.webmanifest 200 in 142ms
+ GET /manifest.webmanifest 200 in 148ms
+ GET /manifest.webmanifest 200 in 65ms
+ ✓ Compiled /[locale] in 42ms
+ GET /admin/blog/posts/create 200 in 82ms
+ GET /admin/pages/b44f5f39-83a4-4238-8158-577f553e62f7/edit 200 in 81ms
+ GET / 200 in 297ms
+ GET /manifest.webmanifest 200 in 112ms
+ GET /manifest.webmanifest 200 in 111ms
+ GET /manifest.webmanifest 200 in 48ms
+ GET /tarifs 404 in 53ms
+ GET /tarifs 404 in 58ms
+ GET /manifest.webmanifest 200 in 145ms
+ GET /manifest.webmanifest 200 in 95ms
+ GET /favicon.ico 200 in 434ms
+ GET / 200 in 109ms
+ GET /favicon.ico 200 in 151ms
+ GET /api/public/settings 200 in 155ms
+ GET /api/public/settings 200 in 114ms
+ ○ Compiling /[locale]/nos-plans ...
+ ✓ Compiled /[locale]/nos-plans in 943ms
+ GET /nos-plans 200 in 1623ms
+ GET /api/public/settings 200 in 138ms
+ GET /manifest.webmanifest 200 in 250ms
+ GET /favicon.ico 200 in 286ms
+ GET /api/public/settings 200 in 397ms
+ GET /api/public/settings 200 in 114ms
+ GET /api/public/settings 200 in 115ms
+ ✓ Compiled /[locale]/chaines in 497ms
+ GET /chaines 200 in 931ms
+ GET /api/public/settings 200 in 181ms
+ GET /manifest.webmanifest 200 in 159ms
+ GET /favicon.ico 200 in 312ms
+ GET /api/public/settings 200 in 252ms
+ ○ Compiling /[locale]/programme-sports ...
+ ✓ Compiled /[locale]/programme-sports in 809ms
+ GET /programme-sports 200 in 2277ms
+ GET /api/public/settings 200 in 111ms
+ GET /manifest.webmanifest 200 in 115ms
+ GET /favicon.ico 200 in 337ms
+ GET /api/public/settings 200 in 318ms
+ ○ Compiling /[locale]/blog ...
+ ✓ Compiled /[locale]/blog in 616ms
+ GET /blog 200 in 1292ms
+ GET /api/public/settings 200 in 192ms
+ GET /manifest.webmanifest 200 in 180ms
+ GET /favicon.ico 200 in 280ms
+ GET /api/public/settings 200 in 177ms
+ ○ Compiling /[locale]/blog/[slug] ...
+ ✓ Compiled /[locale]/blog/[slug] in 512ms
+ GET /blog/automated-test-post-admin-audit 200 in 1100ms
+ GET /api/public/settings 200 in 122ms
+ GET /manifest.webmanifest 200 in 88ms
+ GET /favicon.ico 200 in 200ms
+ GET /api/public/settings 200 in 171ms
+ GET /blog 200 in 46ms
+ GET /manifest.webmanifest 200 in 79ms
+ GET /api/public/settings 200 in 107ms
+ GET /favicon.ico 200 in 198ms
+ GET /api/public/settings 200 in 189ms
+ ○ Compiling /[locale]/faq ...
+ ✓ Compiled /[locale]/faq in 553ms
+ GET /faq 200 in 1082ms
+ GET /api/public/settings 200 in 189ms
+ GET /manifest.webmanifest 200 in 161ms
+ GET /favicon.ico 200 in 341ms
+ GET /api/public/settings 200 in 281ms
+ GET /chaines 200 in 47ms
+ GET /api/public/settings 200 in 131ms
+ GET /favicon.ico 200 in 241ms
+ GET /manifest.webmanifest 200 in 216ms
+ GET /api/public/settings 200 in 219ms
+ GET / 200 in 55ms
+ GET /manifest.webmanifest 200 in 103ms
+ GET /api/public/settings 200 in 152ms
+ GET /favicon.ico 200 in 176ms
+ GET /api/public/settings 200 in 77ms
+ GET /api/public/settings 200 in 167ms
+ GET /api/public/settings 200 in 217ms
+ GET /nos-plans 200 in 51ms
+ GET /manifest.webmanifest 200 in 69ms
+ GET /api/public/settings 200 in 95ms
+ GET /favicon.ico 200 in 170ms
+ GET /api/public/settings 200 in 146ms
+ GET /api/public/settings 200 in 91ms
+ GET /api/public/settings 200 in 90ms
+ GET /api/sports/today 200 in 533ms
+ HEAD / 200 in 68ms
+ GET /nos-plans 200 in 45ms
+ GET /manifest.webmanifest 200 in 198ms
+ GET /nos-plans 200 in 156ms
+ GET /manifest.webmanifest 200 in 385ms
+ GET /api/public/settings 200 in 220ms
+ GET /api/public/settings 200 in 331ms
+ GET /favicon.ico 200 in 469ms
+ GET /tarifs 404 in 36ms
+ GET /tarifs 404 in 64ms
+ GET /manifest.webmanifest 200 in 103ms
+ GET /favicon.ico 200 in 109ms
+ GET / 200 in 142ms
+ GET /manifest.webmanifest 200 in 205ms
+ GET /favicon.ico 200 in 114ms
+ GET /api/public/settings 200 in 115ms
+ GET /api/public/settings 200 in 83ms
+ GET / 200 in 130ms
+ GET /manifest.webmanifest 200 in 127ms
+ GET /favicon.ico 200 in 157ms
+ GET /api/public/settings 200 in 105ms
+ GET /api/public/settings 200 in 88ms
+ GET / 200 in 140ms
+ GET /admin 200 in 160ms
+ GET /manifest.webmanifest 200 in 104ms
+ GET /favicon.ico 200 in 364ms
+ GET /api/auth/me 200 in 369ms
+ GET /api/cms/dashboard/stats 200 in 761ms
+ GET /api/cms/dashboard/stats 200 in 111ms
+ GET /api/sports/today 200 in 1274ms
+ ✓ Compiled /admin/site/pricing in 289ms
+ GET /admin/site/pricing 200 in 319ms
+ GET /manifest.webmanifest 200 in 77ms
+ GET /api/admin/settings 200 in 317ms
+ GET /favicon.ico 200 in 372ms
+ GET /api/admin/settings 200 in 147ms
+ POST /api/admin/settings 200 in 169ms
+ GET /admin/site/pricing 200 in 143ms
+ GET /manifest.webmanifest 200 in 118ms
+ GET /api/auth/me 200 in 118ms
+ GET /api/admin/settings 200 in 179ms
+ GET /api/cms/dashboard/stats 200 in 198ms
+ GET /favicon.ico 200 in 234ms
+ GET / 200 in 112ms
+ GET /manifest.webmanifest 200 in 244ms
+ GET /api/public/settings 200 in 145ms
+ GET /favicon.ico 200 in 237ms
+ GET /api/public/settings 200 in 424ms
+ GET /chaines 200 in 48ms
+ GET /api/public/settings 200 in 173ms
+ GET /manifest.webmanifest 200 in 214ms
+ GET /favicon.ico 200 in 267ms
+ GET /api/public/settings 200 in 321ms
+ GET / 200 in 53ms
+ GET /api/public/settings 200 in 133ms
+ GET /manifest.webmanifest 200 in 135ms
+ GET /favicon.ico 200 in 213ms
+ GET /api/public/settings 200 in 201ms
+ GET /api/public/settings 200 in 234ms
+ GET /api/public/settings 200 in 141ms
+ GET /nos-plans 200 in 50ms
+ GET /api/public/settings 200 in 152ms
+ GET /manifest.webmanifest 200 in 141ms
+ GET /favicon.ico 200 in 234ms
+ GET /api/public/settings 200 in 242ms
+ GET /api/public/settings 200 in 150ms
+ GET /api/public/settings 200 in 114ms
+ GET / 200 in 47ms
+ GET /manifest.webmanifest 200 in 92ms
+ GET /api/public/settings 200 in 133ms
+ GET /favicon.ico 200 in 196ms
+ GET /api/public/settings 200 in 143ms
+ GET /api/public/settings 200 in 116ms
+ GET /api/public/settings 200 in 169ms
+ GET /nos-plans 200 in 52ms
+ GET /manifest.webmanifest 200 in 87ms
+ GET /api/public/settings 200 in 130ms
+ GET /favicon.ico 200 in 195ms
+ GET /api/public/settings 200 in 182ms
+ GET /api/public/settings 200 in 110ms
+ GET /api/public/settings 200 in 105ms
+ GET /tarifs 404 in 35ms
+ GET /tarifs 404 in 41ms
+ GET /manifest.webmanifest 200 in 126ms
+ GET /favicon.ico 200 in 98ms
+ POST /api/admin/settings 200 in 179ms
+ ✓ Compiled /admin/site/content in 445ms
+ GET /admin/site/content 200 in 475ms
+ GET /manifest.webmanifest 200 in 158ms
+ GET /api/admin/settings 200 in 208ms
+ GET /favicon.ico 200 in 275ms
+ GET /api/admin/settings 200 in 145ms
+ ✓ Compiled /admin/analytics in 334ms
+ GET /admin/analytics 200 in 368ms
+ GET /manifest.webmanifest 200 in 95ms
+ GET /favicon.ico 200 in 173ms
+ ○ Compiling /api/cms/analytics ...
+ ✓ Compiled /api/cms/analytics in 575ms
+ GET /api/cms/analytics?days=7 200 in 666ms
+ GET /api/cms/analytics?days=7 200 in 55ms
+ ⨯ ./app/layout.tsx:1:1
+Module not found: Can't resolve '../globals.css'
+[0m[31m[1m>[22m[39m[90m 1 |[39m [36mimport[39m [32m'../globals.css'[39m[33m;[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[0m
+[0m [90m 2 |[39m[0m
+[0m [90m 3 |[39m [36mexport[39m [36mdefault[39m [36mfunction[39m [33mRootLayout[39m({ children }[33m:[39m { children[33m:[39m [33mReact[39m[33m.[39m[33mReactNode[39m }) {[0m
+[0m [90m 4 |[39m   [36mreturn[39m ([0m
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./app/layout.tsx:1:1
+Module not found: Can't resolve '../globals.css'
+[0m[31m[1m>[22m[39m[90m 1 |[39m [36mimport[39m [32m'../globals.css'[39m[33m;[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[0m
+[0m [90m 2 |[39m[0m
+[0m [90m 3 |[39m [36mexport[39m [36mdefault[39m [36mfunction[39m [33mRootLayout[39m({ children }[33m:[39m { children[33m:[39m [33mReact[39m[33m.[39m[33mReactNode[39m }) {[0m
+[0m [90m 4 |[39m   [36mreturn[39m ([0m
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./app/layout.tsx:1:1
+Module not found: Can't resolve '../globals.css'
+[0m[31m[1m>[22m[39m[90m 1 |[39m [36mimport[39m [32m'../globals.css'[39m[33m;[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[0m
+[0m [90m 2 |[39m[0m
+[0m [90m 3 |[39m [36mexport[39m [36mdefault[39m [36mfunction[39m [33mRootLayout[39m({ children }[33m:[39m { children[33m:[39m [33mReact[39m[33m.[39m[33mReactNode[39m }) {[0m
+[0m [90m 4 |[39m   [36mreturn[39m ([0m
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./app/layout.tsx:1:1
+Module not found: Can't resolve '../globals.css'
+[0m[31m[1m>[22m[39m[90m 1 |[39m [36mimport[39m [32m'../globals.css'[39m[33m;[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[0m
+[0m [90m 2 |[39m[0m
+[0m [90m 3 |[39m [36mexport[39m [36mdefault[39m [36mfunction[39m [33mRootLayout[39m({ children }[33m:[39m { children[33m:[39m [33mReact[39m[33m.[39m[33mReactNode[39m }) {[0m
+[0m [90m 4 |[39m   [36mreturn[39m ([0m
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./app/layout.tsx:1:1
+Module not found: Can't resolve '../globals.css'
+[0m[31m[1m>[22m[39m[90m 1 |[39m [36mimport[39m [32m'../globals.css'[39m[33m;[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[0m
+[0m [90m 2 |[39m[0m
+[0m [90m 3 |[39m [36mexport[39m [36mdefault[39m [36mfunction[39m [33mRootLayout[39m({ children }[33m:[39m { children[33m:[39m [33mReact[39m[33m.[39m[33mReactNode[39m }) {[0m
+[0m [90m 4 |[39m   [36mreturn[39m ([0m
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./app/layout.tsx:1:1
+Module not found: Can't resolve '../globals.css'
+[0m[31m[1m>[22m[39m[90m 1 |[39m [36mimport[39m [32m'../globals.css'[39m[33m;[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[0m
+[0m [90m 2 |[39m[0m
+[0m [90m 3 |[39m [36mexport[39m [36mdefault[39m [36mfunction[39m [33mRootLayout[39m({ children }[33m:[39m { children[33m:[39m [33mReact[39m[33m.[39m[33mReactNode[39m }) {[0m
+[0m [90m 4 |[39m   [36mreturn[39m ([0m
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./app/layout.tsx:1:1
+Module not found: Can't resolve '../globals.css'
+[0m[31m[1m>[22m[39m[90m 1 |[39m [36mimport[39m [32m'../globals.css'[39m[33m;[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[0m
+[0m [90m 2 |[39m[0m
+[0m [90m 3 |[39m [36mexport[39m [36mdefault[39m [36mfunction[39m [33mRootLayout[39m({ children }[33m:[39m { children[33m:[39m [33mReact[39m[33m.[39m[33mReactNode[39m }) {[0m
+[0m [90m 4 |[39m   [36mreturn[39m ([0m
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./app/layout.tsx:1:1
+Module not found: Can't resolve '../globals.css'
+[0m[31m[1m>[22m[39m[90m 1 |[39m [36mimport[39m [32m'../globals.css'[39m[33m;[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[0m
+[0m [90m 2 |[39m[0m
+[0m [90m 3 |[39m [36mexport[39m [36mdefault[39m [36mfunction[39m [33mRootLayout[39m({ children }[33m:[39m { children[33m:[39m [33mReact[39m[33m.[39m[33mReactNode[39m }) {[0m
+[0m [90m 4 |[39m   [36mreturn[39m ([0m
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./app/layout.tsx:1:1
+Module not found: Can't resolve '../globals.css'
+[0m[31m[1m>[22m[39m[90m 1 |[39m [36mimport[39m [32m'../globals.css'[39m[33m;[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[0m
+[0m [90m 2 |[39m[0m
+[0m [90m 3 |[39m [36mexport[39m [36mdefault[39m [36mfunction[39m [33mRootLayout[39m({ children }[33m:[39m { children[33m:[39m [33mReact[39m[33m.[39m[33mReactNode[39m }) {[0m
+[0m [90m 4 |[39m   [36mreturn[39m ([0m
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./app/layout.tsx:1:1
+Module not found: Can't resolve '../globals.css'
+[0m[31m[1m>[22m[39m[90m 1 |[39m [36mimport[39m [32m'../globals.css'[39m[33m;[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[0m
+[0m [90m 2 |[39m[0m
+[0m [90m 3 |[39m [36mexport[39m [36mdefault[39m [36mfunction[39m [33mRootLayout[39m({ children }[33m:[39m { children[33m:[39m [33mReact[39m[33m.[39m[33mReactNode[39m }) {[0m
+[0m [90m 4 |[39m   [36mreturn[39m ([0m
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./app/layout.tsx:1:1
+Module not found: Can't resolve '../globals.css'
+[0m[31m[1m>[22m[39m[90m 1 |[39m [36mimport[39m [32m'../globals.css'[39m[33m;[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[0m
+[0m [90m 2 |[39m[0m
+[0m [90m 3 |[39m [36mexport[39m [36mdefault[39m [36mfunction[39m [33mRootLayout[39m({ children }[33m:[39m { children[33m:[39m [33mReact[39m[33m.[39m[33mReactNode[39m }) {[0m
+[0m [90m 4 |[39m   [36mreturn[39m ([0m
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./app/layout.tsx:1:1
+Module not found: Can't resolve '../globals.css'
+[0m[31m[1m>[22m[39m[90m 1 |[39m [36mimport[39m [32m'../globals.css'[39m[33m;[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[0m
+[0m [90m 2 |[39m[0m
+[0m [90m 3 |[39m [36mexport[39m [36mdefault[39m [36mfunction[39m [33mRootLayout[39m({ children }[33m:[39m { children[33m:[39m [33mReact[39m[33m.[39m[33mReactNode[39m }) {[0m
+[0m [90m 4 |[39m   [36mreturn[39m ([0m
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./app/layout.tsx:1:1
+Module not found: Can't resolve '../globals.css'
+[0m[31m[1m>[22m[39m[90m 1 |[39m [36mimport[39m [32m'../globals.css'[39m[33m;[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[0m
+[0m [90m 2 |[39m[0m
+[0m [90m 3 |[39m [36mexport[39m [36mdefault[39m [36mfunction[39m [33mRootLayout[39m({ children }[33m:[39m { children[33m:[39m [33mReact[39m[33m.[39m[33mReactNode[39m }) {[0m
+[0m [90m 4 |[39m   [36mreturn[39m ([0m
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./app/layout.tsx:1:1
+Module not found: Can't resolve '../globals.css'
+[0m[31m[1m>[22m[39m[90m 1 |[39m [36mimport[39m [32m'../globals.css'[39m[33m;[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[0m
+[0m [90m 2 |[39m[0m
+[0m [90m 3 |[39m [36mexport[39m [36mdefault[39m [36mfunction[39m [33mRootLayout[39m({ children }[33m:[39m { children[33m:[39m [33mReact[39m[33m.[39m[33mReactNode[39m }) {[0m
+[0m [90m 4 |[39m   [36mreturn[39m ([0m
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./app/layout.tsx:1:1
+Module not found: Can't resolve '../globals.css'
+[0m[31m[1m>[22m[39m[90m 1 |[39m [36mimport[39m [32m'../globals.css'[39m[33m;[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[0m
+[0m [90m 2 |[39m[0m
+[0m [90m 3 |[39m [36mexport[39m [36mdefault[39m [36mfunction[39m [33mRootLayout[39m({ children }[33m:[39m { children[33m:[39m [33mReact[39m[33m.[39m[33mReactNode[39m }) {[0m
+[0m [90m 4 |[39m   [36mreturn[39m ([0m
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./app/layout.tsx:1:1
+Module not found: Can't resolve '../globals.css'
+[0m[31m[1m>[22m[39m[90m 1 |[39m [36mimport[39m [32m'../globals.css'[39m[33m;[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[0m
+[0m [90m 2 |[39m[0m
+[0m [90m 3 |[39m [36mexport[39m [36mdefault[39m [36mfunction[39m [33mRootLayout[39m({ children }[33m:[39m { children[33m:[39m [33mReact[39m[33m.[39m[33mReactNode[39m }) {[0m
+[0m [90m 4 |[39m   [36mreturn[39m ([0m
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./app/layout.tsx:1:1
+Module not found: Can't resolve '../globals.css'
+[0m[31m[1m>[22m[39m[90m 1 |[39m [36mimport[39m [32m'../globals.css'[39m[33m;[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[0m
+[0m [90m 2 |[39m[0m
+[0m [90m 3 |[39m [36mexport[39m [36mdefault[39m [36mfunction[39m [33mRootLayout[39m({ children }[33m:[39m { children[33m:[39m [33mReact[39m[33m.[39m[33mReactNode[39m }) {[0m
+[0m [90m 4 |[39m   [36mreturn[39m ([0m
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./app/layout.tsx:1:1
+Module not found: Can't resolve '../globals.css'
+[0m[31m[1m>[22m[39m[90m 1 |[39m [36mimport[39m [32m'../globals.css'[39m[33m;[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[0m
+[0m [90m 2 |[39m[0m
+[0m [90m 3 |[39m [36mexport[39m [36mdefault[39m [36mfunction[39m [33mRootLayout[39m({ children }[33m:[39m { children[33m:[39m [33mReact[39m[33m.[39m[33mReactNode[39m }) {[0m
+[0m [90m 4 |[39m   [36mreturn[39m ([0m
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./app/layout.tsx:1:1
+Module not found: Can't resolve '../globals.css'
+[0m[31m[1m>[22m[39m[90m 1 |[39m [36mimport[39m [32m'../globals.css'[39m[33m;[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[0m
+[0m [90m 2 |[39m[0m
+[0m [90m 3 |[39m [36mexport[39m [36mdefault[39m [36mfunction[39m [33mRootLayout[39m({ children }[33m:[39m { children[33m:[39m [33mReact[39m[33m.[39m[33mReactNode[39m }) {[0m
+[0m [90m 4 |[39m   [36mreturn[39m ([0m
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./app/layout.tsx:1:1
+Module not found: Can't resolve '../globals.css'
+[0m[31m[1m>[22m[39m[90m 1 |[39m [36mimport[39m [32m'../globals.css'[39m[33m;[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[0m
+[0m [90m 2 |[39m[0m
+[0m [90m 3 |[39m [36mexport[39m [36mdefault[39m [36mfunction[39m [33mRootLayout[39m({ children }[33m:[39m { children[33m:[39m [33mReact[39m[33m.[39m[33mReactNode[39m }) {[0m
+[0m [90m 4 |[39m   [36mreturn[39m ([0m
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./app/layout.tsx:1:1
+Module not found: Can't resolve '../globals.css'
+[0m[31m[1m>[22m[39m[90m 1 |[39m [36mimport[39m [32m'../globals.css'[39m[33m;[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[0m
+[0m [90m 2 |[39m[0m
+[0m [90m 3 |[39m [36mexport[39m [36mdefault[39m [36mfunction[39m [33mRootLayout[39m({ children }[33m:[39m { children[33m:[39m [33mReact[39m[33m.[39m[33mReactNode[39m }) {[0m
+[0m [90m 4 |[39m   [36mreturn[39m ([0m
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./app/layout.tsx:1:1
+Module not found: Can't resolve '../globals.css'
+[0m[31m[1m>[22m[39m[90m 1 |[39m [36mimport[39m [32m'../globals.css'[39m[33m;[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[0m
+[0m [90m 2 |[39m[0m
+[0m [90m 3 |[39m [36mexport[39m [36mdefault[39m [36mfunction[39m [33mRootLayout[39m({ children }[33m:[39m { children[33m:[39m [33mReact[39m[33m.[39m[33mReactNode[39m }) {[0m
+[0m [90m 4 |[39m   [36mreturn[39m ([0m
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ○ Compiling /_error ...
+ ⨯ ./app/layout.tsx:1:1
+Module not found: Can't resolve '../globals.css'
+[0m[31m[1m>[22m[39m[90m 1 |[39m [36mimport[39m [32m'../globals.css'[39m[33m;[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[0m
+[0m [90m 2 |[39m[0m
+[0m [90m 3 |[39m [36mexport[39m [36mdefault[39m [36mfunction[39m [33mRootLayout[39m({ children }[33m:[39m { children[33m:[39m [33mReact[39m[33m.[39m[33mReactNode[39m }) {[0m
+[0m [90m 4 |[39m   [36mreturn[39m ([0m
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./app/layout.tsx:1:1
+Module not found: Can't resolve '../globals.css'
+[0m[31m[1m>[22m[39m[90m 1 |[39m [36mimport[39m [32m'../globals.css'[39m[33m;[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[0m
+[0m [90m 2 |[39m[0m
+[0m [90m 3 |[39m [36mexport[39m [36mdefault[39m [36mfunction[39m [33mRootLayout[39m({ children }[33m:[39m { children[33m:[39m [33mReact[39m[33m.[39m[33mReactNode[39m }) {[0m
+[0m [90m 4 |[39m   [36mreturn[39m ([0m
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ✓ Compiled /_error in 1719ms
+ GET /admin/analytics 500 in 3086ms
+ ⨯ ./app/layout.tsx:1:1
+Module not found: Can't resolve '../globals.css'
+[0m[31m[1m>[22m[39m[90m 1 |[39m [36mimport[39m [32m'../globals.css'[39m[33m;[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[0m
+[0m [90m 2 |[39m[0m
+[0m [90m 3 |[39m [36mexport[39m [36mdefault[39m [36mfunction[39m [33mRootLayout[39m({ children }[33m:[39m { children[33m:[39m [33mReact[39m[33m.[39m[33mReactNode[39m }) {[0m
+[0m [90m 4 |[39m   [36mreturn[39m ([0m
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./app/layout.tsx:1:1
+Module not found: Can't resolve '../globals.css'
+[0m[31m[1m>[22m[39m[90m 1 |[39m [36mimport[39m [32m'../globals.css'[39m[33m;[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[0m
+[0m [90m 2 |[39m[0m
+[0m [90m 3 |[39m [36mexport[39m [36mdefault[39m [36mfunction[39m [33mRootLayout[39m({ children }[33m:[39m { children[33m:[39m [33mReact[39m[33m.[39m[33mReactNode[39m }) {[0m
+[0m [90m 4 |[39m   [36mreturn[39m ([0m
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./app/layout.tsx:1:1
+Module not found: Can't resolve '../globals.css'
+[0m[31m[1m>[22m[39m[90m 1 |[39m [36mimport[39m [32m'../globals.css'[39m[33m;[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[0m
+[0m [90m 2 |[39m[0m
+[0m [90m 3 |[39m [36mexport[39m [36mdefault[39m [36mfunction[39m [33mRootLayout[39m({ children }[33m:[39m { children[33m:[39m [33mReact[39m[33m.[39m[33mReactNode[39m }) {[0m
+[0m [90m 4 |[39m   [36mreturn[39m ([0m
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./app/layout.tsx:1:1
+Module not found: Can't resolve '../globals.css'
+[0m[31m[1m>[22m[39m[90m 1 |[39m [36mimport[39m [32m'../globals.css'[39m[33m;[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[0m
+[0m [90m 2 |[39m[0m
+[0m [90m 3 |[39m [36mexport[39m [36mdefault[39m [36mfunction[39m [33mRootLayout[39m({ children }[33m:[39m { children[33m:[39m [33mReact[39m[33m.[39m[33mReactNode[39m }) {[0m
+[0m [90m 4 |[39m   [36mreturn[39m ([0m
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./app/layout.tsx:1:1
+Module not found: Can't resolve '../globals.css'
+[0m[31m[1m>[22m[39m[90m 1 |[39m [36mimport[39m [32m'../globals.css'[39m[33m;[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[0m
+[0m [90m 2 |[39m[0m
+[0m [90m 3 |[39m [36mexport[39m [36mdefault[39m [36mfunction[39m [33mRootLayout[39m({ children }[33m:[39m { children[33m:[39m [33mReact[39m[33m.[39m[33mReactNode[39m }) {[0m
+[0m [90m 4 |[39m   [36mreturn[39m ([0m
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./app/layout.tsx:1:1
+Module not found: Can't resolve '../globals.css'
+[0m[31m[1m>[22m[39m[90m 1 |[39m [36mimport[39m [32m'../globals.css'[39m[33m;[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[0m
+[0m [90m 2 |[39m[0m
+[0m [90m 3 |[39m [36mexport[39m [36mdefault[39m [36mfunction[39m [33mRootLayout[39m({ children }[33m:[39m { children[33m:[39m [33mReact[39m[33m.[39m[33mReactNode[39m }) {[0m
+[0m [90m 4 |[39m   [36mreturn[39m ([0m
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./app/layout.tsx:1:1
+Module not found: Can't resolve '../globals.css'
+[0m[31m[1m>[22m[39m[90m 1 |[39m [36mimport[39m [32m'../globals.css'[39m[33m;[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[0m
+[0m [90m 2 |[39m[0m
+[0m [90m 3 |[39m [36mexport[39m [36mdefault[39m [36mfunction[39m [33mRootLayout[39m({ children }[33m:[39m { children[33m:[39m [33mReact[39m[33m.[39m[33mReactNode[39m }) {[0m
+[0m [90m 4 |[39m   [36mreturn[39m ([0m
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./app/layout.tsx:1:1
+Module not found: Can't resolve '../globals.css'
+[0m[31m[1m>[22m[39m[90m 1 |[39m [36mimport[39m [32m'../globals.css'[39m[33m;[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[0m
+[0m [90m 2 |[39m[0m
+[0m [90m 3 |[39m [36mexport[39m [36mdefault[39m [36mfunction[39m [33mRootLayout[39m({ children }[33m:[39m { children[33m:[39m [33mReact[39m[33m.[39m[33mReactNode[39m }) {[0m
+[0m [90m 4 |[39m   [36mreturn[39m ([0m
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./app/layout.tsx:1:1
+Module not found: Can't resolve '../globals.css'
+[0m[31m[1m>[22m[39m[90m 1 |[39m [36mimport[39m [32m'../globals.css'[39m[33m;[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[0m
+[0m [90m 2 |[39m[0m
+[0m [90m 3 |[39m [36mexport[39m [36mdefault[39m [36mfunction[39m [33mRootLayout[39m({ children }[33m:[39m { children[33m:[39m [33mReact[39m[33m.[39m[33mReactNode[39m }) {[0m
+[0m [90m 4 |[39m   [36mreturn[39m ([0m
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./app/layout.tsx:1:1
+Module not found: Can't resolve '../globals.css'
+[0m[31m[1m>[22m[39m[90m 1 |[39m [36mimport[39m [32m'../globals.css'[39m[33m;[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[0m
+[0m [90m 2 |[39m[0m
+[0m [90m 3 |[39m [36mexport[39m [36mdefault[39m [36mfunction[39m [33mRootLayout[39m({ children }[33m:[39m { children[33m:[39m [33mReact[39m[33m.[39m[33mReactNode[39m }) {[0m
+[0m [90m 4 |[39m   [36mreturn[39m ([0m
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./app/layout.tsx:1:1
+Module not found: Can't resolve '../globals.css'
+[0m[31m[1m>[22m[39m[90m 1 |[39m [36mimport[39m [32m'../globals.css'[39m[33m;[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[0m
+[0m [90m 2 |[39m[0m
+[0m [90m 3 |[39m [36mexport[39m [36mdefault[39m [36mfunction[39m [33mRootLayout[39m({ children }[33m:[39m { children[33m:[39m [33mReact[39m[33m.[39m[33mReactNode[39m }) {[0m
+[0m [90m 4 |[39m   [36mreturn[39m ([0m
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./app/layout.tsx:1:1
+Module not found: Can't resolve '../globals.css'
+[0m[31m[1m>[22m[39m[90m 1 |[39m [36mimport[39m [32m'../globals.css'[39m[33m;[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[0m
+[0m [90m 2 |[39m[0m
+[0m [90m 3 |[39m [36mexport[39m [36mdefault[39m [36mfunction[39m [33mRootLayout[39m({ children }[33m:[39m { children[33m:[39m [33mReact[39m[33m.[39m[33mReactNode[39m }) {[0m
+[0m [90m 4 |[39m   [36mreturn[39m ([0m
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./app/layout.tsx:1:1
+Module not found: Can't resolve '../globals.css'
+[0m[31m[1m>[22m[39m[90m 1 |[39m [36mimport[39m [32m'../globals.css'[39m[33m;[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[0m
+[0m [90m 2 |[39m[0m
+[0m [90m 3 |[39m [36mexport[39m [36mdefault[39m [36mfunction[39m [33mRootLayout[39m({ children }[33m:[39m { children[33m:[39m [33mReact[39m[33m.[39m[33mReactNode[39m }) {[0m
+[0m [90m 4 |[39m   [36mreturn[39m ([0m
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./app/layout.tsx:1:1
+Module not found: Can't resolve '../globals.css'
+[0m[31m[1m>[22m[39m[90m 1 |[39m [36mimport[39m [32m'../globals.css'[39m[33m;[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[0m
+[0m [90m 2 |[39m[0m
+[0m [90m 3 |[39m [36mexport[39m [36mdefault[39m [36mfunction[39m [33mRootLayout[39m({ children }[33m:[39m { children[33m:[39m [33mReact[39m[33m.[39m[33mReactNode[39m }) {[0m
+[0m [90m 4 |[39m   [36mreturn[39m ([0m
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./app/layout.tsx:1:1
+Module not found: Can't resolve '../globals.css'
+[0m[31m[1m>[22m[39m[90m 1 |[39m [36mimport[39m [32m'../globals.css'[39m[33m;[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[0m
+[0m [90m 2 |[39m[0m
+[0m [90m 3 |[39m [36mexport[39m [36mdefault[39m [36mfunction[39m [33mRootLayout[39m({ children }[33m:[39m { children[33m:[39m [33mReact[39m[33m.[39m[33mReactNode[39m }) {[0m
+[0m [90m 4 |[39m   [36mreturn[39m ([0m
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./app/layout.tsx:1:1
+Module not found: Can't resolve '../globals.css'
+[0m[31m[1m>[22m[39m[90m 1 |[39m [36mimport[39m [32m'../globals.css'[39m[33m;[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[0m
+[0m [90m 2 |[39m[0m
+[0m [90m 3 |[39m [36mexport[39m [36mdefault[39m [36mfunction[39m [33mRootLayout[39m({ children }[33m:[39m { children[33m:[39m [33mReact[39m[33m.[39m[33mReactNode[39m }) {[0m
+[0m [90m 4 |[39m   [36mreturn[39m ([0m
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./app/layout.tsx:1:1
+Module not found: Can't resolve '../globals.css'
+[0m[31m[1m>[22m[39m[90m 1 |[39m [36mimport[39m [32m'../globals.css'[39m[33m;[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[0m
+[0m [90m 2 |[39m[0m
+[0m [90m 3 |[39m [36mexport[39m [36mdefault[39m [36mfunction[39m [33mRootLayout[39m({ children }[33m:[39m { children[33m:[39m [33mReact[39m[33m.[39m[33mReactNode[39m }) {[0m
+[0m [90m 4 |[39m   [36mreturn[39m ([0m
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./app/layout.tsx:1:1
+Module not found: Can't resolve '../globals.css'
+[0m[31m[1m>[22m[39m[90m 1 |[39m [36mimport[39m [32m'../globals.css'[39m[33m;[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[0m
+[0m [90m 2 |[39m[0m
+[0m [90m 3 |[39m [36mexport[39m [36mdefault[39m [36mfunction[39m [33mRootLayout[39m({ children }[33m:[39m { children[33m:[39m [33mReact[39m[33m.[39m[33mReactNode[39m }) {[0m
+[0m [90m 4 |[39m   [36mreturn[39m ([0m
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./app/layout.tsx:1:1
+Module not found: Can't resolve '../globals.css'
+[0m[31m[1m>[22m[39m[90m 1 |[39m [36mimport[39m [32m'../globals.css'[39m[33m;[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[0m
+[0m [90m 2 |[39m[0m
+[0m [90m 3 |[39m [36mexport[39m [36mdefault[39m [36mfunction[39m [33mRootLayout[39m({ children }[33m:[39m { children[33m:[39m [33mReact[39m[33m.[39m[33mReactNode[39m }) {[0m
+[0m [90m 4 |[39m   [36mreturn[39m ([0m
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./app/layout.tsx:1:1
+Module not found: Can't resolve '../globals.css'
+[0m[31m[1m>[22m[39m[90m 1 |[39m [36mimport[39m [32m'../globals.css'[39m[33m;[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[0m
+[0m [90m 2 |[39m[0m
+[0m [90m 3 |[39m [36mexport[39m [36mdefault[39m [36mfunction[39m [33mRootLayout[39m({ children }[33m:[39m { children[33m:[39m [33mReact[39m[33m.[39m[33mReactNode[39m }) {[0m
+[0m [90m 4 |[39m   [36mreturn[39m ([0m
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./app/layout.tsx:1:1
+Module not found: Can't resolve '../globals.css'
+[0m[31m[1m>[22m[39m[90m 1 |[39m [36mimport[39m [32m'../globals.css'[39m[33m;[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[0m
+[0m [90m 2 |[39m[0m
+[0m [90m 3 |[39m [36mexport[39m [36mdefault[39m [36mfunction[39m [33mRootLayout[39m({ children }[33m:[39m { children[33m:[39m [33mReact[39m[33m.[39m[33mReactNode[39m }) {[0m
+[0m [90m 4 |[39m   [36mreturn[39m ([0m
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ✓ Compiled in 827ms
+ ✓ Compiled /admin/blog/posts/create in 163ms
+ GET /admin/blog/posts/create 200 in 412ms
+ ✓ Compiled /admin/analytics in 77ms
+ GET /tarifs 404 in 320ms
+ GET /tarifs 404 in 590ms
+ GET /admin/analytics 200 in 610ms
+ GET /manifest.webmanifest 200 in 499ms
+ GET /manifest.webmanifest 200 in 97ms
+ GET /api/auth/me 200 in 301ms
+ GET /api/cms/dashboard/stats 200 in 365ms
+ ○ Compiling /[locale] ...
+ GET /api/cms/analytics?days=7 200 in 422ms
+ ✓ Compiled /[locale] in 566ms
+ GET /favicon.ico 200 in 1148ms
+ GET /favicon.ico 200 in 105ms
+ GET /admin/blog/posts/create 200 in 307ms
+ GET /admin/blog/posts/create 200 in 65ms
+ GET /admin/blog/posts/create 200 in 63ms
+ GET /admin/blog/posts/create 200 in 55ms
+ GET /admin/blog/posts/create 200 in 62ms
+ GET /admin/blog/posts/create 200 in 60ms
+ GET /admin/blog/posts/create 200 in 56ms
+ GET /admin/blog/posts/create 200 in 52ms
+ GET /admin/blog/posts/create 200 in 55ms
+ GET /admin/blog/posts/create 200 in 138ms
+ GET /admin/blog/posts/create 200 in 207ms
+ GET /manifest.webmanifest 200 in 231ms
+ GET /favicon.ico 200 in 203ms
+ GET /api/auth/me 200 in 249ms
+ GET /api/cms/dashboard/stats 200 in 252ms
+ GET /api/cms/users 200 in 356ms
+ GET /api/cms/tags 200 in 610ms
+ GET /api/cms/categories 200 in 612ms
+ GET /api/cms/users 200 in 84ms
+ GET /api/cms/categories 200 in 89ms
+ GET /api/cms/tags 200 in 91ms
+ GET /admin/blog/posts/create 200 in 69ms
+ GET /manifest.webmanifest 200 in 112ms
+ GET /api/auth/me 200 in 163ms
+ GET /api/cms/dashboard/stats 200 in 175ms
+ GET /api/cms/categories 200 in 184ms
+ GET /api/cms/users 200 in 186ms
+ GET /api/cms/tags 200 in 198ms
+ GET /api/cms/users 200 in 89ms
+ GET /api/cms/tags 200 in 90ms
+ GET /api/cms/categories 200 in 92ms
+ GET /favicon.ico 200 in 162ms
+ GET /admin/analytics 200 in 84ms
+ GET /manifest.webmanifest 200 in 113ms
+ GET /api/auth/me 200 in 139ms
+ GET /api/cms/analytics?days=7 200 in 157ms
+ GET /api/cms/dashboard/stats 200 in 174ms
+ GET /favicon.ico 200 in 116ms
+ GET /tarifs 404 in 41ms
+ GET /manifest.webmanifest 200 in 132ms
+ GET /favicon.ico 200 in 135ms
+ GET / 200 in 151ms
+ GET /manifest.webmanifest 200 in 73ms
+ GET /api/public/settings 200 in 266ms
+ GET /favicon.ico 200 in 393ms
+ GET /api/public/settings 200 in 391ms
+ GET /api/public/settings 200 in 147ms
+ GET /api/public/settings 200 in 147ms
+ ✓ Compiled /admin/blog/posts/create in 137ms
+ GET /admin/analytics 200 in 336ms
+ GET /admin/blog/posts/create 200 in 357ms
+ GET / 200 in 435ms
+ GET /admin/analytics 200 in 309ms
+ GET /admin/blog/posts/create 200 in 318ms
+ GET / 200 in 320ms
+ GET /admin/analytics 200 in 121ms
+ GET /admin/blog/posts/create 200 in 145ms
+ GET / 200 in 163ms
+ GET /admin/blog/posts/create 200 in 262ms
+ GET /admin/analytics 200 in 293ms
+ GET / 200 in 293ms
+ GET /admin/blog/posts/create 200 in 127ms
+ GET /admin/analytics 200 in 131ms
+ GET / 200 in 137ms
+ GET /admin/analytics 200 in 113ms
+ GET /admin/blog/posts/create 200 in 116ms
+ GET / 200 in 137ms
+ GET /admin/blog/posts/create 200 in 117ms
+ GET /admin/analytics 200 in 122ms
+ GET / 200 in 144ms
+ GET /admin/blog/posts/create 200 in 159ms
+ GET /admin/analytics 200 in 166ms
+ GET / 200 in 196ms
+ GET /admin/analytics 200 in 155ms
+ GET /admin/blog/posts/create 200 in 165ms
+ GET / 200 in 160ms
+ GET /admin/blog/posts/create 200 in 124ms
+ GET /admin/analytics 200 in 143ms
+ GET / 200 in 150ms
+ GET /admin/blog/posts/create 200 in 169ms
+ GET /admin/analytics 200 in 166ms
+ GET / 200 in 197ms
+ GET /admin/blog/posts/create 200 in 235ms
+ GET /admin/analytics 200 in 248ms
+ GET / 200 in 269ms
+ GET /admin/blog/posts/create 200 in 287ms
+ GET /admin/analytics 200 in 283ms
+ GET / 200 in 324ms
+ GET /admin/blog/posts/create 200 in 166ms
+ GET /admin/analytics 200 in 149ms
+ GET / 200 in 163ms
+ GET /admin/blog/posts/create 200 in 106ms
+ GET /admin/analytics 200 in 108ms
+ GET / 200 in 134ms
+ GET /admin/blog/posts/create 200 in 115ms
+ GET /admin/analytics 200 in 117ms
+ GET / 200 in 144ms
+ GET /admin/blog/posts/create 200 in 163ms
+ GET /admin/analytics 200 in 165ms
+ GET / 200 in 183ms
+ GET /admin/blog/posts/create 200 in 126ms
+ GET /admin/analytics 200 in 137ms
+ GET / 200 in 131ms
+ GET /admin/blog/posts/create 200 in 128ms
+ GET /admin/analytics 200 in 126ms
+ GET / 200 in 155ms
+ GET /admin/blog/posts/create 200 in 136ms
+ GET /admin/analytics 200 in 141ms
+ GET / 200 in 167ms
+ GET /admin/blog/posts/create 200 in 146ms
+ GET /admin/analytics 200 in 150ms
+ GET / 200 in 166ms
+ GET /manifest.webmanifest 200 in 364ms
+ GET /api/auth/me 200 in 321ms
+ GET /api/cms/dashboard/stats 200 in 366ms
+ GET /api/cms/analytics?days=7 200 in 370ms
+ GET /manifest.webmanifest 200 in 242ms
+ GET /api/auth/me 200 in 133ms
+ GET /api/cms/analytics?days=7 200 in 110ms
+ GET /api/cms/dashboard/stats 200 in 119ms
+ GET /manifest.webmanifest 200 in 103ms
+ GET / 200 in 122ms
+ GET /manifest.webmanifest 200 in 242ms
+ GET /api/public/settings 200 in 188ms
+ GET /api/public/settings 200 in 255ms
+ GET /api/public/settings 200 in 378ms
+ GET /api/public/settings 200 in 549ms
+ GET /manifest.webmanifest 200 in 394ms
+ GET /favicon.ico 200 in 479ms
+ GET / 200 in 140ms
+ GET /manifest.webmanifest 200 in 201ms
+ GET / 200 in 134ms
+ GET /api/public/settings 200 in 124ms
+ GET /api/public/settings 200 in 162ms
+ GET /api/public/settings 200 in 206ms
+ GET /api/public/settings 200 in 206ms
+ GET /manifest.webmanifest 200 in 158ms
+ GET / 200 in 195ms
+ GET /manifest.webmanifest 200 in 151ms
+ GET / 200 in 223ms
+ GET /manifest.webmanifest 200 in 79ms
+ GET /api/public/settings 200 in 305ms
+ GET /api/public/settings 200 in 370ms
+ GET /api/public/settings 200 in 375ms
+ GET /api/public/settings 200 in 443ms
+ GET /manifest.webmanifest 200 in 230ms
+ GET /favicon.ico 200 in 346ms
+ ✓ Compiled in 194ms
+ ✓ Compiled /admin/analytics in 243ms
+ GET /admin/analytics 200 in 397ms
+ GET /admin/blog/posts/create 200 in 406ms
+ GET / 200 in 416ms
+ GET /admin/analytics 200 in 175ms
+ GET /admin/blog/posts/create 200 in 182ms
+ GET / 200 in 192ms
+ GET /admin/blog/posts/create 200 in 89ms
+ GET /admin/analytics 200 in 102ms
+ GET / 200 in 114ms
+ GET /admin/analytics 200 in 112ms
+ GET /admin/blog/posts/create 200 in 133ms
+ GET / 200 in 137ms
+ GET /admin/analytics 200 in 102ms
+ GET /admin/blog/posts/create 200 in 103ms
+ GET / 200 in 113ms
+ GET /admin/analytics 200 in 96ms
+ GET /admin/blog/posts/create 200 in 99ms
+ GET / 200 in 119ms
+ GET /admin/blog/posts/create 200 in 100ms
+ GET /admin/analytics 200 in 107ms
+ GET / 200 in 115ms
+ GET /admin/blog/posts/create 200 in 167ms
+ GET /admin/analytics 200 in 154ms
+ GET / 200 in 174ms
+ GET /admin/blog/posts/create 200 in 125ms
+ GET /admin/analytics 200 in 137ms
+ GET / 200 in 139ms
+ GET /admin/blog/posts/create 200 in 112ms
+ GET /admin/analytics 200 in 122ms
+ GET / 200 in 130ms
+ GET /admin/blog/posts/create 200 in 111ms
+ GET /admin/analytics 200 in 110ms
+ GET / 200 in 188ms
+ GET /admin/analytics 200 in 134ms
+ GET /admin/blog/posts/create 200 in 188ms
+ GET / 200 in 151ms
+ GET /admin/analytics 200 in 98ms
+ GET /admin/blog/posts/create 200 in 107ms
+ GET / 200 in 112ms
+ GET /admin/analytics 200 in 92ms
+ GET /admin/blog/posts/create 200 in 107ms
+ GET / 200 in 121ms
+ GET /admin/analytics 200 in 240ms
+ GET /admin/blog/posts/create 200 in 251ms
+ GET / 200 in 257ms
+ GET /admin/analytics 200 in 121ms
+ GET /admin/blog/posts/create 200 in 124ms
+ GET / 200 in 132ms
+ GET / 200 in 120ms
+ GET /admin/analytics 200 in 142ms
+ GET /admin/blog/posts/create 200 in 146ms
+ GET / 200 in 155ms
+ GET /admin/analytics 200 in 123ms
+ GET /admin/blog/posts/create 200 in 122ms
+ GET / 200 in 204ms
+ GET /admin/blog/posts/create 200 in 178ms
+ GET /admin/analytics 200 in 183ms
+ GET / 200 in 158ms
+ GET /admin/blog/posts/create 200 in 131ms
+ GET /admin/analytics 200 in 136ms
+ GET / 200 in 135ms
+ GET /admin/blog/posts/create 200 in 111ms
+ GET /admin/analytics 200 in 114ms
+ GET /manifest.webmanifest 200 in 136ms
+ GET /manifest.webmanifest 200 in 127ms
+ GET /manifest.webmanifest 200 in 55ms
+ ✓ Compiled in 111ms
+[?25h

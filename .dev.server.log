@@ -1,0 +1,29 @@
+
+> regardez-iptv@1.0.0 dev
+> next dev --turbo
+
+   ▲ Next.js 15.1.3 (Turbopack)
+   - Local:        http://localhost:3000
+   - Network:      http://192.168.1.84:3000
+   - Environments: .env.local
+   - Experiments (use with caution):
+     · turbo
+
+ ✓ Starting...
+ ✓ Compiled in 384ms
+ ✓ Ready in 1623ms
+ ○ Compiling /[locale] ...
+ ✓ Compiled /[locale] in 7.2s
+ GET / 200 in 8357ms
+ ✓ Compiled /manifest.webmanifest in 285ms
+ GET /manifest.webmanifest 200 in 390ms
+ GET /favicon.ico 200 in 154ms
+ ○ Compiling /api/public/settings ...
+ ✓ Compiled /api/public/settings in 792ms
+ GET /api/public/settings 200 in 1056ms
+ GET /api/public/settings 200 in 1087ms
+ GET /api/public/settings 200 in 1078ms
+ GET /api/public/settings 200 in 1093ms
+ HEAD / 200 in 105ms
+ ✓ Compiled /api/sports/today in 111ms
+ GET /api/sports/today 200 in 1126ms
