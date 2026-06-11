@@ -5,12 +5,8 @@ import './admin.css';
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="fr" suppressHydrationWarning>
-      <body>
-        <ThemeProvider>
-          <AdminLayoutContent>{children}</AdminLayoutContent>
-        </ThemeProvider>
-      </body>
-    </html>
+    <ThemeProvider>
+      <AdminLayoutContent>{children}</AdminLayoutContent>
+    </ThemeProvider>
   );
 }

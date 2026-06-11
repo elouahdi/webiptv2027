@@ -99,7 +99,7 @@ export default async function RootLayout({
   const dictionary = messages[activeLocale];
 
   return (
-    <html lang={activeLocale} className={`${syne.variable} ${inter.variable} ${jetbrainsMono.variable}`} suppressHydrationWarning>
+    <>
       <head>
         <script
           id="organization-schema"
@@ -114,7 +114,7 @@ export default async function RootLayout({
           suppressHydrationWarning
         />
       </head>
-      <body className="min-h-screen bg-bg-base text-text-primary antialiased">
+      <div className={`${syne.variable} ${inter.variable} ${jetbrainsMono.variable} min-h-screen bg-bg-base text-text-primary antialiased`}>
         <TranslationProvider locale={activeLocale} dictionary={dictionary}>
           <ThemeProvider>
             <a href="#main" className="skip-to-main">
@@ -123,7 +123,7 @@ export default async function RootLayout({
             <div id="main">{children}</div>
           </ThemeProvider>
         </TranslationProvider>
-      </body>
-    </html>
+      </div>
+    </>
   );
 }
