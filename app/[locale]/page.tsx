@@ -4,6 +4,7 @@ import { Footer } from '@/components/layout/Footer';
 import { WhatsappButton } from '@/components/ui/WhatsappButton';
 import { HeroSection } from '@/components/sections/HeroSection';
 import { DeviceCarousel } from '@/components/sections/DeviceCarousel';
+import { SeriesCarousel } from '@/components/sections/SeriesCarousel';
 import { FeaturesSection } from '@/components/sections/FeaturesSection';
 import { StatsSection } from '@/components/sections/StatsSection';
 import { PlansSection } from '@/components/sections/PlansSection';
@@ -103,6 +104,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       <main id="main-content" className="min-h-screen">
         <HeroSection />
         <DeviceCarousel />
+        <SeriesCarousel />
         <FeaturesSection />
         <StatsSection />
         <PlansSection />

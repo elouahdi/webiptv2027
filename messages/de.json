@@ -9,7 +9,8 @@
     "sports": "Live-Spielen",
     "trial": "Kostenloser 3H Test",
     "close_menu": "Menü schließen",
-    "open_menu": "Menü öffnen"
+    "open_menu": "Menü öffnen",
+    "guide": "Installationsanleitung"
   },
   "announcement": {
     "text": "🔥 Sonderangebot: Sparen Sie bis zu 79% + 3 Monate gratis beim Jahrestarif!"
@@ -254,6 +255,13 @@
       "crypto": "Kryptowährung (Bitcoin, USDT)",
       "success": "Herzlichen Glückwunsch! Ihre Bestellung wurde erfolgreich registriert. Sie erhalten Ihre IPTV-Zugangsdaten in wenigen Minuten per E-Mail.",
       "error": "Bei der Überprüfung ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut oder wenden Sie sich an den WhatsApp-Support."
+    },
+    "success": {
+      "title": "Zahlung bestätigt!",
+      "subtitle": "Ihr IPTV-Abonnement wurde erfolgreich aktiviert.",
+      "email_sent": "Bestätigungs-E-Mail mit Ihren Zugangsdaten gesendet.",
+      "activation": "Ihr Abonnement wird innerhalb von 5 Minuten aktiviert.",
+      "back_home": "Zurück zur Startseite"
     }
   },
   "trial_page": {
@@ -360,5 +368,58 @@
     "channel": "Kanal:",
     "no_matches": "Derzeit sind in dieser Kategorie keine Spiele geplant.",
     "trial_cta": "Kostenlosen 3H-Test Starten"
+  },
+  "channels_page": {
+    "badge": "45.000+ HD & 4K Sender",
+    "title_1": "Liste der",
+    "title_gradient": "IPTV Sender",
+    "subtitle": "Entdecken Sie unseren kompletten Katalog nach Ländern. Premium-Sport, Kino, Serien, International — alles in Ihrem IPTV-Abonnement enthalten.",
+    "stats_countries": "Länder",
+    "stats_channels": "Sender",
+    "stats_hd": "HD & 4K",
+    "stats_update": "Tägliche Aktualisierung",
+    "cta_buy": "Abonnement kaufen",
+    "search_placeholder": "Sender oder Land suchen...",
+    "browse_countries": "Nach Land durchsuchen",
+    "back": "Zurück",
+    "loading": "Sender werden geladen...",
+    "error": "Sender konnten nicht geladen werden.",
+    "retry": "Wiederholen",
+    "no_results": "Keine Ergebnisse",
+    "no_results_hint": "Versuchen Sie ein anderes Stichwort",
+    "no_channels": "Keine Sender in diesem Land gefunden",
+    "countries_found": "Länder gefunden",
+    "channels_found": "Sender gefunden",
+    "cta_title": "Bereit für all diese Sender?",
+    "cta_subtitle": "Wählen Sie Ihr IPTV-Abonnement und genießen Sie sofort 45.000+ HD/4K-Sender. 7-Tage-Geld-zurück-Garantie.",
+    "cta_plans": "Abos ansehen",
+    "cta_trial": "Kostenloser 3H-Test",
+    "price_from": "Ab",
+    "price_value": "17,99€/Monat",
+    "no_commitment": "Keine Bindung",
+    "activation_badge": "Aktivierung in 2 Minuten",
+    "channels_count": "Sender"
+  },
+  "installation_guide": {
+    "title": "IPTV Installationsanleitung",
+    "subtitle": "Hier finden Sie Schritt-für-Schritt-Installationsanleitungen zur Einrichtung Ihres IPTV-Abonnements auf all Ihren Geräten: Smart TV, Smartphone, PC oder Android Box.",
+    "badge": "Komplette Anleitung",
+    "search_placeholder": "Nach einer App suchen (z.B. Smarters, VLC...)...",
+    "filter_all": "Alle Geräte",
+    "filter_smartphone": "Smartphone / Tablet",
+    "filter_tv": "Smart TV",
+    "filter_pc": "Computer",
+    "filter_box": "Android Box / Fire Stick",
+    "filter_free": "Kostenlos",
+    "filter_paid": "Kostenpflichtig",
+    "steps_title": "Installationsschritte",
+    "cta_title": "Benötigen Sie ein aktives IPTV-Abonnement?",
+    "cta_subtitle": "Genießen Sie über 45.000 Premium-Live-Kanäle und VOD in 4K UHD mit unserem exklusiven Angebot.",
+    "cta_plans": "Unsere Pläne ansehen",
+    "cta_trial": "Kostenlose 3-Stunden-Testversion",
+    "activation_badge": "Sofortige Freischaltung",
+    "price_from": "Ab",
+    "price_value": "17,99€",
+    "no_commitment": "Ohne Bindung"
   }
 }

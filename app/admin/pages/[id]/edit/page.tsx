@@ -30,7 +30,6 @@ export default function EditPagePage() {
       body: JSON.stringify(page),
     });
     setSaving(false);
-    router.push('/admin/pages');
   };
 
   if (!page) return <div className="text-admin-text-muted">Chargement...</div>;
@@ -66,7 +65,7 @@ export default function EditPagePage() {
               <CardHeader><CardTitle>Blocs de page</CardTitle></CardHeader>
               <CardContent>
                 <PageBuilder
-                  sections={page.sections}
+                  sections={page.sections || []}
                   onChange={(sections: PageBlock[]) => setPage({ ...page, sections })}
                 />
               </CardContent>

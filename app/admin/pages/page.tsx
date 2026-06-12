@@ -20,10 +20,39 @@ const TEMPLATE_LABELS: Record<string, string> = {
 
 export default function PagesAdminPage() {
   const [pages, setPages] = useState<Page[]>([]);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    fetch('/api/cms/pages').then((r) => r.json()).then(setPages);
+    fetch('/api/cms/pages')
+      .then(async (r) => {
+        if (!r.ok) {
+          const text = await r.text();
+          throw new Error(text || 'Erreur ' + r.status);
+        }
+        return r.json();
+      })
+      .then(setPages)
+      .catch((err) => {
+        console.error('Pages fetch error:', err);
+        setError(err.message || 'Erreur de chargement');
+      });
   }, []);
+
+  if (error) {
+    return (
+      <div className="space-y-6">
+        <h1 className="font-syne font-bold text-2xl text-admin-text">Pages</h1>
+        <Card>
+          <div className="p-8 text-center">
+            <p className="text-4xl mb-4">⚠️</p>
+            <p className="text-red-400 font-medium mb-2">Erreur de chargement</p>
+            <p className="text-admin-text-secondary text-sm mb-4">{error}</p>
+            <Button onClick={() => window.location.reload()}>Réessayer</Button>
+          </div>
+        </Card>
+      </div>
+    );
+  }
 
   return (
     <div className="space-y-6">

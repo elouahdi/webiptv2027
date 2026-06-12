@@ -43,8 +43,8 @@ export default async function CheckoutPage() {
 
   return (
     <Suspense fallback={
-      <div className="min-h-screen bg-[#F7F8FA] dark:bg-[#0A0A0A] flex items-center justify-center">
-        <div className="w-10 h-10 border-4 border-[#00D4FF]/30 border-t-[#00D4FF] rounded-full animate-spin"></div>
+      <div className="min-h-screen bg-[#0A0A0F] flex items-center justify-center">
+        <div className="w-10 h-10 border-4 border-blue-500/30 border-t-blue-500 rounded-full animate-spin"></div>
       </div>
     }>
       <CheckoutForm pricing={pricing} />

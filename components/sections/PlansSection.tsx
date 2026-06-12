@@ -59,21 +59,11 @@ export function PlansSection() {
     <section className="py-80 bg-bg-base relative">
       <motion.div
         variants={staggerContainer}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.1 }}
+        initial="visible"
+        animate="visible"
         className="max-w-7xl mx-auto px-[24px] md:px-[40px]"
       >
-        <motion.div variants={fadeInUp} className="text-center mb-64">
-          <h2 className="font-syne font-bold text-32 md:text-48 text-text-primary mb-16 tracking-tight">
-            {t('plans.title')}
-          </h2>
-          <p className="text-text-secondary text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
-            {t('plans.subtitle')}
-          </p>
-        </motion.div>
-
-        {loading ? (
+{loading ? (
           <div className="flex justify-center py-32">
             <div className="w-8 h-8 border-2 border-brand-from border-t-transparent rounded-full animate-spin" />
           </div>

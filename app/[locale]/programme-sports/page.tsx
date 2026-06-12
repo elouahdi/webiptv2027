@@ -149,6 +149,9 @@ export default async function SportsGuidePage({
             <p className="text-[#8b8fa8] text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
               {pageSubtitle}
             </p>
+            <div className="mt-32 max-w-2xl mx-auto">
+              <img src="/hero-sports.svg" alt="Live scores" className="w-full rounded-xl opacity-90" />
+            </div>
           </div>
         </div>
 

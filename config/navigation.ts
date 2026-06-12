@@ -3,6 +3,7 @@ export const NAV_LINKS = [
   { label: 'Plans', href: '/nos-plans' },
   { label: 'Chaînes', href: '/chaines' },
   { label: 'Sports', href: '/programme-sports' },
+  { label: 'Guide Installation', href: '/guide-installation' },
   { label: 'Blog', href: '/blog' },
   { label: 'Contact', href: '/contact' },
   { label: 'FAQ', href: '/faq' },

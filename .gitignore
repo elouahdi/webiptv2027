@@ -39,3 +39,9 @@ yarn-error.log*
 tsconfig.tsbuildinfo
 .claude/
 .devin/
+*.backup
+*.old
+*.patch
+*.log
+.dev.server.log
+colors-fix.txt

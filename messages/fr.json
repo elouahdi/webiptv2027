@@ -9,7 +9,8 @@
     "sports": "Matchs Live",
     "trial": "Essai Gratuit 3H",
     "close_menu": "Fermer le menu",
-    "open_menu": "Ouvrir le menu"
+    "open_menu": "Ouvrir le menu",
+    "guide": "Guide Installation"
   },
   "announcement": {
     "text": "🔥 Offre Spéciale : Économisez jusqu'à 79% + 3 mois offerts sur le plan annuel !"
@@ -254,6 +255,13 @@
       "crypto": "Cryptomonnaie (Bitcoin, USDT)",
       "success": "Félicitations ! Votre commande a été enregistrée avec succès. Vous recevrez vos accès IPTV par e-mail en moins de 5 minutes.",
       "error": "Une erreur est survenue lors de la validation. Veuillez réessayer ou contacter le support WhatsApp."
+    },
+    "success": {
+      "title": "Paiement confirmé !",
+      "subtitle": "Votre abonnement IPTV a été activé avec succès.",
+      "email_sent": "Email de confirmation envoyé avec vos identifiants.",
+      "activation": "Votre abonnement sera activé dans les 5 minutes.",
+      "back_home": "Retour à l'accueil"
     }
   },
   "trial_page": {
@@ -360,5 +368,58 @@
     "channel": "Chaîne :",
     "no_matches": "Aucun match prévu dans cette catégorie pour le moment.",
     "trial_cta": "Commencer l'essai gratuit 3H"
+  },
+  "channels_page": {
+    "badge": "45 000+ Chaînes HD & 4K",
+    "title_1": "Liste des",
+    "title_gradient": "Chaînes IPTV",
+    "subtitle": "Explorez notre catalogue complet par pays. Sport premium, cinéma, séries, international — tout est inclus dans votre abonnement IPTV.",
+    "stats_countries": "Pays",
+    "stats_channels": "Chaînes",
+    "stats_hd": "HD & 4K",
+    "stats_update": "Mise à jour quotidienne",
+    "cta_buy": "Acheter un abonnement",
+    "search_placeholder": "Rechercher une chaîne ou un pays...",
+    "browse_countries": "Parcourir par pays",
+    "back": "Retour",
+    "loading": "Chargement des chaînes...",
+    "error": "Impossible de charger les chaînes.",
+    "retry": "Réessayer",
+    "no_results": "Aucun résultat",
+    "no_results_hint": "Essayez un autre mot-clé",
+    "no_channels": "Aucune chaîne trouvée dans ce pays",
+    "countries_found": "Pays trouvés",
+    "channels_found": "Chaînes trouvées",
+    "cta_title": "Prêt à accéder à toutes ces chaînes ?",
+    "cta_subtitle": "Choisissez votre abonnement IPTV et profitez immédiatement de 45 000+ chaînes HD/4K. Garantie satisfait ou remboursé 7 jours.",
+    "cta_plans": "Voir les abonnements",
+    "cta_trial": "Essai gratuit 3H",
+    "price_from": "À partir de",
+    "price_value": "17,99€/mois",
+    "no_commitment": "Sans engagement",
+    "activation_badge": "Activation en 2 minutes",
+    "channels_count": "chaînes"
+  },
+  "installation_guide": {
+    "title": "Guide Installation IPTV",
+    "subtitle": "Retrouvez les tutoriels d'installation étape par étape pour configurer votre abonnement IPTV sur tous vos appareils : Smart TV, smartphone, PC ou Box Android.",
+    "badge": "Guide complet",
+    "search_placeholder": "Rechercher une application (ex: Smarters, VLC...)...",
+    "filter_all": "Tous les appareils",
+    "filter_smartphone": "Smartphone / Tablette",
+    "filter_tv": "Smart TV",
+    "filter_pc": "Ordinateur",
+    "filter_box": "Box Android / Fire Stick",
+    "filter_free": "Gratuit",
+    "filter_paid": "Payant",
+    "steps_title": "Étapes d'installation",
+    "cta_title": "Besoin d'un abonnement IPTV actif ?",
+    "cta_subtitle": "Profitez de plus de 45 000 chaînes premium en direct et VOD en 4K UHD avec notre offre exclusive.",
+    "cta_plans": "Voir nos plans",
+    "cta_trial": "Essai gratuit 3H",
+    "activation_badge": "Activation immédiate",
+    "price_from": "À partir de",
+    "price_value": "17,99€",
+    "no_commitment": "Sans engagement"
   }
 }

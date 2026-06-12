@@ -42,6 +42,8 @@ export function Navbar() {
         return t('nav.channels') || 'Chaînes';
       case 'sports':
         return t('nav.sports') || 'Sports';
+      case 'guide installation':
+        return t('nav.guide') || 'Guide Installation';
       case 'blog':
         return t('nav.blog');
       case 'contact':

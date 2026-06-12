@@ -22,6 +22,8 @@ import {
   Bell,
   Trophy,
   BarChart3,
+  AppWindow,
+  Smartphone,
 } from 'lucide-react';
 import { cn } from '@/lib/utils/cn';
 
@@ -39,6 +41,8 @@ const navigation = [
   },
   { name: 'Médias', href: '/admin/media', icon: ImageIcon },
   { name: 'Pages', href: '/admin/pages', icon: File },
+  { name: "📱 Applications IPTV", href: "/admin/applications", icon: Smartphone },
+
   {
     name: 'Site',
     href: '/admin/site',
@@ -54,6 +58,7 @@ const navigation = [
   },
   { name: 'Utilisateurs', href: '/admin/users', icon: Users },
   { name: 'Sports', href: '/admin/sports', icon: Trophy },
+  { name: 'Applications IPTV', href: '/admin/applications', icon: AppWindow },
   { name: 'Analytics', href: '/admin/analytics', icon: BarChart3 },
   { name: 'SEO', href: '/admin/seo', icon: Search },
   { name: 'Paramètres', href: '/admin/settings', icon: Settings },
